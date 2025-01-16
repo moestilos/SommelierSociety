@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Jaro:opsz@6..72&family=Sofadi+One&family=Teko:wght@300..700&display=swap');
@@ -36,13 +37,13 @@
   </header>
 <section class="bg-black">
     <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-      <h2 class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+      <h2 class="text-center text-4xl font-bold tracking-tight text-white sm:text-5xl">
         Reseñas de nuestros Clientes    
       </h2>
   
       <div class="mt-8 [column-fill:_balance] sm:columns-2 sm:gap-6 lg:columns-3 lg:gap-8">
         <div class="mb-8 sm:break-inside-avoid">
-          <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+          <blockquote class="h-full bg-gray-800 bg-opacity-60 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg text-white">
             <div class="flex items-center gap-4">
               <img
                 alt=""
@@ -104,11 +105,11 @@
                   </svg>
                 </div>
   
-                <p class="mt-0.5 text-lg font-medium text-gray-900">Paul Starr</p>
+                <p class="mt-0.5 text-lg font-medium text-white">Paul Starr</p>
               </div>
             </div>
   
-            <p class="mt-4 text-gray-700">
+            <p class="mt-4 text-white-700çç">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
               consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus
               error officiis atque voluptates magnam!
