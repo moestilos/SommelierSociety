@@ -36,5 +36,9 @@ Route::get('/contacto', function () {
     return view('contacto');
 });
 
+// Ruta que lleva a 'contacto.blade.php'
+Route::get('/catasdevino', function () {
+    return view('catasdevino');
+});
 
 require __DIR__.'/auth.php';

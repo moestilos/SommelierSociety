@@ -12,8 +12,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Asegúrate de compilar estilos si usas Tailwind -->
 </head>
-<body class="flex flex-col min-h-screen bg-[url('{{ asset('img/fondocursos.jpg') }}')] bg-cover bg-center bg-no-repeat">
-        <!-- ENCABEZADO DE LA PÁGINA -->
+<body class="w-full h-40 bg-cover bg-center rounded mb-4" style="background-image: url('{{ asset('img/vinosfon.jpeg') }}');">
+  <!-- ENCABEZADO DE LA PÁGINA -->
   <header class="text-gray-400 bg-black p-2 body-font">
       <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
@@ -22,7 +22,7 @@
               <span class="ml-3 text-xl">South Wine Academy</span>
           </a>
           <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-              <a href="{{ url('/login') }}" class="mr-5 hover:text-yellow">Login</a>
+              <a href="{{ url('/dashboard') }}" class="mr-5 hover:text-yellow">Home</a>
               <a href="{{ url('/contacto') }}" class="mr-5 hover:text-yellow">Contact</a>
               <a href="{{ url('/register') }}" class="mr-5 hover:text-yellow">Register</a>
               <a href="" class="mr-5 hover:text-yellow">About Us</a>
@@ -42,14 +42,13 @@
   >
     <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
       <h1 class="text-3xl font-extrabold text-white sm:text-5xl">
-        Let us find your
+        Cursos de
 
-        <strong class="block font-extrabold text-rose-500"> Forever Home. </strong>
+        <strong class="block font-extrabold text-rose-500"> Sommelier. </strong>
       </h1>
 
       <p class="mt-4 max-w-lg text-white sm:text-xl/relaxed">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus
-        numquam ea!
+        Inscribete en nuestros cursos de Sommelier de Vinos de Jerez
       </p>
 
       <div class="mt-8 flex flex-wrap gap-4 text-center">

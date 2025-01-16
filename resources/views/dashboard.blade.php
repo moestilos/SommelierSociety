@@ -13,7 +13,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Asegúrate de compilar estilos si usas Tailwind -->
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen" style="background-image: url('{{ asset('img/fondocursos.jpg') }}'); background-size: cover; background-position: center;">
         <!-- ENCABEZADO DE LA PÁGINA -->
   <header class="text-gray-400 bg-black p-2 body-font">
       <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -40,10 +40,10 @@
                               <!-- CAJA 1 -->
                               <div class="p-2 lg:w-1/4 md:w-1/2">
                                   <div data-aos="fade-up" data-aos-duration="1000" class="h-full bg-gray-800 bg-opacity-40 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
-                                      <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">CATEGORY</h2>
+                                      <h2 class="tracking-widest text-xs title-font font-medium text-white mb-3">CATEGORY</h2>
                                       <img src="{{ asset('img/vino1.jpg') }}" alt="Tuzorra" class="w-full h-40 object-cover mb-4 rounded">
                                       <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Info Tarifas</h1>
-                                      <p class="leading-relaxed mb-3 text-white mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                                      <p class="leading-relaxed mb-3 text-white mb-1">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
                                       <a href="{{ url('/tarifas') }}" class="text-yellow-400 inline-flex items-center">
                                           Learn More
                                           <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -57,10 +57,10 @@
                               <!-- CAJA 2 -->
                               <div class="p-2 lg:w-1/4 md:w-1/2">
                                   <div data-aos="fade-up" data-aos-duration="1000" class="h-full bg-gray-800 bg-opacity-40 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
-                                      <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">CATEGORY</h2>
+                                      <h2 class="tracking-widest text-xs title-font font-medium text-white mb-3">CATEGORY</h2>
                                       <img src="{{ asset('img/vino2.jpeg') }}" alt="Tuzorra" class="w-full h-40 object-cover mb-4 rounded">
                                       <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Cursos de Sommelier</h1>
-                                      <p class="leading-relaxed mb-3 text-white mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                                      <p class="leading-relaxed mb-3 text-white mb-1">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
                                       <a href="{{ url('/cursos') }}" class="text-yellow-400 inline-flex items-center">
                                           Learn More
                                           <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -74,11 +74,11 @@
                               <!-- CAJA 3 -->
                               <div class="p-2 lg:w-1/4 md:w-1/2">
                                   <div data-aos="fade-up" data-aos-duration="1000" class="h-full bg-gray-800 bg-opacity-40 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
-                                      <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">CATEGORY</h2>
+                                      <h2 class="tracking-widest text-xs title-font font-medium text-white mb-3">CATEGORY</h2>
                                       <img src="{{ asset('img/vino3.jpeg') }}" alt="Tuzorra" class="w-full h-40 object-cover mb-4 rounded">
                                       <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Catas de Vino</h1>
-                                      <p class="leading-relaxed mb-3 text-white mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                                      <a href="{{ url('/login') }}" class="text-yellow-400 inline-flex items-center">
+                                      <p class="leading-relaxed mb-3 text-white mb-1">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                                      <a href="{{ url('/catasdevino') }}" class="text-yellow-400 inline-flex items-center">
                                           Learn More
                                           <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                               <path d="M5 12h14"></path>
