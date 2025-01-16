@@ -26,6 +26,11 @@ Route::get('/tarifas', function () {
     return view('tarifas');
 });
 
+// Ruta que lleva a 'tarifas.blade.php'
+Route::get('/cursos', function () {
+    return view('cursos');
+});
+
 // Ruta que lleva a 'contacto.blade.php'
 Route::get('/contacto', function () {
     return view('contacto');

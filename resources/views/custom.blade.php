@@ -25,7 +25,7 @@
           <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
               <a href="{{ url('/login') }}" class="mr-5 hover:text-yellow">Login</a>
               <a href="{{ url('/contacto') }}" class="mr-5 hover:text-yellow">Contact</a>
-              <a href="{{ url('/welcome') }}" class="mr-5 hover:text-yellow">Welcome</a>
+              <a href="{{ url('/register') }}" class="mr-5 hover:text-yellow">Register</a>
               <a href="" class="mr-5 hover:text-yellow">About Us</a>
               <a href="" class="mr-5 hover:text-yellow">Store</a>
           </nav>
@@ -62,7 +62,7 @@
                                       <img src="{{ asset('img/vino2.jpeg') }}" alt="Tuzorra" class="w-full h-40 object-cover mb-4 rounded">
                                       <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Cursos de Sommelier</h1>
                                       <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                                      <a href="{{ url('/login') }}" class="text-purple-400 inline-flex items-center">
+                                      <a href="{{ url('/cursos') }}" class="text-purple-400 inline-flex items-center">
                                           Learn More
                                           <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                               <path d="M5 12h14"></path>
