@@ -1,7 +1,8 @@
 <?php
-
+use App\Http\Controllers\UserRequestController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\CourseController as AdminCourseController;
 
 Route::get('/custom', function () {
     return view('custom');
@@ -44,6 +45,20 @@ Route::get('/contacto', function () {
 // Ruta que lleva a 'resenas.blade.php'
 Route::get('/resenas', function () {
     return view('resenas');
+});
+
+// Página de Contacto
+Route::view('/contact', 'contact')->name('contact');
+Route::post('/contact', [UserRequestController::class, 'store'])->name('contact.store');
+
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/courses', [AdminCourseController::class, 'index'])->name('courses.index');
+    Route::get('/courses/create', [AdminCourseController::class, 'create'])->name('courses.create');
+    Route::post('/courses', [AdminCourseController::class, 'store'])->name('courses.store');
+    Route::get('/courses/{id}/edit', [AdminCourseController::class, 'edit'])->name('courses.edit');
+    Route::put('/courses/{id}', [AdminCourseController::class, 'update'])->name('courses.update');
+    Route::delete('/courses/{id}', [AdminCourseController::class, 'destroy'])->name('courses.destroy');
 });
 
 // Ruta que lleva a 'catasdevino.blade.php'

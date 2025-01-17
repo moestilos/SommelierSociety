@@ -27,10 +27,8 @@
           </a>
           <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
             <a href="{{ url('/dashboard') }}" class="mr-5 hover:text-yellow">Home</a>
-              <a href="{{ url('/contacto') }}" class="mr-5 hover:text-yellow">Contact</a>
-
-
-              <a href="" class="mr-5 hover:text-yellow">About Us</a>
+              <a href="{{ url('/contacto') }}" class="mr-5 hover:text-yellow">About Us</a>
+              <a href="{{ url('/contact') }}" class="mr-5 hover:text-yellow">Contact Us</a>
               <a href="" class="mr-5 hover:text-yellow">Store</a>
           </nav>
       </div>

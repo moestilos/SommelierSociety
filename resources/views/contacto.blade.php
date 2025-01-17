@@ -40,76 +40,61 @@
   </h2>
 
   <section class="text-gray-400 body-font">
-    <div class="container mx-auto flex flex-col justify-center items-center px-20 py-24 space-y-4">
-      <div class="w-full">
-        <div class="flex border-2 rounded-lg border-gray-800 p-8 sm:flex-row flex-col h-full bg-gray-800 bg-opacity-80 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
-          <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-800 text-purple-400 flex-shrink-0">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
-              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
+    <div class="container mx-auto flex flex-wrap justify-between px-8 py-12">
+      <!-- Primera caja -->
+      <div class="p-4 w-full lg:w-1/2">
+        <div class="flex flex-col items-center border-2 rounded-lg border-gray-800 p-8 bg-gray-800 bg-opacity-80 px-4 pt-8 pb-12 text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
+          <!-- Imagen circular centrada arriba -->
+          <div class="w-24 h-24 mb-4 flex items-center justify-center overflow-hidden rounded-full bg-gray-700">
+            <img src="{{ asset('img/laprimera.png') }}" alt="Tuzorra" class="w-full h-full object-cover">
           </div>
-          <div class="flex-grow ">
+          <!-- Contenido de la caja -->
+          <div class="flex-grow">
             <h2 class="text-white text-lg title-font font-medium mb-3">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">Ana Hergueta Garde</font>
-              </font>
+              Ana Hergueta Garde
             </h2>
-            <p class="leading-relaxed text-base">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">Enóloga y sumiller cofundadora y propietaria del restaurante Palo Cortao en Sevilla.</font>
-              </font>
+            <p class="leading-relaxed text-base text-gray-300">
+              Enóloga y sumiller cofundadora y propietaria del restaurante Palo Cortao en Sevilla.
             </p>
-            <a class="mt-3 text-purple-400 inline-flex items-center">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">ana.hergueta@southwinesacademy.com</font>
-              </font>
+            <a href="mailto:pilar.perez@cesurformacion.com" class="mt-3 text-purple-400 inline-flex items-center">
+              ana.hergueta@southwinesacademy.com  
             </a>
             <br>
-            <a class="mt-3 text-purple-400 inline-flex items-center">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">Tlf: 649 44 61 20</font>
-              </font>
+            <a href="tel:+34649446120" class="mt-3 text-purple-400 inline-flex items-center">
+              Tlf: 649 44 61 20
             </a>
           </div>
         </div>
       </div>
-      <div class="w-full">
-        <div class="flex border-2 rounded-lg border-gray-800 p-8 sm:flex-row flex-col h-full bg-gray-800 bg-opacity-80 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
-          <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-800 text-purple-400 flex-shrink-0">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
-              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
+  
+      <!-- Segunda caja -->
+      <div class="p-4 w-full lg:w-1/2">
+        <div class="flex flex-col items-center border-2 rounded-lg border-gray-800 p-8 bg-gray-800 bg-opacity-80 px-4 pt-8 pb-12 text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
+          <!-- Imagen circular centrada arriba -->
+          <div class="w-24 h-24 mb-4 flex items-center justify-center overflow-hidden rounded-full bg-gray-700">
+            <img src="{{ asset('img/lasegunda.png') }}" alt="Tuzorra" class="w-full h-full object-cover">
           </div>
+          <!-- Contenido de la caja -->
           <div class="flex-grow">
             <h2 class="text-white text-lg title-font font-medium mb-3">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">Pilar Pérez Vaca</font>
-              </font>
+              Pilar Pérez Vaca
             </h2>
-            <p class="leading-relaxed text-base">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">Sumiller y docente.
-                  Mejor sumiller de Sevilla 2016, 2018 y 2019.</font>
-              </font>
+            <p class="leading-relaxed text-base text-gray-300">
+              Sumiller y docente. Mejor sumiller de Sevilla 2016, 2018 y 2019.
             </p>
-            <a class="mt-3 text-purple-400 inline-flex items-center">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">pilar.perez@cesurformacion.com</font>
-              </font>
+            <a href="mailto:pilar.perez@cesurformacion.com" class="mt-3 text-purple-400 inline-flex items-center">
+              pilar.perez@cesurformacion.com
             </a>
             <br>
-            <a class="mt-3 text-purple-400 inline-flex items-center">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">Tlf: 647 09 46 59</font>
-              </font>
+            <a href="tel:+34649446120" class="mt-3 text-purple-400 inline-flex items-center">
+              Tlf: 647 09 46 59
             </a>
           </div>
         </div>
       </div>
     </div>
   </section>
+  
 
   <!-- PIE DE LA PÁGINA -->
   <footer class="text-gray-400 bg-black p-4 body-font">
