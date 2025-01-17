@@ -1,12 +1,16 @@
+<!-- resources/views/custom.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Jaro:opsz@6..72&family=Sofadi+One&family=Teko:wght@300..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400..700&family=Jaro:opsz@6..72&family=Sofadi+One&family=Teko:wght@300..700&display=swap');
         </style>
     <title>Vinos</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -18,13 +22,14 @@
       <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
               <!-- Logo VinoA -->
-              <img src="{{ asset('img/logonuevo.jpeg') }}" alt="Logo VinoA" class="w-10 h-10 rounded-full mr-3">
-              <span class="ml-3 text-xl">South Wine Academy</span>
+              <img src="{{ asset('img/logonuevo.jpeg  ') }}" alt="Logo VinoA" class="w-10 h-10 rounded-full mr-3">
+              <span class="ml-3 text-xl holy">South Wine Academy</span>
           </a>
           <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-              <a href="{{ url('/dashboard') }}" class="mr-5 hover:text-yellow">Home</a>
+            <a href="{{ url('/dashboard') }}" class="mr-5 hover:text-yellow">Home</a>
               <a href="{{ url('/contacto') }}" class="mr-5 hover:text-yellow">Contact</a>
-              <a href="{{ url('/register') }}" class="mr-5 hover:text-yellow">Register</a>
+
+
               <a href="" class="mr-5 hover:text-yellow">About Us</a>
               <a href="" class="mr-5 hover:text-yellow">Store</a>
           </nav>

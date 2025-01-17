@@ -1,5 +1,3 @@
-
-
 <!-- resources/views/custom.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +9,8 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Jaro:opsz@6..72&family=Sofadi+One&family=Teko:wght@300..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400..700&family=Jaro:opsz@6..72&family=Sofadi+One&family=Teko:wght@300..700&display=swap');
         </style>
     <title>Vinos</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -23,7 +23,7 @@
           <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
               <!-- Logo VinoA -->
               <img src="{{ asset('img/logonuevo.jpeg  ') }}" alt="Logo VinoA" class="w-10 h-10 rounded-full mr-3">
-              <span class="ml-3 text-xl">South Wine Academy</span>
+              <span class="ml-3 text-xl holy">South Wine Academy</span>
           </a>
           <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
             <a href="{{ url('/dashboard') }}" class="mr-5 hover:text-yellow">Home</a>
