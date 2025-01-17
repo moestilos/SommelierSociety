@@ -87,11 +87,7 @@
                     </div>
                 </div>
 
-<<<<<<< HEAD
-                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" onclick="checkAge()">
-=======
                 <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
->>>>>>> 6620699bb4af137f9c9cff4c65a5a9a498c59237
                     Choose plan
                 </button>
             </div>
@@ -143,11 +139,7 @@
                     </div>
                 </div>
 
-<<<<<<< HEAD
-                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" onclick="checkAge()">
-=======
                 <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
->>>>>>> 6620699bb4af137f9c9cff4c65a5a9a498c59237
                     Choose plan
                 </button>
             </div>
@@ -199,11 +191,7 @@
                     </div>
                 </div>
 
-<<<<<<< HEAD
-                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-black p-4 rounded-md hover:bg-white p-4 focus:outline-none focus:bg-blue-600 hover:text-black p-4" onclick="checkAge()">
-=======
                 <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-black p-4 rounded-md hover:bg-yellow-500 focus:outline-none focus:bg-yellow-600">
->>>>>>> 6620699bb4af137f9c9cff4c65a5a9a498c59237
                     Choose plan
                 </button>
             </div>
@@ -255,11 +243,7 @@
                     </div>
                 </div>
 
-<<<<<<< HEAD
-                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" onclick="checkAge()">
-=======
                 <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
->>>>>>> 6620699bb4af137f9c9cff4c65a5a9a498c59237
                     Choose plan
                 </button>
             </div>
@@ -305,13 +289,5 @@
           </span>
         </div>
       </footer>
-      <script>
-        function checkAge() {
-            let ageConfirmed = confirm("¿Eres mayor de edad?");
-            if (ageConfirmed) {
-                window.location.href = "/otra-pagina";
-            }
-        }
-    </script>
 </body>
 </html>
