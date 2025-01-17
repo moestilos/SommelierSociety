@@ -88,8 +88,13 @@
                         <span class="mx-4 text-gray-300">Unlimited users</span>
                     </div>
                 </div>
+<<<<<<< HEAD
  
                 <button onclick="window.location.href='{{ url('/tarifaschek') }}'" class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
+=======
+
+                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-black p-4 rounded-md hover:bg-yellow-500 focus:outline-none focus:bg-yellow-600">
+>>>>>>> d086e178c1ed49e1c17ee6f9b93875c0e2eb73da
                     Choose plan
                 </button>
             </div>
@@ -140,6 +145,7 @@
                         <span class="mx-4 text-gray-300">Unlimited users</span>
                     </div>
                 </div>
+<<<<<<< HEAD
  
                 <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
                     Choose plan
@@ -245,6 +251,9 @@
                     </div>
                 </div>
  
+=======
+
+>>>>>>> d086e178c1ed49e1c17ee6f9b93875c0e2eb73da
                 <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
                     Choose plan
                 </button>

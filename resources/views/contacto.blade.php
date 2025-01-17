@@ -40,62 +40,71 @@
   </h2>
 
   <section class="text-gray-400 body-font">
-    <div class="container px-20 py-24 mx-auto flex flex-wrap">
-      <div class="flex flex-wrap -m-4">
-        <div class="p-4 lg:w-1/2 md:w-full">
-          <div class="flex border-2 rounded-lg border-gray-800 p-8 sm:flex-row flex-col h-full bg-gray-800 bg-opacity-40 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
-            <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-800 text-purple-400 flex-shrink-0">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-            </div>
-            <div class="flex-grow ">
-              <h2 class="text-white text-lg title-font font-medium mb-3">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Pilar Pérez Vaca</font>
-                </font>
-              </h2>
-              <p class="leading-relaxed text-base">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Crucifijo de botella azul, vinilo, tostada de cuatro dólares, taxidermia vegana, pub gastronómico, jugo de poutine indxgo.</font>
-                </font>
-              </p>
-              <a class="mt-3 text-purple-400 inline-flex items-center">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">pilar.perez@cesurformacion.com</font>
-                </font>
-
-              </a>
-            </div>
+    <div class="container mx-auto flex flex-col justify-center items-center px-20 py-24 space-y-4">
+      <div class="w-full">
+        <div class="flex border-2 rounded-lg border-gray-800 p-8 sm:flex-row flex-col h-full bg-gray-800 bg-opacity-80 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
+          <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-800 text-purple-400 flex-shrink-0">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div class="flex-grow ">
+            <h2 class="text-white text-lg title-font font-medium mb-3">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Ana Hergueta Garde</font>
+              </font>
+            </h2>
+            <p class="leading-relaxed text-base">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Enóloga y sumiller cofundadora y propietaria del restaurante Palo Cortao en Sevilla.</font>
+              </font>
+            </p>
+            <a class="mt-3 text-purple-400 inline-flex items-center">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">ana.hergueta@southwinesacademy.com</font>
+              </font>
+            </a>
+            <br>
+            <a class="mt-3 text-purple-400 inline-flex items-center">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Tlf: 649 44 61 20</font>
+              </font>
+            </a>
           </div>
         </div>
-        <div class="p-4 lg:w-1/2 md:w-full">
-          <div class="flex border-2 rounded-lg border-gray-800 p-8 sm:flex-row flex-col h-full bg-gray-800 bg-opacity-40 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
-            <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-800 text-purple-400 flex-shrink-0">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-            </div>
-            <div class="flex-grow">
-              <h2 class="text-white text-lg title-font font-medium mb-3">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Pilar Pérez Vaca</font>
-                </font>
-              </h2>
-              <p class="leading-relaxed text-base">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Crucifijo de botella azul, vinilo, tostada de cuatro dólares, taxidermia vegana, pub gastronómico, jugo de poutine indxgo.</font>
-                </font>
-              </p>
-              <a class="mt-3 text-purple-400 inline-flex items-center">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">pilar.perez@cesurformacion.com</font>
-                </font>
-
-              </a>
-            </div>
+      </div>
+      <div class="w-full">
+        <div class="flex border-2 rounded-lg border-gray-800 p-8 sm:flex-row flex-col h-full bg-gray-800 bg-opacity-80 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
+          <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-800 text-purple-400 flex-shrink-0">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-white text-lg title-font font-medium mb-3">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Pilar Pérez Vaca</font>
+              </font>
+            </h2>
+            <p class="leading-relaxed text-base">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Sumiller y docente.
+                  Mejor sumiller de Sevilla 2016, 2018 y 2019.</font>
+              </font>
+            </p>
+            <a class="mt-3 text-purple-400 inline-flex items-center">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">pilar.perez@cesurformacion.com</font>
+              </font>
+            </a>
+            <br>
+            <a class="mt-3 text-purple-400 inline-flex items-center">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Tlf: 647 09 46 59</font>
+              </font>
+            </a>
           </div>
         </div>
       </div>
