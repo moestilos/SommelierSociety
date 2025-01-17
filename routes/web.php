@@ -26,7 +26,12 @@ Route::get('/tarifas', function () {
     return view('tarifas');
 });
 
-// Ruta que lleva a 'tarifas.blade.php'
+// Ruta que lleva a 'tarifaschek.blade.php'
+Route::get('/tarifaschek', function () {
+    return view('tarifaschek');
+});
+
+// Ruta que lleva a 'cursos.blade.php'
 Route::get('/cursos', function () {
     return view('cursos');
 });
@@ -36,12 +41,12 @@ Route::get('/contacto', function () {
     return view('contacto');
 });
 
-// Ruta que lleva a 'contacto.blade.php'
+// Ruta que lleva a 'resenas.blade.php'
 Route::get('/resenas', function () {
     return view('resenas');
 });
 
-// Ruta que lleva a 'contacto.blade.php'
+// Ruta que lleva a 'catasdevino.blade.php'
 Route::get('/catasdevino', function () {
     return view('catasdevino');
 });
