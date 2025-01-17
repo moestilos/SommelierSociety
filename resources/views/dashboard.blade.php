@@ -5,26 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Jaro:opsz@6..72&family=Sofadi+One&family=Teko:wght@300..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400..700&family=Jaro:opsz@6..72&family=Sofadi+One&family=Teko:wght@300..700&display=swap');
         </style>
     <title>Vinos</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Asegúrate de compilar estilos si usas Tailwind -->
 </head>
 <body class="flex flex-col min-h-screen" style="background-image: url('{{ asset('img/fondocursos.jpg') }}'); background-size: cover; background-position: center;">
-        <!-- ENCABEZADO DE LA PÁGINA -->
+  <!-- ENCABEZADO DE LA PÁGINA -->
   <header class="text-gray-400 bg-black p-2 body-font">
       <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
               <!-- Logo VinoA -->
-              <img src="{{ asset('img/logoVinoA.png') }}" alt="Logo VinoA" class="w-10 h-10 rounded-full mr-3">
-              <span class="ml-3 text-xl">South Wine Academy</span>
+              <img src="{{ asset('img/logonuevo.jpeg  ') }}" alt="Logo VinoA" class="w-10 h-10 rounded-full mr-3">
+              <span class="ml-3 text-xl holy">South Wine Academy</span>
           </a>
           <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a href="{{ url('/dashboard') }}" class="mr-5 hover:text-yellow">Home</a>
               <a href="{{ url('/contacto') }}" class="mr-5 hover:text-yellow">Contact</a>
-              <a href="{{ url('/register') }}" class="mr-5 hover:text-yellow">Register</a>
+
+
               <a href="" class="mr-5 hover:text-yellow">About Us</a>
               <a href="" class="mr-5 hover:text-yellow">Store</a>
           </nav>
@@ -33,15 +38,15 @@
 
         <!-- CAJAS DE CATEGORÍAS -->
                     <!-- CAJA 1 -->
-                    <section class="text-white-400 bg-purple-500 body-font flex-grow">
+                    <section class="text-white-400 body-font flex-grow">
                       <div class="container px-5 py-24 mx-auto flex justify-center">
                           <div class="flex flex-wrap -m-2 justify-center">
                               
                               <!-- CAJA 1 -->
                               <div class="p-2 lg:w-1/4 md:w-1/2">
-                                  <div data-aos="fade-up" data-aos-duration="1000" class="h-full bg-gray-800 bg-opacity-40 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
+                                  <div data-aos="fade-up" data-aos-duration="1000" class="h-full bg-gray-800 bg-opacity-60 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
                                       <h2 class="tracking-widest text-xs title-font font-medium text-white mb-3">CATEGORY</h2>
-                                      <img src="{{ asset('img/vino1.jpg') }}" alt="Tuzorra" class="w-full h-40 object-cover mb-4 rounded">
+                                      <img src="{{ asset('img/infotarifas.jpeg') }}" alt="Tuzorra" class="w-full h-40 object-cover mb-4 rounded">
                                       <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Info Tarifas</h1>
                                       <p class="leading-relaxed mb-3 text-white mb-1">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
                                       <a href="{{ url('/tarifas') }}" class="text-yellow-400 inline-flex items-center">
@@ -56,9 +61,9 @@
                   
                               <!-- CAJA 2 -->
                               <div class="p-2 lg:w-1/4 md:w-1/2">
-                                  <div data-aos="fade-up" data-aos-duration="1000" class="h-full bg-gray-800 bg-opacity-40 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
+                                  <div data-aos="fade-up" data-aos-duration="1000" class="h-full bg-gray-800 bg-opacity-60 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
                                       <h2 class="tracking-widest text-xs title-font font-medium text-white mb-3">CATEGORY</h2>
-                                      <img src="{{ asset('img/vino2.jpeg') }}" alt="Tuzorra" class="w-full h-40 object-cover mb-4 rounded">
+                                      <img src="{{ asset('img/bodega.jpeg') }}" alt="Tuzorra" class="w-full h-40 object-cover mb-4 rounded">
                                       <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Cursos de Sommelier</h1>
                                       <p class="leading-relaxed mb-3 text-white mb-1">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
                                       <a href="{{ url('/cursos') }}" class="text-yellow-400 inline-flex items-center">
@@ -70,12 +75,27 @@
                                       </a>
                                   </div>
                               </div>
-                  
                               <!-- CAJA 3 -->
+                              <div class="p-2 lg:w-1/4 md:w-1/2">
+                                <div data-aos="fade-up" data-aos-duration="1000" class="h-full bg-gray-800 bg-opacity-60 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
+                                    <h2 class="tracking-widest text-xs title-font font-medium text-white mb-3">CATEGORY</h2>
+                                    <img src="{{ asset('img/resenas.jpeg') }}" alt="Tuzorra" class="w-full h-40 object-cover mb-4 rounded">
+                                    <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Reseñas</h1>
+                                    <p class="leading-relaxed mb-3 text-white mb-1">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                                    <a href="{{ url('/resenas') }}" class="text-yellow-400 inline-flex items-center">
+                                        Learn More
+                                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M5 12h14"></path>
+                                            <path d="M12 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                              <!-- CAJA 4 -->
                               <div class="p-2 lg:w-1/4 md:w-1/2">
                                   <div data-aos="fade-up" data-aos-duration="1000" class="h-full bg-gray-800 bg-opacity-40 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
                                       <h2 class="tracking-widest text-xs title-font font-medium text-white mb-3">CATEGORY</h2>
-                                      <img src="{{ asset('img/vino3.jpeg') }}" alt="Tuzorra" class="w-full h-40 object-cover mb-4 rounded">
+                                      <img src="{{ asset('img/vinocur.jpeg') }}" alt="Tuzorra" class="w-full h-40 object-cover mb-4 rounded">
                                       <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Catas de Vino</h1>
                                       <p class="leading-relaxed mb-3 text-white mb-1">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
                                       <a href="{{ url('/catasdevino') }}" class="text-yellow-400 inline-flex items-center">
@@ -102,12 +122,11 @@
     
       <footer class="text-gray-400 bg-black p-4 body-font">
         <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-          <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-purple-500 rounded-full" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
-            <span class="ml-3 text-xl">South Wine Academy</span>
-          </a>
+          <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+            <!-- Logo VinoA -->
+            <img src="{{ asset('img/logonuevo.jpeg  ') }}" alt="Logo VinoA" class="w-10 h-10 rounded-full mr-3">
+
+        </a>
           <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">© 2025 South Wine Academy —
             <a href="https://github.com/moestilos/SommelierSociety.git" class="text-gray-500 ml-1" target="_blank" rel="noopener noreferrer">github</a>
           </p>

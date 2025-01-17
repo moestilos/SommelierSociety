@@ -37,6 +37,11 @@ Route::get('/contacto', function () {
 });
 
 // Ruta que lleva a 'contacto.blade.php'
+Route::get('/resenas', function () {
+    return view('resenas');
+});
+
+// Ruta que lleva a 'contacto.blade.php'
 Route::get('/catasdevino', function () {
     return view('catasdevino');
 });
