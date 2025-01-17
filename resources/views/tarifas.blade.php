@@ -80,7 +80,7 @@
                     </div>
                 </div>
 
-                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" onclick="checkAge()">
                     Choose plan
                 </button>
             </div>
@@ -132,7 +132,7 @@
                     </div>
                 </div>
 
-                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" onclick="checkAge()">
                     Choose plan
                 </button>
             </div>
@@ -184,7 +184,7 @@
                     </div>
                 </div>
 
-                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-black p-4 rounded-md hover:bg-white p-4 focus:outline-none focus:bg-blue-600 hover:text-black p-4">
+                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-black p-4 rounded-md hover:bg-white p-4 focus:outline-none focus:bg-blue-600 hover:text-black p-4" onclick="checkAge()">
                     Choose plan
                 </button>
             </div>
@@ -236,7 +236,7 @@
                     </div>
                 </div>
 
-                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" onclick="checkAge()">
                     Choose plan
                 </button>
             </div>
@@ -282,5 +282,13 @@
           </span>
         </div>
       </footer>
+      <script>
+        function checkAge() {
+            let ageConfirmed = confirm("¿Eres mayor de edad?");
+            if (ageConfirmed) {
+                window.location.href = "/otra-pagina";
+            }
+        }
+    </script>
 </body>
 </html>
