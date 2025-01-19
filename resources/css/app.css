@@ -7,20 +7,35 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-
-}
-
-.bg-custom {
     background-image: url('/img/fondocursos.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  }
-  
+}
 
-  .holy {
+body.dark-mode {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
+
+header, footer {
+    background-color: black;
+    color: gray;
+}
+
+body.light-mode header, body.light-mode footer {
+    background-color: white !important;
+    color: black !important;
+}
+
+body.light-mode header .title-font, body.light-mode footer .title-font {
+    color: black !important;
+}
+
+
+
+.holy {
     font-family: "Dancing Script", serif;
-  font-optical-sizing: auto;
-
-  font-style: normal;
-  }
+    font-optical-sizing: auto;
+    font-style: normal;
+}
