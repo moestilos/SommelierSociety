@@ -89,7 +89,7 @@
                     </div>
                 </div>
  
-                <button onclick="window.location.href='{{ url('/tarifaschek') }}'" class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
+                <button onclick="window.location.href='{{ url('/tarifaschek?plan=intro') }}'" class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
                     Choose plan
                 </button>
             </div>
@@ -141,7 +141,7 @@
                     </div>
                 </div>
  
-                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
+                <button onclick="window.location.href='{{ url('/tarifaschek?plan=base') }}'" class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
                     Choose plan
                 </button>
             </div>
@@ -193,7 +193,7 @@
                     </div>
                 </div>
  
-                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-black p-4 rounded-md hover:bg-yellow-500 focus:outline-none focus:bg-yellow-600">
+                <button onclick="window.location.href='{{ url('/tarifaschek?plan=popular') }}'" class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-black p-4 rounded-md hover:bg-yellow-500 focus:outline-none focus:bg-yellow-600">
                     Choose plan
                 </button>
             </div>
@@ -245,7 +245,7 @@
                     </div>
                 </div>
  
-                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
+                <button onclick="window.location.href='{{ url('/tarifaschek?plan=exterprise') }}'" class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
                     Choose plan
                 </button>
             </div>
