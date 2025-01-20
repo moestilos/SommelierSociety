@@ -51,7 +51,6 @@ Route::get('/resenas', function () {
 Route::view('/contact', 'contact')->name('contact');
 Route::post('/contact', [UserRequestController::class, 'store'])->name('contact.store');
 
-
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/courses', [AdminCourseController::class, 'index'])->name('courses.index');
     Route::get('/courses/create', [AdminCourseController::class, 'create'])->name('courses.create');
@@ -65,5 +64,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 Route::get('/catasdevino', function () {
     return view('catasdevino');
 });
+
+
 
 require __DIR__.'/auth.php';
