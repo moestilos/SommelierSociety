@@ -15,14 +15,27 @@
         <form id="ageForm" class="flex flex-col items-center">
             <label for="dob" class="mb-2">Fecha de Nacimiento:</label>
             <input type="date" id="dob" name="dob" class="mb-4 p-2 rounded-md text-black">
+            <input type="hidden" id="plan" name="plan" value="{{ request()->query('plan') }}">
             <button type="button" onclick="checkAge()" class="px-4 py-2 bg-yellow-500 rounded-md hover:bg-yellow-600">Verificar Edad</button>
         </form>
     </div>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const plan = getQueryParam('plan');
+            if (plan) {
+                document.getElementById('plan').value = plan;
+            }
+        });
+
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
         function checkAge() {
             const dob = new Date(document.getElementById('dob').value);
             const today = new Date();
-            const age = today.getFullYear() - dob.getFullYear();
+            let age = today.getFullYear() - dob.getFullYear();
             const monthDiff = today.getMonth() - dob.getMonth();
             const dayDiff = today.getDate() - dob.getDate();
 
@@ -32,7 +45,18 @@
 
             if (age >= 18) {
                 alert("Acceso permitido. Redirigiendo...");
-                window.location.href = "/tarifas";
+                const plan = document.getElementById('plan').value;
+                if (plan === 'intro') {
+                    window.location.href = "/tarifas";
+                } else if (plan === 'base') {
+                    window.location.href = "/tarifasbase";
+                } else if (plan === 'popular') {
+                    window.location.href = "/tarifaspopular";
+                } else if (plan === 'exterprise') {
+                    window.location.href = "/tarifasexterprise";
+                } else {
+                    window.location.href = "/tarifas";
+                }
             } else {
                 alert("Lo siento, debes tener al menos 18 años para acceder a esta página.");
             }
