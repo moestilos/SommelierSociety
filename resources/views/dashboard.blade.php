@@ -29,28 +29,13 @@
                 <span class="ml-3 text-xl holy">South Wine Academy</span>
             </a>
             <!-- modo oscuro -->
-            <div class="ml-auto">
+            <div class="ml-auto mr-4">
                 <button id="theme-toggle" class="bg-gray-800 text-white px-3 py-2 rounded">
                     Modo Oscuro
                 </button>
             </div>
 
             <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                <!-- Traductor-->
-                <span>
-                    <div class="traductor" id="google_translate_element"></div>
-
-                    <script type="text/javascript">
-                        function googleTranslateElementInit() {
-                            new google.translate.TranslateElement({
-                                pageLanguage: 'spain'
-                            }, 'google_translate_element');
-                        }
-                    </script>
-                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-                    </script>
-                </span>
-                <!-- Traductor listo -->
                 <a href="{{ url('/dashboard') }}" class="mr-5 hover:text-yellow">Home</a>
                 <a href="{{ url('/contacto') }}" class="mr-5 hover:text-yellow">About Us</a>
                 <a href="{{ url('/contact') }}" class="mr-5 hover:text-yellow">Contact Us</a>
@@ -58,7 +43,6 @@
             </nav>
         </div>
     </header>
-
     <!-- CAJAS DE CATEGORÍAS -->
     <!-- CAJA 1 -->
     <section class="text-white-400 body-font flex-grow">

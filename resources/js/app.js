@@ -1,5 +1,6 @@
 import './bootstrap';
 
+
 document.addEventListener('DOMContentLoaded', (event) => {
     function updateCountdown() {
         const now = new Date().getTime();
