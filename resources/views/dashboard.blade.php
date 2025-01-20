@@ -190,16 +190,34 @@
         const chatInput = document.getElementById('chat-input');
         const chatSend = document.getElementById('chat-send');
 
+        const responses = {
+            "hola": "¡Hola! ¿Cómo puedo ayudarte?",
+            "adios": "¡Adiós! Que tengas un buen día.",
+            "gracias": "¡De nada! ¿En qué más puedo ayudarte?",
+            "informacion": "Tenemos varios tipos de cursos y varias catas de vino. También puedes obtener información sobre nuestros profesionales y de nuestras tarifas. ¿Qué información deseas?",
+            "cursos": "Puedes encontrar más información sobre nuestros cursos <a href='{{ url('/cursos') }}' class='text-yellow-400'>aquí</a>.",
+            "catas": "Puedes encontrar más información sobre nuestras catas de vino <a href='{{ url('/catasdevino') }}' class='text-yellow-400'>aquí</a>.",
+            "especialistas": "Puedes encontrar más información sobre nuestros especialistas <a href='{{ url('/contacto') }}' class='text-yellow-400'>aquí</a>.",
+            "tarifas": "Puedes encontrar más información sobre nuestras tarifas <a href='{{ url('/tarifas') }}' class='text-yellow-400'>aquí</a>."
+        };
+
         chatToggle.addEventListener('click', () => {
             chatContainer.style.display = chatContainer.style.display === 'none' ? 'block' : 'none';
         });
 
         chatSend.addEventListener('click', () => {
-            const message = chatInput.value.trim();
+            const message = chatInput.value.trim().toLowerCase();
             if (message) {
-                const messageElement = document.createElement('div');
-                messageElement.textContent = message;
-                chatMessages.appendChild(messageElement);
+                const userMessageElement = document.createElement('div');
+                userMessageElement.textContent = message;
+                chatMessages.appendChild(userMessageElement);
+
+                const botResponse = responses[message] || "Lo siento, no entiendo tu mensaje.";
+                const botMessageElement = document.createElement('div');
+                botMessageElement.innerHTML = botResponse;
+                botMessageElement.style.fontWeight = 'bold';
+                chatMessages.appendChild(botMessageElement);
+
                 chatInput.value = '';
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }

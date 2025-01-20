@@ -41,7 +41,7 @@ body.light-mode header .title-font, body.light-mode footer .title-font {
 /* Chatbot styles */
 .chat-container {
     position: fixed;
-    bottom: 20px;
+    bottom: 80px; /* Ajustar para que no tape el botón de enviar */
     right: 20px;
     width: 300px;
     max-width: 100%;
