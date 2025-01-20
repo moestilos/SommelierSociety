@@ -1,36 +1,50 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <!-- Estilos -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Teko:wght@300..700&display=swap');
+    </style>
+    <title>@yield('title', 'South Wine Academy')</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body>
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+<body class="flex flex-col min-h-screen"
+    style="background-image: url('{{ asset('img/fondocursos.jpg') }}'); background-size: cover; background-position: center;">
+    
+    @include('layouts.header')
 
+    <main class="flex-grow">
+        @yield('content')
+    </main>
 
-            <!-- Page Heading -->
-            @isset($header)
-                <header>
-                    <div>
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
+    @include('layouts.footer')
 
-            <!-- Page Content -->
-            <main class="container mx-auto mt-6">
-                @yield('content')
-            </main>
-        </div>
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.textContent = 'Modo Claro';
+            } else {
+                themeToggle.textContent = 'Modo Oscuro';
+            }
+        });
+    </script>
+    
+</body>
+
 </html>
