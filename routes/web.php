@@ -51,7 +51,6 @@ Route::get('/resenas', function () {
 Route::view('/contact', 'contact')->name('contact');
 Route::post('/contact', [UserRequestController::class, 'store'])->name('contact.store');
 
-
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/courses', [AdminCourseController::class, 'index'])->name('courses.index');
     Route::get('/courses/create', [AdminCourseController::class, 'create'])->name('courses.create');
@@ -66,6 +65,7 @@ Route::get('/catasdevino', function () {
     return view('catasdevino');
 });
 
+<<<<<<< HEAD
 // Ruta que lleva a 'tarifasbase.blade.php'
 Route::get('/tarifasbase', function () {
     return view('tarifasbase');
@@ -80,5 +80,8 @@ Route::get('/tarifaspopular', function () {
 Route::get('/tarifasexterprise', function () {
     return view('tarifasexterprise');
 });
+=======
+
+>>>>>>> 59e564c9987b863c05afa834899dbe56792a941a
 
 require __DIR__.'/auth.php';
