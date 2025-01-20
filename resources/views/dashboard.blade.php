@@ -41,6 +41,7 @@
                 <a href="{{ url('/contact') }}" class="mr-5 hover:text-yellow">Contact Us</a>
                 <a href="" class="mr-5 hover:text-yellow">Store</a>
             </nav>
+            
         </div>
     </header>
     <!-- CAJAS DE CATEGORÍAS -->
