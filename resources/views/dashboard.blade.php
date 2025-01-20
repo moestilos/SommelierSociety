@@ -19,13 +19,13 @@
 </head>
 
 <body class="flex flex-col min-h-screen"
-    style="background-image: url('{{ asset('img/fondocursos.jpg') }}'); background-size: cover; background-position: center;">
+    style="background-image: url('{{ asset('img/fondocursos.jpg') }}'); background-size: cover; background-position: center; background-color: rgba(0, 0, 0, 0.9); background-blend-mode: darken;">
     <!-- ENCABEZADO DE LA PÁGINA -->
     <header class="text-gray-400 bg-black p-2 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
                 <!-- Logo VinoA -->
-                <img src="{{ asset('img/logonuevo.jpeg  ') }}" alt="Logo VinoA" class="w-10 h-10 rounded-full mr-3">
+                <img src="{{ asset('img/nuevoLogo.png  ') }}" alt="Logo VinoA" class="w-24 h-20 rounded-full mr-3">
                 <span class="ml-3 text-xl holy">South Wine Academy</span>
             </a>
             <!-- modo oscuro -->
@@ -221,7 +221,7 @@
         <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
             <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
                 <!-- Logo VinoA -->
-                <img src="{{ asset('img/logonuevo.jpeg  ') }}" alt="Logo VinoA" class="w-10 h-10 rounded-full mr-3">
+                <img src="{{ asset('img/nuevoLogo.png  ') }}" alt="Logo VinoA" class="w-24 h-20 rounded-full mr-3">
 
             </a>
             <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">©
