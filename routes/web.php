@@ -65,7 +65,6 @@ Route::get('/catasdevino', function () {
     return view('catasdevino');
 });
 
-<<<<<<< HEAD
 // Ruta que lleva a 'tarifasbase.blade.php'
 Route::get('/tarifasbase', function () {
     return view('tarifasbase');
@@ -80,8 +79,5 @@ Route::get('/tarifaspopular', function () {
 Route::get('/tarifasexterprise', function () {
     return view('tarifasexterprise');
 });
-=======
-
->>>>>>> 59e564c9987b863c05afa834899dbe56792a941a
 
 require __DIR__.'/auth.php';
