@@ -1,3 +1,9 @@
+@extends('layouts.app')
+
+@section('title', 'South Wine Academy')
+
+@section('content')
+
 <!-- resources/views/custom.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
@@ -73,3 +79,4 @@
   </footer>
 </body>
 </html>
+@endsection
