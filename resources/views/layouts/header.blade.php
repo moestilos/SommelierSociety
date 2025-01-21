@@ -2,7 +2,7 @@
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
                 <!-- Logo VinoA -->
-                <img src="{{ asset('img/logonuevo.jpeg  ') }}" alt="Logo VinoA" class="w-10 h-10 rounded-full mr-3">
+                <img src="{{ asset('img/nuevoLogo.png  ') }}" alt="Logo VinoA" class="w-24 h-20 rounded-full mr-3">
                 <span class="ml-3 text-xl holy">South Wine Academy</span>
             </a>
             <!-- modo oscuro -->
