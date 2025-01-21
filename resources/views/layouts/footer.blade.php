@@ -2,7 +2,7 @@
         <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
             <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
                 <!-- Logo VinoA -->
-                <img src="{{ asset('img/nuevoLogo.png  ') }}" alt="Logo VinoA" class="w-10 h-10 rounded-full mr-3">
+                <img src="{{ asset('img/nuevoLogo.png  ') }}" alt="Logo VinoA" class="w-24 h-20 rounded-full mr-3">
 
             </a>
             <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">©
