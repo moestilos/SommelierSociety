@@ -70,4 +70,9 @@ Route::get('/cursosdevino', function () {
     return view('cursosdevino');
 });
 
+// Ruta que lleva a 'info.blade.php'
+Route::get('/info', function () {
+    return view('info');
+});
+
 require __DIR__.'/auth.php';

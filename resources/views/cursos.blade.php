@@ -51,16 +51,16 @@
       <div class="mt-8 flex flex-wrap gap-4 justify-center">
         <a
           href="{{ url('/tarifas') }}"
-          class="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
+          class="block w-full rounded bg-rose-600 px-16 py-4 text-lg font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
         >
-          Get Started
+          Tarifas
         </a>
 
         <a
-          href="#"
-          class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
+          href="{{ url('/info') }}"
+          class="block w-full rounded bg-white px-16 py-4 text-lg font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
         >
-          Learn More
+          Información
         </a>
       </div>
     </div>
