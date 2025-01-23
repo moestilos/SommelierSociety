@@ -65,4 +65,9 @@ Route::get('/catasdevino', function () {
     return view('catasdevino');
 });
 
+// Ruta que lleva a 'cursosdevino.blade.php'
+Route::get('/cursosdevino', function () {
+    return view('cursosdevino');
+});
+
 require __DIR__.'/auth.php';
