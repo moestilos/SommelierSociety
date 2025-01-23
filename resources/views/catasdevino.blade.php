@@ -43,7 +43,7 @@
                 firstDay: 1,
                 locale: 'es',
                 events: [
-                    // agregamos eventos a la agenda
+                    // aquita las catas
                     {
                         title: 'Cata de Cata de Vinos',
                         start: '2025-02-05',
