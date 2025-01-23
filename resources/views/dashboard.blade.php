@@ -17,10 +17,16 @@
         @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Jaro:opsz@6..72&family=Sofadi+One&family=Teko:wght@300..700&display=swap');
 
         @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400..700&family=Jaro:opsz@6..72&family=Sofadi+One&family=Teko:wght@300..700&display=swap');
+
+        .chat-messages div {
+            color: black;
+        }
+        .chat-input input {
+            color: black; 
+        }
     </style>
     <title>Vinos</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <!-- Asegúrate de compilar estilos si usas Tailwind -->
 </head>
 
 <body class="flex flex-col min-h-screen"
@@ -158,12 +164,14 @@
             if (message) {
                 const userMessageElement = document.createElement('div');
                 userMessageElement.textContent = message;
+                userMessageElement.style.color = 'black'; 
                 chatMessages.appendChild(userMessageElement);
 
                 const botResponse = responses[message] || "Lo siento, no entiendo tu mensaje.";
                 const botMessageElement = document.createElement('div');
                 botMessageElement.innerHTML = botResponse;
                 botMessageElement.style.fontWeight = 'bold';
+                botMessageElement.style.color = 'black'; 
                 chatMessages.appendChild(botMessageElement);
 
                 chatInput.value = '';
