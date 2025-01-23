@@ -47,6 +47,9 @@ Route::get('/resenas', function () {
     return view('resenas');
 });
 
+// Ruta para enviar reseñas
+Route::post('/resenas', [UserRequestController::class, 'storeReview'])->name('resenas.store');
+
 // Página de Contacto
 Route::view('/contact', 'contact')->name('contact');
 Route::post('/contact', [UserRequestController::class, 'store'])->name('contact.store');
