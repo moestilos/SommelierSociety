@@ -1,7 +1,7 @@
 @extends('layouts.app')
-
+ 
 @section('title', 'Academia de Vinos del Sur')
-
+ 
 @section('content')
 <!DOCTYPE html>
 <html lang="es">
@@ -12,22 +12,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
         .fc-event-title, .fc-event-time {
-            color: #000; 
+            color: #000;
         }
         .fc {
-            background-color: #fff !important; 
-            color: #000 !important; 
+            background-color: #fff !important;
+            color: #000 !important;
         }
         .fc-event-title, .fc-event-time {
             color: #000 !important;
         }
     </style>
-<<<<<<< HEAD
-    <title>Catas de Vino</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <!-- Asegúrate de compilar estilos si usas Tailwind -->
-=======
->>>>>>> c94b6bbd36ec19661ad943711d6ad988028ef4c5
 </head>
 <body class="bg-gray-100">
     <div class="container mx-auto mt-10 mb-10">
@@ -36,52 +30,7 @@
             <div id="calendar"></div>
         </div>
     </div>
-
-<<<<<<< HEAD
-<body class="flex flex-col min-h-screen"
-    style="background-image: url('{{ asset('img/fondocursos.jpg') }}'); background-size: cover; background-position: center;">
-
-<section
-  class="relative bg-[url('{{ asset('img/fondocursos.jpg') }}')] bg-cover bg-center bg-no-repeat"
->
-  <div
-    class="absolute inset-0 bg-gray-900/75 sm:from-gray-900/95 sm:to-gray-900/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
-  ></div>
-
-  <div
-    class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-10 lg:flex lg:h-screen lg:items-center lg:px-16"
-  >
-    <div class="max-w-xl text-center mx-auto">
-      <h1 class="text-3xl font-extrabold text-white sm:text-5xl">
-        Catas de
-
-        <strong class="block font-extrabold text-rose-500"> Vino. </strong>
-      </h1>
-
-      <p class="mt-4 max-w-lg text-white sm:text-xl/relaxed mx-auto">
-        Inscríbete en nuestras catas de vino y disfruta de una experiencia única.
-      </p>
-
-      <div class="mt-8 flex flex-wrap gap-4 justify-center">
-        <a
-          href="{{ url('/tarifas') }}"
-          class="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
-        >
-          Get Started
-        </a>
-
-        <a
-          href="#"
-          class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
-        >
-          Learn More
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-=======
+ 
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.min.js"></script>
@@ -92,7 +41,7 @@
                 initialView: 'dayGridMonth',
                 initialDate: '2025-02-01',
                 firstDay: 1,
-                locale: 'es', 
+                locale: 'es',
                 events: [
                     // agregamos eventos a la agenda
                     {
@@ -181,7 +130,6 @@
             calendar.render();
         });
     </script>
->>>>>>> c94b6bbd36ec19661ad943711d6ad988028ef4c5
 </body>
 </html>
 @endsection
