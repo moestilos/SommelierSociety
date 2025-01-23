@@ -26,11 +26,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/tarifas', function () {
     return view('tarifas');
 });
-// Ruta que lleva a 'profile.blade.php'
-Route::get('/profile', function () {
-    return view('profile');
-});
-
 
 // Ruta que lleva a 'tarifaschek.blade.php'
 Route::get('/tarifaschek', function () {
@@ -68,21 +63,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 // Ruta que lleva a 'catasdevino.blade.php'
 Route::get('/catasdevino', function () {
     return view('catasdevino');
-});
-
-// Ruta que lleva a 'tarifasbase.blade.php'
-Route::get('/tarifasbase', function () {
-    return view('tarifasbase');
-});
-
-// Ruta que lleva a 'tarifaspopular.blade.php'
-Route::get('/tarifaspopular', function () {
-    return view('tarifaspopular');
-});
-
-// Ruta que lleva a 'tarifasexterprise.blade.php'
-Route::get('/tarifasexterprise', function () {
-    return view('tarifasexterprise');
 });
 
 require __DIR__.'/auth.php';
