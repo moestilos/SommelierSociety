@@ -42,10 +42,9 @@
                 <div class="p-2 lg:w-1/4 md:w-1/2">
                     <div data-aos="fade-up" data-aos-duration="1000"
                         class="h-full bg-gray-800 bg-opacity-60 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
-                        <h2 class="tracking-widest text-xs title-font font-medium text-white mb-3">CATEGORY</h2>
+                        <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Info Tarifas</h1>
                         <img src="{{ asset('img/infotarifas.jpeg') }}" alt="Tuzorra"
                             class="w-full h-40 object-cover mb-4 rounded">
-                        <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Info Tarifas</h1>
                         <p class="leading-relaxed mb-3 text-white mb-1">Photo booth fam kinfolk cold-pressed sriracha
                             leggings jianbing microdosing tousled waistcoat.</p>
                         <a href="{{ url('/tarifas') }}" class="text-yellow-400 inline-flex items-center">
@@ -63,10 +62,9 @@
                 <div class="p-2 lg:w-1/4 md:w-1/2">
                     <div data-aos="fade-up" data-aos-duration="1000"
                         class="h-full bg-gray-800 bg-opacity-60 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
-                        <h2 class="tracking-widest text-xs title-font font-medium text-white mb-3">CATEGORY</h2>
+                        <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Cursos de Sommelier</h1>
                         <img src="{{ asset('img/bodega.jpeg') }}" alt="Tuzorra"
                             class="w-full h-40 object-cover mb-4 rounded">
-                        <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Cursos de Sommelier</h1>
                         <p class="leading-relaxed mb-3 text-white mb-1">Photo booth fam kinfolk cold-pressed sriracha
                             leggings jianbing microdosing tousled waistcoat.</p>
                         <a href="{{ url('/cursos') }}" class="text-yellow-400 inline-flex items-center">
@@ -83,10 +81,9 @@
                 <div class="p-2 lg:w-1/4 md:w-1/2">
                     <div data-aos="fade-up" data-aos-duration="1000"
                         class="h-full bg-gray-800 bg-opacity-60 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
-                        <h2 class="tracking-widest text-xs title-font font-medium text-white mb-3">CATEGORY</h2>
+                        <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Reseñas</h1>
                         <img src="{{ asset('img/resenas.jpeg') }}" alt="Tuzorra"
                             class="w-full h-40 object-cover mb-4 rounded">
-                        <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Reseñas</h1>
                         <p class="leading-relaxed mb-3 text-white mb-1">Photo booth fam kinfolk cold-pressed sriracha
                             leggings jianbing microdosing tousled waistcoat.</p>
                         <a href="{{ url('/resenas') }}" class="text-yellow-400 inline-flex items-center">
@@ -103,10 +100,9 @@
                 <div class="p-2 lg:w-1/4 md:w-1/2">
                     <div data-aos="fade-up" data-aos-duration="1000"
                         class="h-full bg-gray-800 bg-opacity-40 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
-                        <h2 class="tracking-widest text-xs title-font font-medium text-white mb-3">CATEGORY</h2>
+                        <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Catas de Vino</h1>
                         <img src="{{ asset('img/vinocur.jpeg') }}" alt="Tuzorra"
                             class="w-full h-40 object-cover mb-4 rounded">
-                        <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Catas de Vino</h1>
                         <p class="leading-relaxed mb-3 text-white mb-1">Photo booth fam kinfolk cold-pressed sriracha
                             leggings jianbing microdosing tousled waistcoat.</p>
                         <a href="{{ url('/catasdevino') }}" class="text-yellow-400 inline-flex items-center">

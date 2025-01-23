@@ -37,20 +37,20 @@
   <div
     class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-10 lg:flex lg:h-screen lg:items-center lg:px-16"
   >
-    <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+    <div class="max-w-xl text-center mx-auto">
       <h1 class="text-3xl font-extrabold text-white sm:text-5xl">
         Cursos de
 
         <strong class="block font-extrabold text-rose-500"> Sommelier. </strong>
       </h1>
 
-      <p class="mt-4 max-w-lg text-white sm:text-xl/relaxed">
+      <p class="mt-4 max-w-lg text-white sm:text-xl/relaxed mx-auto">
         Inscribete en nuestros cursos de Sommelier de Vinos de Jerez
       </p>
 
-      <div class="mt-8 flex flex-wrap gap-4 text-center">
+      <div class="mt-8 flex flex-wrap gap-4 justify-center">
         <a
-          href="#"
+          href="{{ url('/tarifas') }}"
           class="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
         >
           Get Started
