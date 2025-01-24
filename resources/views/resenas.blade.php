@@ -17,7 +17,7 @@
         </style>
     <title>Vinos</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <!-- Asegúrate de compilar estilos si usas Tailwind -->
+    <!-- miraaaaa de compilar estilos si usas Tailwind -->
 </head>
 <body class="flex flex-col min-h-screen" style="background-image: url('{{ asset('img/fondovinos.jpg') }}'); background-size: cover; background-position: center;">
 
