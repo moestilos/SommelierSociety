@@ -19,10 +19,16 @@
         @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400..700&family=Jaro:opsz@6..72&family=Sofadi+One&family=Teko:wght@300..700&display=swap');
 
         .chat-messages div {
-            color: black;
+            color: rgba(0, 0, 0, 0.388);
         }
         .chat-input input {
-            color: black; 
+            color: rgba(0, 0, 0, 0.268); 
+        }
+        .bg-opacity-60 {
+            background-color: rgba(31, 41, 55, 0.1); /* Ajuste de opacidad para ver la imagen de fondo */
+        }
+        .bg-opacity-40 {
+            background-color: rgba(31, 41, 55, 0.05); /* Ajuste de opacidad para ver la imagen de fondo */
         }
     </style>
     <title>Vinos</title>
@@ -30,7 +36,7 @@
 </head>
 
 <body class="flex flex-col min-h-screen"
-    style="background-image: url('{{ asset('img/fondocursos.jpg') }}'); background-size: cover; background-position: center;">
+    style="background-image: url('{{ asset('img/fondocursos.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
 
     <!-- CAJAS DE CATEGORÍAS -->
     <!-- CAJA 1 -->
