@@ -14,17 +14,17 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $admins = [
-            'info@southwinesacademy.com',
-            'pilar.perez@southwinesacademy.com',
-            'ana.hergueta@southwinesacademy.com',
-            'estrella123@gmail.com',
+            'info@southwinesacademy.com' => 'Usuario1!',
+            'pilar.perez@southwinesacademy.com' => 'Usuario1!',
+            'ana.hergueta@southwinesacademy.com' => 'Usuario1!',
+            'estrella123@gmail.com' => 'Usuario1!', 
         ];
 
-        foreach ($admins as $admin) {
+        foreach ($admins as $admin => $password) {
             DB::table('users')->insert([
                 'name' => explode('@', $admin)[0],
                 'email' => $admin,
-                'password' => Hash::make('password'), // Cambiar la contraseña según sea necesario
+                'password' => bcrypt($password), 
                 'is_admin' => true,
                 'email_verified_at' => now(),
                 'created_at' => now(),
