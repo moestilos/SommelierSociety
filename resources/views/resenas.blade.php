@@ -21,19 +21,19 @@
 </head>
 <body class="flex flex-col min-h-screen" style="background-image: url('{{ asset('img/fondovinos.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
 
-<section class="bg-[#0000004a] py-12">
+<section class="bg-[#f8f9fa] py-12">
     <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <h2 class="text-center text-4xl font-bold tracking-tight text-white sm:text-5xl">
+        <h2 class="text-center text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl">
             Reseñas de nuestros Clientes    
         </h2>
         <div class="mt-8 flex flex-wrap justify-center gap-6">
             @foreach ($resenas as $resena)
             <div class="w-full sm:w-1/2 lg:w-1/3 mb-8">
-                <blockquote class="h-full bg-gray-800 bg-opacity-80 px-6 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg text-white">
+                <blockquote class="h-full bg-white bg-opacity-80 px-6 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg text-gray-800">
                     <div class="flex items-center gap-4">
                         <img
                             alt=""
-                            src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                            src="{{ $resena->image ? asset('storage/' . $resena->image) : 'https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80' }}"
                             class="size-14 rounded-full object-cover"
                         />
                         <div>
@@ -51,10 +51,10 @@
                                 </svg>
                                 @endfor
                             </div>
-                            <p class="mt-0.5 text-lg font-medium text-white">{{ $resena->name }}</p>
+                            <p class="mt-0.5 text-lg font-medium text-gray-800">{{ $resena->name }}</p>
                         </div>
                     </div>
-                    <p class="mt-4 text-white">
+                    <p class="mt-4 text-gray-800">
                         {{ $resena->review }}
                     </p>
                     <a href="{{ route('resenas.edit', $resena->id) }}" class="text-yellow-500 hover:underline">Editar</a>
@@ -68,7 +68,7 @@
 <section class="py-8">
     <div class="container px-6 py-8 mx-auto text-center">
         <h1 class="text-3xl font-extrabold text-white sm:text-5xl">Reseñas</h1>
-        <form data-action="{{ route('resenas.store') }}" method="POST" class="mt-8">
+        <form data-action="{{ route('resenas.store') }}" method="POST" enctype="multipart/form-data" class="mt-8">
             @csrf
             <div class="mb-4">
                 <label for="name" class="block text-white">Nombre:</label>
@@ -81,6 +81,10 @@
             <div class="mb-4">
                 <label for="stars" class="block text-white">Estrellas:</label>
                 <input type="number" id="stars" name="stars" min="1" max="5" class="w-full px-4 py-2 mt-2 text-white bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:bg-gray-200 dark:text-black">
+            </div>
+            <div class="mb-4">
+                <label for="image" class="block text-white">Imagen:</label>
+                <input type="file" id="image" name="image" class="w-full px-4 py-2 mt-2 text-white bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:bg-gray-200 dark:text-black">
             </div>
             <button type="submit" class="px-4 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">Enviar Reseña</button>
         </form>

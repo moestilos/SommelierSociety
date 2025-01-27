@@ -58,6 +58,9 @@ Route::get('/resenas/{id}/edit', [ResenaController::class, 'edit'])->name('resen
 // Ruta para actualizar reseñas
 Route::put('/resenas/{id}', [ResenaController::class, 'update'])->name('resenas.update');
 
+// Ruta para subir imágenes de reseñas
+Route::post('/resenas/upload', [ResenaController::class, 'uploadImage'])->name('resenas.upload');
+
 // Página de Contacto
 Route::view('/contact', 'contact')->name('contact');
 Route::post('/contact', [UserRequestController::class, 'store'])->name('contact.store');
