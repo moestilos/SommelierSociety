@@ -13,17 +13,17 @@ class ResenasTableSeeder extends Seeder
             [
                 'name' => 'Juan Pérez',
                 'review' => 'Excelente experiencia, los vinos fueron increíbles.',
-                'stars'=> '3',
+                'stars' => 5, // Agregar valor de estrellas
             ],
             [
                 'name' => 'María López',
                 'review' => 'Me encantó la cata de vinos, muy recomendable.',
-                'stars'=> '5',
+                'stars' => 4, // Agregar valor de estrellas
             ],
             [
                 'name' => 'Carlos García',
                 'review' => 'Una experiencia única, volveré sin duda.',
-                'stars'=> '4',
+                'stars' => 5, // Agregar valor de estrellas
             ],
         ]);
     }
