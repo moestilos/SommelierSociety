@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Cata; // Importar el modelo Cata
 
 class AdminController extends Controller
 {
@@ -23,7 +24,15 @@ class AdminController extends Controller
             'description' => 'required|string',
         ]);
 
-        // Lógica para manejar el envío del formulario
+        // Crear una nueva cata en la base de datos
+        Cata::create([
+            'title' => $request->name,
+            'type' => $request->type,
+            'date' => $request->date,
+            'time' => $request->time,
+            'location' => $request->location,
+            'description' => $request->description,
+        ]);
 
         return redirect()->route('admin.form')->with('success', 'Formulario enviado correctamente.');
     }

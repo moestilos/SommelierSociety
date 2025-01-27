@@ -87,4 +87,6 @@ Route::get('/info', function () {
 
 Route::get('/cata/{id}', [CatasController::class, 'show'])->name('cata.show');
 
+Route::delete('/catas/{id}', [CatasController::class, 'destroy'])->name('catas.destroy'); // Ruta para eliminar catas
+
 require __DIR__.'/auth.php';
