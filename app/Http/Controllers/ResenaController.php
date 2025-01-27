@@ -18,13 +18,39 @@ class ResenaController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'review' => 'required|string',
+            'stars' => 'required|integer|min:1|max:5', // Validar estrellas
         ]);
 
         Resena::create([
             'name' => $request->name,
             'review' => $request->review,
+            'stars' => $request->stars, // Guardar estrellas
         ]);
 
         return redirect()->back()->with('success', 'Reseña enviada con éxito.');
+    }
+
+    public function edit($id)
+    {
+        $resena = Resena::findOrFail($id);
+        return view('resenas_edit', compact('resena'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'review' => 'required|string',
+            'stars' => 'required|integer|min:1|max:5', // Validar estrellas
+        ]);
+
+        $resena = Resena::findOrFail($id);
+        $resena->update([
+            'name' => $request->name,
+            'review' => $request->review,
+            'stars' => $request->stars, // Actualizar estrellas
+        ]);
+
+        return redirect()->route('resenas.index')->with('success', 'Reseña actualizada con éxito.');
     }
 }

@@ -12,6 +12,7 @@ class CreateResenasTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('review');
+            $table->integer('stars'); // Agregar columna stars
             $table->timestamps();
         });
     }
