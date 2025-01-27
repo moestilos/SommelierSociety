@@ -8,8 +8,6 @@ class CataController extends Controller
 {
     public function show($id)
     {
-        // Aquí deberías obtener la información de la cata desde la base de datos
-        // Por ahora, usaremos datos de ejemplo
         $cata = [
             'id' => $id,
             'title' => 'Cata de Vinos',
