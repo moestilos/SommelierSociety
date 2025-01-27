@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CourseController as AdminCourseController;
 use App\Http\Controllers\CatasController;
 use App\Http\Controllers\ResenaController; // Agregar ResenaController
+use App\Http\Controllers\AdminController; // Agregar AdminController
 
 Route::get('/custom', function () {
     return view('custom');
@@ -67,6 +68,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/courses/{id}/edit', [AdminCourseController::class, 'edit'])->name('courses.edit');
     Route::put('/courses/{id}', [AdminCourseController::class, 'update'])->name('courses.update');
     Route::delete('/courses/{id}', [AdminCourseController::class, 'destroy'])->name('courses.destroy');
+    Route::get('/form', [AdminController::class, 'showForm'])->name('form');
+    Route::post('/form', [AdminController::class, 'submitForm'])->name('form.submit');
 });
 
 // Ruta que lleva a 'catasdevino.blade.php'
