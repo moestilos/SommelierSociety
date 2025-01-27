@@ -12,7 +12,7 @@ class CreateResenasTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('review');
-            $table->integer('stars'); // Agregar columna stars
+            $table->integer('stars')->default(1); // Asegurarse de que tenga un valor predeterminado
             $table->timestamps();
         });
     }

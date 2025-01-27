@@ -21,7 +21,7 @@
 </head>
 <body class="flex flex-col min-h-screen" style="background-image: url('{{ asset('img/fondovinos.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
 
-<section class="bg-[#0000004a] py-12" style="background-image: url('{{ asset('img/fondovinos.jpg') }}'); background-size: cover; background-position: center;">
+<section class="bg-[#0000004a] py-12">
     <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <h2 class="text-center text-4xl font-bold tracking-tight text-white sm:text-5xl">
             Reseñas de nuestros Clientes    
@@ -29,7 +29,7 @@
         <div class="mt-8 flex flex-wrap justify-center gap-6">
             @foreach ($resenas as $resena)
             <div class="w-full sm:w-1/2 lg:w-1/3 mb-8">
-                <blockquote class="h-full bg-gray-900 bg-opacity-80 px-6 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg text-white">
+                <blockquote class="h-full bg-gray-800 bg-opacity-80 px-6 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg text-white">
                     <div class="flex items-center gap-4">
                         <img
                             alt=""
