@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
     public function showForm()
     {
-        return view('form.blade.php');
+        return view('form'); // Corregir la vista a 'form'
     }
 
     public function submitForm(Request $request)
@@ -23,7 +23,8 @@ class AdminController extends Controller
             'description' => 'required|string',
         ]);
 
+        // Lógica para manejar el envío del formulario
 
-        return redirect()->route('form.blade.php')->with('success', 'Formulario enviado correctamente.');
+        return redirect()->route('admin.form')->with('success', 'Formulario enviado correctamente.');
     }
 }
