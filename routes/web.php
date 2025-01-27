@@ -3,7 +3,8 @@ use App\Http\Controllers\UserRequestController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CourseController as AdminCourseController;
-use App\Http\Controllers\CatasController; // Cambiar a CatasController
+use App\Http\Controllers\CatasController;
+use App\Http\Controllers\ResenaController; // Agregar ResenaController
 
 Route::get('/custom', function () {
     return view('custom');
@@ -44,12 +45,10 @@ Route::get('/contacto', function () {
 });
 
 // Ruta que lleva a 'resenas.blade.php'
-Route::get('/resenas', function () {
-    return view('resenas');
-});
+Route::get('/resenas', [ResenaController::class, 'index'])->name('resenas.index');
 
 // Ruta para enviar reseñas
-Route::post('/resenas', [UserRequestController::class, 'storeReview'])->name('resenas.store');
+Route::post('/resenas', [ResenaController::class, 'store'])->name('resenas.store');
 
 // Página de Contacto
 Route::view('/contact', 'contact')->name('contact');
