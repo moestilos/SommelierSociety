@@ -26,11 +26,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/tarifas', function () {
     return view('tarifas');
 });
-// Ruta que lleva a 'profile.blade.php'
-Route::get('/profile', function () {
-    return view('profile');
-});
-
 
 // Ruta que lleva a 'tarifaschek.blade.php'
 Route::get('/tarifaschek', function () {
@@ -52,6 +47,9 @@ Route::get('/resenas', function () {
     return view('resenas');
 });
 
+// Ruta para enviar reseñas
+Route::post('/resenas', [UserRequestController::class, 'storeReview'])->name('resenas.store');
+
 // Página de Contacto
 Route::view('/contact', 'contact')->name('contact');
 Route::post('/contact', [UserRequestController::class, 'store'])->name('contact.store');
@@ -70,19 +68,14 @@ Route::get('/catasdevino', function () {
     return view('catasdevino');
 });
 
-// Ruta que lleva a 'tarifasbase.blade.php'
-Route::get('/tarifasbase', function () {
-    return view('tarifasbase');
+// Ruta que lleva a 'cursosdevino.blade.php'
+Route::get('/cursosdevino', function () {
+    return view('cursosdevino');
 });
 
-// Ruta que lleva a 'tarifaspopular.blade.php'
-Route::get('/tarifaspopular', function () {
-    return view('tarifaspopular');
-});
-
-// Ruta que lleva a 'tarifasexterprise.blade.php'
-Route::get('/tarifasexterprise', function () {
-    return view('tarifasexterprise');
+// Ruta que lleva a 'info.blade.php'
+Route::get('/info', function () {
+    return view('info');
 });
 
 require __DIR__.'/auth.php';
