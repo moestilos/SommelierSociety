@@ -25,10 +25,10 @@
             color: rgba(0, 0, 0, 0.268); 
         }
         .bg-opacity-60 {
-            background-color: rgba(31, 41, 55, 0.1); /* Ajuste de opacidad para ver la imagen de fondo */
+            background-color: rgba(31, 41, 55, 0.1); 
         }
         .bg-opacity-40 {
-            background-color: rgba(31, 41, 55, 0.05); /* Ajuste de opacidad para ver la imagen de fondo */
+            background-color: rgba(31, 41, 55, 0.05); 
         }
     </style>
     <title>Vinos</title>
@@ -36,7 +36,7 @@
 </head>
 
 <body class="flex flex-col min-h-screen"
-    style="background-image: url('{{ asset('img/fondocursos.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    style="background-image: url('{{ asset('img/FondoClaro.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
 
     <!-- CAJAS DE CATEGORÍAS -->
     <!-- CAJA 1 -->

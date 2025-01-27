@@ -65,9 +65,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 });
 
 // Ruta que lleva a 'catasdevino.blade.php'
-Route::get('/catasdevino', function () {
-    return view('catasdevino');
-});
+Route::get('/catasdevino', [CatasController::class, 'index'])->name('catas.index');
 
 // Ruta que lleva a 'cursosdevino.blade.php'
 Route::get('/cursosdevino', function () {

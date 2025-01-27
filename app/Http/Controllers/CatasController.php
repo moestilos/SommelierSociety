@@ -3,20 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cata;
 
 class CatasController extends Controller
 {
     public function show($id)
     {
-        
-        $cata = [
-            'id' => $id,
-            'title' => 'Cata de Vinos',
-            'description' => 'Descripción de la cata de vinos.',
-            'location' => 'Bodega La Rioja',
-            'date' => '2025-02-05'
-        ];
+        $cata = Cata::findOrFail($id);
 
-        return view('infoCatas', compact('cata')); 
+        return view('infoCatas', compact('cata'));
+    }
+
+    public function index()
+    {
+        $catas = Cata::all();
+
+        return view('catasdevino', compact('catas'));
     }
 }
