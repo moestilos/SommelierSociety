@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CourseController as AdminCourseController;
 use App\Http\Controllers\CatasController;
 use App\Http\Controllers\ResenaController; // Agregar ResenaController
 use App\Http\Controllers\AdminController; // Agregar AdminController
+use App\Http\Controllers\ReservaController; // Agregar ReservaController
 
 Route::get('/custom', function () {
     return view('custom');
@@ -88,5 +89,8 @@ Route::get('/info', function () {
 Route::get('/cata/{id}', [CatasController::class, 'show'])->name('cata.show');
 
 Route::delete('/catas/{id}', [CatasController::class, 'destroy'])->name('catas.destroy'); // Ruta para eliminar catas
+
+Route::get('/reservar/{id}', [ReservaController::class, 'showForm'])->name('reservar.form');
+Route::post('/reservar/{id}', [ReservaController::class, 'submitForm'])->name('reservar.submit');
 
 require __DIR__.'/auth.php';
