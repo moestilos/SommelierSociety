@@ -3,7 +3,7 @@ use App\Http\Controllers\UserRequestController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CourseController as AdminCourseController;
-use App\Http\Controllers\CataController; // Agregar esta línea
+use App\Http\Controllers\CatasController; // Cambiar a CatasController
 
 Route::get('/custom', function () {
     return view('custom');
@@ -79,6 +79,6 @@ Route::get('/info', function () {
     return view('info');
 });
 
-Route::get('/cata/{id}', [CataController::class, 'show'])->name('cata.show');
+Route::get('/cata/{id}', [CatasController::class, 'show'])->name('cata.show');
 
 require __DIR__.'/auth.php';
