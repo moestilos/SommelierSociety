@@ -23,7 +23,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body style="background-image: url('{{ asset('img/catainfofondo.jpg') }}'); background-size: cover; background-position: center;">
     <div class="container mx-auto mt-10 mb-10">
         <h1 class="text-3xl font-bold mb-6 text-center text-white">Calendario de Catas</h1>
         <div class="bg-white shadow-md rounded-lg p-6 max-w-xl mx-auto">
