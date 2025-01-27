@@ -142,6 +142,7 @@
             "hola": "¡Hola! ¿Cómo puedo ayudarte?",
             "adios": "¡Adiós! Que tengas un buen día.",
             "gracias": "¡De nada! ¿En qué más puedo ayudarte?",
+            "canta": "Tu madre tiene una polla, que ya la quisiera yo, me dio pena por tu padre el dia que se entero, llegó la noche de bodas, de quien se iba a imaginar, que iba a ser a tu padre al que iban a encular",
             "informacion": "Tenemos varios tipos de cursos y varias catas de vino. También puedes obtener información sobre nuestros profesionales y de nuestras tarifas. ¿Qué información deseas?",
             "cursos": "Puedes encontrar más información sobre nuestros cursos <a href='{{ url('/cursos') }}' class='text-yellow-400'>aquí</a>.",
             "catas": "Puedes encontrar más información sobre nuestras catas de vino <a href='{{ url('/catasdevino') }}' class='text-yellow-400'>aquí</a>.",
