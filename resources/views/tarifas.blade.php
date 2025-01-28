@@ -32,6 +32,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            width: 300px; /* Ancho fijo */
+            height: 400px; /* Alto fijo */
+        }
+
+        .course-card .buttons {
+            margin-top: auto;
         }
     </style>
     <title>Tarifas</title>
@@ -45,18 +51,36 @@
     <section class="py-8">
         <div class="container px-6 py-8 mx-auto text-center">
             <h1 class="text-3xl font-extrabold text-white sm:text-5xl">Tarifas de Cursos</h1>
+            @if(auth()->user() && auth()->user()->is_admin)
+                <div class="text-center mt-4">
+                    <a href="{{ route('cursos.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                        Añadir Curso
+                    </a>
+                </div>
+            @endif
             <div class="relative mt-16">
                 <div class="carousel flex overflow-x-auto snap-x snap-mandatory">
                     @foreach ($cursos as $curso)
-                    <div class="course-card snap-center flex-shrink-0 w-80 h-96 bg-gray-800 bg-opacity-60 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg mx-4">
+                    <div class="course-card snap-center flex-shrink-0 bg-gray-800 bg-opacity-60 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg mx-4">
                         <div>
                             <h4 class="mt-2 text-4xl font-semibold text-white">{{ $curso->nombre }}</h4>
                             <p class="mt-4 text-gray-300">{{ $curso->descripcion_breve }}</p>
                             <h4 class="mt-2 text-4xl font-semibold text-white">{{ $curso->coste }}€</h4>
                         </div>
-                        <button onclick="window.location.href='{{ url('/cursos/' . $curso->id) }}'" class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
-                            Ver más
-                        </button>
+                        <div class="buttons">
+                            <button onclick="window.location.href='{{ url('/cursos/' . $curso->id) }}'" class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
+                                Ver más
+                            </button>
+                            @if(auth()->user() && auth()->user()->is_admin)
+                                <form action="{{ route('cursos.destroy', $curso->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este curso?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="w-full px-4 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-red-500 rounded-md hover:bg-red-700 focus:outline-none focus:bg-red-700">
+                                        Eliminar
+                                    </button>
+                                </form>
+                            @endif
+                        </div>
                     </div>
                     @endforeach
                 </div>
