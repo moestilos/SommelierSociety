@@ -4,9 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CourseController as AdminCourseController;
 use App\Http\Controllers\CatasController;
-use App\Http\Controllers\ResenaController; // Agregar ResenaController
-use App\Http\Controllers\AdminController; // Agregar AdminController
-use App\Http\Controllers\ReservaController; // Agregar ReservaController
+use App\Http\Controllers\ResenaController; 
+use App\Http\Controllers\AdminController; 
+use App\Http\Controllers\ReservaController; 
 
 Route::get('/custom', function () {
     return view('custom');
@@ -58,8 +58,8 @@ Route::get('/resenas/{id}/edit', [ResenaController::class, 'edit'])->name('resen
 // Ruta para actualizar reseñas
 Route::put('/resenas/{id}', [ResenaController::class, 'update'])->name('resenas.update');
 
-// Ruta para subir imágenes de reseñas
-Route::post('/resenas/upload', [ResenaController::class, 'uploadImage'])->name('resenas.upload');
+// Ruta para eliminar reseñas
+Route::delete('/resenas/{id}', [ResenaController::class, 'destroy'])->name('resenas.destroy');
 
 // Página de Contacto
 Route::view('/contact', 'contact')->name('contact');
@@ -97,5 +97,7 @@ Route::get('/reservar/{id}', [ReservaController::class, 'showForm'])->name('rese
 Route::post('/reservar/{id}', [ReservaController::class, 'submitForm'])->name('reservar.submit');
 Route::get('/personasReserv/{id}', [ReservaController::class, 'list'])->name('personasReserv.list'); // Ruta para ver personas apuntadas
 Route::delete('/reservas/{id}', [ReservaController::class, 'destroy'])->name('reservas.destroy'); // Ruta para eliminar reserva
+
+Route::resource('resenas', ResenaController::class);
 
 require __DIR__.'/auth.php';

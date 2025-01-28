@@ -20,7 +20,7 @@ class ResenaController extends Controller
             'name' => 'required|string|max:255',
             'review' => 'required|string',
             'stars' => 'required|integer|min:1|max:5',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validar imagen
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         $imagePath = null;
@@ -28,12 +28,16 @@ class ResenaController extends Controller
             $imagePath = $request->file('image')->store('resenas', 'public');
         }
 
-        Resena::create([
+        $resena = Resena::create([
             'name' => $request->name,
             'review' => $request->review,
-            'stars' => $request->stars, // Asegurarse de incluir 'stars'
-            'image' => $imagePath, // Guardar ruta de la imagen
+            'stars' => $request->stars,
+            'image' => $imagePath,
         ]);
+
+        if ($request->ajax()) {
+            return response()->json(['success' => true, 'resena' => $resena]);
+        }
 
         return redirect()->back()->with('success', 'Reseña enviada con éxito.');
     }
@@ -50,7 +54,7 @@ class ResenaController extends Controller
             'name' => 'required|string|max:255',
             'review' => 'required|string',
             'stars' => 'required|integer|min:1|max:5',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validar imagen
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         $resena = Resena::findOrFail($id);
@@ -66,9 +70,17 @@ class ResenaController extends Controller
         $resena->update([
             'name' => $request->name,
             'review' => $request->review,
-            'stars' => $request->stars, // Asegurarse de incluir 'stars'
+            'stars' => $request->stars,
         ]);
 
         return redirect()->route('resenas.index')->with('success', 'Reseña actualizada con éxito.');
+    }
+
+    public function destroy($id)
+    {
+        $resena = Resena::findOrFail($id);
+        $resena->delete();
+
+        return redirect()->route('resenas.index')->with('success', 'Reseña eliminada correctamente.');
     }
 }

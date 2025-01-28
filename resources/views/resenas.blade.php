@@ -26,7 +26,12 @@
         <h2 class="text-center text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl">
             Reseñas de nuestros Clientes    
         </h2>
-        <div class="mt-8 flex flex-wrap justify-center gap-6">
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+        <div id="resenasContainer" class="mt-8 flex flex-wrap justify-center gap-6">
             @foreach ($resenas as $resena)
             <div class="w-full sm:w-1/2 lg:w-1/3 mb-8">
                 <blockquote class="h-full bg-white bg-opacity-80 px-6 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg text-gray-800">
@@ -57,7 +62,14 @@
                     <p class="mt-4 text-gray-800">
                         {{ $resena->review }}
                     </p>
+                    @if(auth()->user() && auth()->user()->is_admin)
                     <a href="{{ route('resenas.edit', $resena->id) }}" class="text-yellow-500 hover:underline">Editar</a>
+                    <form action="{{ route('resenas.destroy', $resena->id) }}" method="POST" class="inline" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta reseña?');">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-red-500 hover:underline">Eliminar</button>
+                    </form>
+                    @endif
                 </blockquote>
             </div>
             @endforeach
@@ -68,28 +80,69 @@
 <section class="py-8">
     <div class="container px-6 py-8 mx-auto text-center">
         <h1 class="text-3xl font-extrabold text-white sm:text-5xl">Reseñas</h1>
-        <form data-action="{{ route('resenas.store') }}" method="POST" enctype="multipart/form-data" class="mt-8">
+        <form id="resenaForm" action="{{ route('resenas.store') }}" method="POST" enctype="multipart/form-data" class="mt-8">
             @csrf
             <div class="mb-4">
-                <label for="name" class="block text-white">Nombre:</label>
-                <input type="text" id="name" name="name" class="w-full px-4 py-2 mt-2 text-white bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:bg-gray-200 dark:text-black">
+                <label for="stars" class="block text-black">Estrellas:</label>
+                <div id="starRating" class="flex justify-center gap-1">
+                    @for ($i = 1; $i <= 5; $i++)
+                    <span class="star text-3xl cursor-pointer" data-value="{{ $i }}">&#9733;</span>
+                    @endfor
+                </div>
+                <input type="hidden" id="stars" name="stars" value="0">
             </div>
             <div class="mb-4">
-                <label for="review" class="block text-white">Reseña:</label>
-                <textarea id="review" name="review" class="w-full px-4 py-2 mt-2 text-white bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:bg-gray-200 dark:text-black"></textarea>
+                <label for="name" class="block text-black">Nombre:</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-2 mt-2 text-black bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:bg-gray-200 dark:text-black">
             </div>
             <div class="mb-4">
-                <label for="stars" class="block text-white">Estrellas:</label>
-                <input type="number" id="stars" name="stars" min="1" max="5" class="w-full px-4 py-2 mt-2 text-white bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:bg-gray-200 dark:text-black">
+                <label for="review" class="block text-black">Reseña:</label>
+                <textarea id="review" name="review" class="w-full px-4 py-2 mt-2 text-black bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:bg-gray-200 dark:text-black"></textarea>
             </div>
+           
             <div class="mb-4">
-                <label for="image" class="block text-white">Imagen:</label>
-                <input type="file" id="image" name="image" class="w-full px-4 py-2 mt-2 text-white bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:bg-gray-200 dark:text-black">
+                <label for="image" class="block text-black">Imagen:</label>
+                <input type="file" id="image" name="image" class="w-full px-4 py-2 mt-2 text-black bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:bg-gray-200 dark:text-black">
             </div>
             <button type="submit" class="px-4 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">Enviar Reseña</button>
         </form>
     </div>
 </section>
+
+<script>
+    document.getElementById('resenaForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        let formData = new FormData(this);
+        let action = this.getAttribute('action'); 
+
+        fetch(action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload(); 
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+
+    document.querySelectorAll('#starRating .star').forEach(star => {
+        star.addEventListener('click', function() {
+            let value = this.getAttribute('data-value');
+            document.getElementById('stars').value = value;
+            document.querySelectorAll('#starRating .star').forEach(s => s.classList.remove('text-yellow-500'));
+            for (let i = 0; i < value; i++) {
+                document.querySelectorAll('#starRating .star')[i].classList.add('text-yellow-500');
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
