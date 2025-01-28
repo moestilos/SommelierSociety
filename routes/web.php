@@ -7,6 +7,7 @@ use App\Http\Controllers\CatasController;
 use App\Http\Controllers\ResenaController; 
 use App\Http\Controllers\AdminController; 
 use App\Http\Controllers\ReservaController; 
+use App\Http\Controllers\CursoController;
 
 Route::get('/custom', function () {
     return view('custom');
@@ -99,5 +100,6 @@ Route::get('/personasReserv/{id}', [ReservaController::class, 'list'])->name('pe
 Route::delete('/reservas/{id}', [ReservaController::class, 'destroy'])->name('reservas.destroy'); // Ruta para eliminar reserva
 
 Route::resource('resenas', ResenaController::class);
+Route::resource('cursos', CursoController::class);
 
 require __DIR__.'/auth.php';

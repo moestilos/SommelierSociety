@@ -20,7 +20,6 @@
     </style>
     <title>Vinos</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <!-- Asegúrate de compilar estilos si usas Tailwind -->
 </head>
 
 <body class="flex flex-col min-h-screen items-center justify-center"
