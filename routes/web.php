@@ -28,9 +28,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // Ruta que lleva a 'tarifas.blade.php'
-Route::get('/tarifas', function () {
-    return view('tarifas');
-});
+Route::get('/tarifas', [CursoController::class, 'index'])->name('tarifas.index');
 
 // Ruta que lleva a 'tarifaschek.blade.php'
 Route::get('/tarifaschek', function () {
@@ -97,7 +95,11 @@ Route::delete('/catas/{id}', [CatasController::class, 'destroy'])->name('catas.d
 Route::get('/reservar/{id}', [ReservaController::class, 'showForm'])->name('reservar.form');
 Route::post('/reservar/{id}', [ReservaController::class, 'submitForm'])->name('reservar.submit');
 Route::get('/personasReserv/{id}', [ReservaController::class, 'list'])->name('personasReserv.list'); // Ruta para ver personas apuntadas
-Route::delete('/reservas/{id}', [ReservaController::class, 'destroy'])->name('reservas.destroy'); // Ruta para eliminar reserva
+Route::delete('/reservas/{id}', [CursoController::class, 'destroyReservation'])->name('reservas.destroy'); // Ruta para eliminar reserva
+
+Route::get('/cursos/{id}/reservar', [CursoController::class, 'showReservationForm'])->name('reservar.form');
+Route::post('/cursos/{id}/reservar', [CursoController::class, 'submitReservation'])->name('reservar.submit');
+Route::get('/cursos/{id}/reservas', [CursoController::class, 'listReservations'])->name('personasReserv.list');
 
 Route::resource('resenas', ResenaController::class);
 Route::resource('cursos', CursoController::class);
