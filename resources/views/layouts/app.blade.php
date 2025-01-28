@@ -15,12 +15,11 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="flex flex-col min-h-screen"
-    style="background-image: url('{{ asset('img/fondocursos.jpg') }}'); background-size: cover; background-position: center;">
+<body class="flex flex-col min-h-screen">
     
     @include('layouts.header')
 
-    <main class="flex-grow">
+    <main>
         @yield('content')
     </main>
 

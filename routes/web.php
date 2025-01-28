@@ -3,6 +3,7 @@ use App\Http\Controllers\UserRequestController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CourseController as AdminCourseController;
+use App\Http\Controllers\CatasController; // Cambiar a CatasController
 
 Route::get('/custom', function () {
     return view('custom');
@@ -64,9 +65,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 });
 
 // Ruta que lleva a 'catasdevino.blade.php'
-Route::get('/catasdevino', function () {
-    return view('catasdevino');
-});
+Route::get('/catasdevino', [CatasController::class, 'index'])->name('catas.index');
 
 // Ruta que lleva a 'cursosdevino.blade.php'
 Route::get('/cursosdevino', function () {
@@ -77,5 +76,7 @@ Route::get('/cursosdevino', function () {
 Route::get('/info', function () {
     return view('info');
 });
+
+Route::get('/cata/{id}', [CatasController::class, 'show'])->name('cata.show');
 
 require __DIR__.'/auth.php';

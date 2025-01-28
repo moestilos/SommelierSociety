@@ -7,10 +7,6 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    background-image: url('/img/fondocursos.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 body.dark-mode {
@@ -38,10 +34,10 @@ body.light-mode header .title-font, body.light-mode footer .title-font {
     font-style: normal;
 }
 
-/* Chatbot styles */
+/* Chatbot  */
 .chat-container {
     position: fixed;
-    bottom: 80px; /* Ajustar para que no tape el botón de enviar */
+    bottom: 80px;
     right: 20px;
     width: 300px;
     max-width: 100%;
