@@ -18,5 +18,15 @@
             <a href="{{ url('/contact') }}" class="mr-5 hover:text-yellow-400">Contact Us</a>
             <a href="" class="mr-5 hover:text-yellow-400">Store</a>
         </nav>
+        @auth
+        <div class="ml-auto">
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+            <button class="bg-gray-800 text-white px-3 py-2 rounded hover:text-yellow-400" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Cerrar sesión
+            </button>
+        </div>
+        @endauth
     </div>
 </header>

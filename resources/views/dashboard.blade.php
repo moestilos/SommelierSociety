@@ -37,22 +37,7 @@
 <body class="flex flex-col min-h-screen"
     style="background-image: url('{{ asset('img/FondoClaro.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
 
-    <header>
-        <nav>
-            <ul>
-                @auth
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-                <li>
-                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        Cerrar sesión
-                    </a>
-                </li>
-                @endauth
-            </ul>
-        </nav>
-    </header>
+
 
     <!-- CAJAS DE CATEGORÍAS -->
     <!-- CAJA 1 -->
