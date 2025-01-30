@@ -20,4 +20,12 @@ class CatasController extends Controller
 
         return view('catasdevino', compact('catas'));
     }
+
+    public function destroy($id)
+    {
+        $cata = Cata::findOrFail($id);
+        $cata->delete();
+
+        return redirect()->route('catas.index')->with('success', 'Cata eliminada correctamente.');
+    }
 }

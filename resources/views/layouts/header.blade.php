@@ -7,7 +7,7 @@
         </a>
         <!-- modo oscuro -->
         <div class="ml-auto mr-4">
-            <button id="theme-toggle" class="bg-gray-800 text-white px-3 py-2 rounded">
+            <button id="theme-toggle" class="bg-gray-800 text-white px-3 py-2 rounded hover:text-yellow-400">
                 Modo Oscuro
             </button>
         </div>

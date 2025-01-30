@@ -3,7 +3,11 @@ use App\Http\Controllers\UserRequestController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CourseController as AdminCourseController;
-use App\Http\Controllers\CatasController; // Cambiar a CatasController
+use App\Http\Controllers\CatasController;
+use App\Http\Controllers\ResenaController; 
+use App\Http\Controllers\AdminController; 
+use App\Http\Controllers\ReservaController; 
+use App\Http\Controllers\CursoController;
 
 Route::get('/custom', function () {
     return view('custom');
@@ -24,9 +28,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // Ruta que lleva a 'tarifas.blade.php'
-Route::get('/tarifas', function () {
-    return view('tarifas');
-});
+Route::get('/tarifas', [CursoController::class, 'index'])->name('tarifas.index');
 
 // Ruta que lleva a 'tarifaschek.blade.php'
 Route::get('/tarifaschek', function () {
@@ -44,12 +46,19 @@ Route::get('/contacto', function () {
 });
 
 // Ruta que lleva a 'resenas.blade.php'
-Route::get('/resenas', function () {
-    return view('resenas');
-});
+Route::get('/resenas', [ResenaController::class, 'index'])->name('resenas.index');
 
 // Ruta para enviar reseñas
-Route::post('/resenas', [UserRequestController::class, 'storeReview'])->name('resenas.store');
+Route::post('/resenas', [ResenaController::class, 'store'])->name('resenas.store');
+
+// Ruta para editar reseñas
+Route::get('/resenas/{id}/edit', [ResenaController::class, 'edit'])->name('resenas.edit');
+
+// Ruta para actualizar reseñas
+Route::put('/resenas/{id}', [ResenaController::class, 'update'])->name('resenas.update');
+
+// Ruta para eliminar reseñas
+Route::delete('/resenas/{id}', [ResenaController::class, 'destroy'])->name('resenas.destroy');
 
 // Página de Contacto
 Route::view('/contact', 'contact')->name('contact');
@@ -62,6 +71,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/courses/{id}/edit', [AdminCourseController::class, 'edit'])->name('courses.edit');
     Route::put('/courses/{id}', [AdminCourseController::class, 'update'])->name('courses.update');
     Route::delete('/courses/{id}', [AdminCourseController::class, 'destroy'])->name('courses.destroy');
+    Route::get('/form', [AdminController::class, 'showForm'])->name('form');
+    Route::post('/form', [AdminController::class, 'submitForm'])->name('form.submit');
 });
 
 // Ruta que lleva a 'catasdevino.blade.php'
@@ -78,5 +89,19 @@ Route::get('/info', function () {
 });
 
 Route::get('/cata/{id}', [CatasController::class, 'show'])->name('cata.show');
+
+Route::delete('/catas/{id}', [CatasController::class, 'destroy'])->name('catas.destroy'); // Ruta para eliminar catas
+
+Route::get('/reservar/{id}', [ReservaController::class, 'showForm'])->name('reservar.form');
+Route::post('/reservar/{id}', [ReservaController::class, 'submitForm'])->name('reservar.submit');
+Route::get('/personasReserv/{id}', [ReservaController::class, 'list'])->name('personasReserv.list'); // Ruta para ver personas apuntadas
+Route::delete('/reservas/{id}', [CursoController::class, 'destroyReservation'])->name('reservas.destroy'); // Ruta para eliminar reserva
+
+Route::get('/cursos/{id}/reservar', [CursoController::class, 'showReservationForm'])->name('reservar.form');
+Route::post('/cursos/{id}/reservar', [CursoController::class, 'submitReservation'])->name('reservar.submit');
+Route::get('/cursos/{id}/reservas', [CursoController::class, 'listReservations'])->name('personasReserv.list');
+
+Route::resource('resenas', ResenaController::class);
+Route::resource('cursos', CursoController::class);
 
 require __DIR__.'/auth.php';
