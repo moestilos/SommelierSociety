@@ -13,7 +13,7 @@ class AdminController extends Controller
 {
     public function showForm()
     {
-        return view('form'); // Corregir la vista a 'form'
+        return view('form'); 
     }
 
     public function submitForm(Request $request)
