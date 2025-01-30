@@ -15,7 +15,9 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=EB+Garamond:wght@400;500;600&family=Jaro:opsz@6..72&family=Sofadi+One&display=swap');
-        
+        body {
+    background: linear-gradient(to bottom, black, #510303, black);
+}
         .font-amatic {
             font-family: 'Amatic SC', cursive;
         }
@@ -40,8 +42,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="flex flex-col min-h-screen bg-gray-50/95" 
-      style="background-image: url('{{ asset('img/fondoClaro.png') }}'); background-size: cover; background-position: center;">
+<body class="flex flex-col min-h-screen bg-gradient-to-br from-black via-red-800 to-black">
 
     <!-- Main Content Section -->
     <section class="text-gray-700 body-font flex-grow pt-16">
@@ -50,7 +51,7 @@
 
                 <!-- Curso Card -->
                 <div class="p-4 md:w-1/2 lg:w-1/3">
-                    <div class="h-full bg-gradient-to-br from-black via-black to-yellow-900 backdrop-blur-lg bg-opacity-80 rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300">
+                    <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80 rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300">
                         <div class="relative overflow-hidden rounded-xl mb-6">
                             <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105" 
                                  src="{{ asset('img/bodega.jpeg') }}" 
@@ -76,7 +77,7 @@
 
                 <!-- Catas Card -->
                 <div class="p-4 md:w-1/2 lg:w-1/3">
-                    <div class="h-full bg-gradient-to-br from-black via-black to-yellow-900 backdrop-blur-lg bg-opacity-80 rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300">
+                    <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80 rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300">
                         <div class="relative overflow-hidden rounded-xl mb-6">
                             <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105" 
                                  src="{{ asset('img/vinocur.jpeg') }}" 
@@ -102,7 +103,7 @@
 
                 <!-- Reseñas Card -->
                 <div class="p-4 md:w-1/2 lg:w-1/3">
-                    <div class="h-full bg-gradient-to-br from-black via-black to-yellow-900 backdrop-blur-lg bg-opacity-80 rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300">
+                    <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80 rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300">
                         <div class="relative overflow-hidden rounded-xl mb-6">
                             <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105" 
                                  src="{{ asset('img/resenas.jpeg') }}" 

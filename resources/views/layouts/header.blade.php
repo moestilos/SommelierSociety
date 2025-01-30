@@ -1,9 +1,13 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=EB+Garamond:wght@400;500;600&family=Jaro:opsz@6..72&family=Sofadi+One&display=swap');
+
+    </style>
 <header class="text-gray-400 bg-black p-2 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
             <!-- Logo VinoA -->
             <img src="{{ asset('img/nuevoLogo.png') }}" alt="Logo VinoA" class="w-24 h-20 rounded-full mr-3">
-            <span class="ml-3 text-xl holy">South Wine Academy</span>
+            <span class="ml-3 text-3xl font-amatic">South Wine Academy</span>
         </a>
 
         <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center space-x-4">
