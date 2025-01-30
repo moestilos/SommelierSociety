@@ -39,6 +39,7 @@
                                 class="w-14 h-14 rounded-full object-cover shadow-md"
                                 loading="lazy"
                                 decoding="async"
+                                onerror="this.onerror=null; this.src='{{ asset('img/tuzorra.jpg') }}';"
                             >
                             <div class="flex-1 min-w-0">
                                 <h3 class="text-lg font-semibold text-gray-900 truncate">{{ $resena->name }}</h3>
