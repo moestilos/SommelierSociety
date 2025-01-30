@@ -5,7 +5,7 @@
 @section('content')
 
 <section class="bg-[#f8f9fa] py-12">
-    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-screen-md px-4 sm:px-6 lg:px-8">
         <div class="bg-white bg-opacity-80 px-6 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg text-gray-800">
             <h2 class="text-center text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl">
                 Añadir Curso
@@ -56,6 +56,11 @@
                     <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Añadir Curso</button>
                 </div>
             </form>
+            <div class="text-center mt-4">
+                <a href="{{ route('tarifas.index') }}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                    Volver a Tarifas
+                </a>
+            </div>
         </div>
     </div>
 </section>

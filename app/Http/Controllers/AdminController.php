@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Cata; // Importar el modelo Cata
+use App\Models\Curso;
+use App\Models\ReservaCurso;
+use App\Models\ReservaCata;
 
 class AdminController extends Controller
 {
@@ -35,5 +38,29 @@ class AdminController extends Controller
         ]);
 
         return redirect()->route('admin.form')->with('success', 'Formulario enviado correctamente.');
+    }
+
+    public function showPersonasForm()
+    {
+        $cursos = Curso::all();
+        $catas = Cata::all();
+        return view('personas', compact('cursos', 'catas'));
+    }
+
+    public function listPersonas(Request $request)
+    {
+        $tipo = $request->input('tipo');
+        $id = $request->input('id');
+
+        if ($tipo == 'curso') {
+            $reservas = ReservaCurso::where('curso_id', $id)->get();
+        } else {
+            $reservas = ReservaCata::where('cata_id', $id)->get();
+        }
+
+        $cursos = Curso::all();
+        $catas = Cata::all();
+
+        return view('personas', compact('reservas', 'tipo', 'cursos', 'catas'));
     }
 }

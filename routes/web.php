@@ -73,6 +73,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::delete('/courses/{id}', [AdminCourseController::class, 'destroy'])->name('courses.destroy');
     Route::get('/form', [AdminController::class, 'showForm'])->name('form');
     Route::post('/form', [AdminController::class, 'submitForm'])->name('form.submit');
+    Route::get('/panel', function () {
+        return view('panel');
+    })->name('panel');
+    Route::get('/personas', [AdminController::class, 'showPersonasForm'])->name('personas.form');
+    Route::get('/personas/list', [AdminController::class, 'listPersonas'])->name('personas.list');
 });
 
 // Ruta que lleva a 'catasdevino.blade.php'
