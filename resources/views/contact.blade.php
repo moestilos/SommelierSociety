@@ -4,61 +4,84 @@
 
 @section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Jaro:opsz@6..72&family=Sofadi+One&family=Teko:wght@300..700&display=swap');
-
-        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400..700&family=Jaro:opsz@6..72&family=Sofadi+One&family=Teko:wght@300..700&display=swap');
-    </style>
-    <title>Vinos</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <!-- Asegúrate de compilar estilos si usas Tailwind -->
-</head>
-
 <body class="flex flex-col min-h-screen"
     style="background-image: url('{{ asset('img/fondocursos.jpg') }}'); background-size: cover; background-position: center;">
 
+<div class="container mx-auto px-4 py-12">
+    <div class="text-center mb-12">
+        
+    </div>
 
-<div class="text-center mt-12">
-    <h1 class="text-4xl font-bold text-white">Contáctanos</h1>
-    <p class="text-gray-400 mt-4">Estamos aquí para ayudarte. Escríbenos y resolveremos todas tus dudas.</p>
-</div>
-<div class="mt-8 max-w-md mx-auto bg-gray-800 bg-opacity-80 p-8 rounded-lg shadow-lg">
-    @if(session('success'))
-        <div class="mb-4 p-4 text-green-800 bg-green-100 border border-green-200 rounded">
-            {{ session('success') }}
+    <div class="max-w-2xl mx-auto bg-white/10 backdrop-blur-lg rounded-3xl shadow-xl p-8 border border-white/20">
+        @if(session('success'))
+        <div class="mb-6 p-4 bg-green-500/20 text-green-100 rounded-xl border border-green-400/50">
+            <i class="fas fa-check-circle mr-2"></i>{{ session('success') }}
         </div>
-    @endif
-    <form method="POST" action="{{ route('contact.store') }}">
-        @csrf
-        <!-- Campos del formulario -->
-        <div class="mb-4">
-            <label for="name" class="block text-sm font-medium text-gray-400">Nombre</label>
-            <input type="text" name="name" id="name" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50">
-        </div>
-        <div class="mb-4">
-            <label for="email" class="block text-sm font-medium text-gray-400">Email</label>
-            <input type="email" name="email" id="email" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50">
-        </div>
-        <div class="mb-4">
-            <label for="phone" class="block text-sm font-medium text-gray-400">Teléfono</label>
-            <input type="text" name="phone" id="phone" required pattern="\d{9}" title="El número de teléfono debe tener 9 cifras" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50">
-        </div>
-        <div class="mb-4">
-            <label for="message" class="block text-sm font-medium text-gray-400">Mensaje</label>
-            <textarea name="message" id="message" rows="4" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50"></textarea>
-        </div>
-        <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded-md shadow hover:bg-purple-700">Enviar</button>
-    </form>
+        @endif
+
+        <form method="POST" action="{{ route('contact.store') }}" class="space-y-6">
+            @csrf
+
+            <div class="relative group">
+                <input type="text" name="name" id="name" required
+                    class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-300/30 text-white placeholder-white/50 transition-all"
+                    placeholder=" ">
+                <label for="name"
+                    class="absolute left-4 top-3 px-1 transition-all transform origin-left text-white/80 group-focus-within:text-purple-300 group-focus-within:-translate-y-5 group-focus-within:scale-75">
+                    <i class="fas fa-user mr-2"></i>Nombre completo
+                </label>
+            </div>
+
+            <div class="relative group">
+                <input type="email" name="email" id="email" required
+                    class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-300/30 text-white placeholder-white/50 transition-all"
+                    placeholder=" ">
+                <label for="email"
+                    class="absolute left-4 top-3 px-1 transition-all transform origin-left text-white/80 group-focus-within:text-purple-300 group-focus-within:-translate-y-5 group-focus-within:scale-75">
+                    <i class="fas fa-envelope mr-2"></i>Correo electrónico
+                </label>
+            </div>
+
+            <div class="relative group">
+                <input type="tel" name="phone" id="phone" required pattern="\d{9}"
+                    class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-300/30 text-white placeholder-white/50 transition-all"
+                    placeholder=" ">
+                <label for="phone"
+                    class="absolute left-4 top-3 px-1 transition-all transform origin-left text-white/80 group-focus-within:text-purple-300 group-focus-within:-translate-y-5 group-focus-within:scale-75">
+                    <i class="fas fa-phone mr-2"></i>Teléfono (9 dígitos)
+                </label>
+            </div>
+
+            <div class="relative group">
+                <textarea name="message" id="message" rows="4" required
+                    class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-300/30 text-white placeholder-white/50 transition-all resize-none"
+                    placeholder=" "></textarea>
+                <label for="message"
+                    class="absolute left-4 top-3 px-1 transition-all transform origin-left text-white/80 group-focus-within:text-purple-300 group-focus-within:-translate-y-5 group-focus-within:scale-75">
+                    <i class="fas fa-comment-dots mr-2"></i>Mensaje
+                </label>
+            </div>
+
+            <button type="submit" 
+                class="w-full py-3 px-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+                <i class="fas fa-paper-plane mr-2"></i>Enviar Mensaje
+            </button>
+        </form>
+    </div>
 </div>
 
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+    .font-dancing {
+        font-family: 'Dancing Script', cursive;
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus {
+        -webkit-text-fill-color: white;
+        -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.05) inset;
+    }
+</style>
 
 @endsection
