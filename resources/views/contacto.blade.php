@@ -61,7 +61,7 @@
                              class="w-full h-full object-cover rounded-full transform group-hover:scale-105 transition-transform">
                     </div>
                     
-                    <h2 class="text-2xl font-semibold bg-gradient-to-r from-yellow-300 to-yellow-400 bg-clip-text text-transparent mb-2">
+                    <h2 class="text-2xl font-semibold bg-gradient-to-r from-yellow-300 to-pink-400 bg-clip-text text-transparent mb-2">
                         Pilar Pérez Vaca
                     </h2>
                     <p class="text-lg text-yellow-100 mb-4">Sumiller y docente</p>

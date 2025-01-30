@@ -63,7 +63,7 @@
             </div>
 
             <button type="submit" 
-                class="w-full py-3 px-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+                class="w-full py-3 px-6 bg-gradient-to-r from-yellow-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
                 <i class="fas fa-paper-plane mr-2"></i>Enviar Mensaje
             </button>
         </form>

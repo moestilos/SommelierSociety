@@ -127,70 +127,129 @@
             </div>
         </div>
     </section>
-
-    
-    <!-- Botón del ChatBot -->
-    <div class="chat-container" id="chat-container">
-        <div class="chat-header">ChatBot</div>
-        <div class="chat-messages" id="chat-messages"></div>
-        <div class="chat-input">
-            <input type="text" id="chat-input" placeholder="Escribe un mensaje...">
-            <button id="chat-send">Enviar</button>
+<!-- ChatBot -->
+<div class="fixed bottom-8 right-8 z-50">
+    <div id="chat-container" class="hidden w-80 bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20 transform transition-all duration-300">
+        <div class="chat-header bg-gradient-to-r from-yellow-400 to-amber-600 text-white p-4 rounded-t-2xl flex items-center">
+            <i class="fas fa-wine-glass-alt mr-2"></i>
+            <h3 class="font-semibold">Wine Assistant</h3>
+            <button id="chat-close" class="ml-auto hover:text-yellow-200 transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="chat-messages h-64 p-4 overflow-y-auto space-y-3" id="chat-messages">
+            <div class="bot-message bg-white/80 backdrop-blur-sm p-3 rounded-lg border border-white/30 text-gray-700 shadow-sm">
+                ¡Hola! Soy tu asistente de vinos. ¿En qué puedo ayudarte?
+            </div>
+        </div>
+        
+        <div class="chat-input p-4 border-t border-white/30 flex gap-2">
+            <input type="text" id="chat-input" 
+                   class="flex-1 bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 focus:outline-none focus:ring-2 focus:ring-yellow-400/30 text-gray-700"
+                   placeholder="Escribe tu mensaje...">
+            <button id="chat-send" 
+                    class="bg-yellow-400 text-white px-4 py-2 rounded-full hover:bg-amber-500 transition-colors shadow-sm">
+                <i class="fas fa-paper-plane"></i>
+            </button>
         </div>
     </div>
-    <button class="chat-toggle" id="chat-toggle">💬</button>
+    
+    <button id="chat-toggle" 
+            class="w-14 h-14 bg-gradient-to-br from-yellow-400 to-amber-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 flex items-center justify-center">
+        <i class="fas fa-comment-dots text-xl"></i>
+    </button>
+</div>
 
-    <script>
-        const chatToggle = document.getElementById('chat-toggle');
-        const chatContainer = document.getElementById('chat-container');
-        const chatMessages = document.getElementById('chat-messages');
-        const chatInput = document.getElementById('chat-input');
-        const chatSend = document.getElementById('chat-send');
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+    .font-dancing {
+        font-family: 'Dancing Script', cursive;
+    }
+    
+    .chat-messages::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .chat-messages::-webkit-scrollbar-track {
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+    }
+    
+    .chat-messages::-webkit-scrollbar-thumb {
+        background: rgba(245,158,11,0.5);
+        border-radius: 10px;
+    }
+    
+    [data-aos] {
+        transition: all 500ms ease-out;
+    }
+    
+    .user-message {
+        @apply bg-yellow-100/80 backdrop-blur-sm p-3 rounded-lg border border-yellow-200 text-gray-700 self-end max-w-[80%];
+    }
+    
+    .bot-message {
+        @apply bg-white/80 backdrop-blur-sm p-3 rounded-lg border border-white/30 text-gray-700 shadow-sm max-w-[80%];
+    }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: true,
+        easing: 'ease-in-out-quad'
+    });
 
-        const responses = {
-            "hola": "¡Hola! ¿Cómo puedo ayudarte?",
-            "adios": "¡Adiós! Que tengas un buen día.",
-            "gracias": "¡De nada! ¿En qué más puedo ayudarte?",
-            "canta": "Tu madre tiene una polla, que ya la quisiera yo, me dio pena por tu padre el dia que se entero, llegó la noche de bodas, de quien se iba a imaginar, que iba a ser a tu padre al que iban a encular",
-            "informacion": "Tenemos varios tipos de cursos y varias catas de vino. También puedes obtener información sobre nuestros profesionales y de nuestras tarifas. ¿Qué información deseas?",
-            "cursos": "Puedes encontrar más información sobre nuestros cursos <a href='{{ url('/cursos') }}' class='text-yellow-400'>aquí</a>.",
-            "catas": "Puedes encontrar más información sobre nuestras catas de vino <a href='{{ url('/catasdevino') }}' class='text-yellow-400'>aquí</a>.",
-            "especialistas": "Puedes encontrar más información sobre nuestros especialistas <a href='{{ url('/contacto') }}' class='text-yellow-400'>aquí</a>.",
-            "tarifas": "Puedes encontrar más información sobre nuestras tarifas <a href='{{ url('/tarifas') }}' class='text-yellow-400'>aquí</a>."
-        };
+    // Chatbot Script
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatContainer = document.getElementById('chat-container');
+    const chatMessages = document.getElementById('chat-messages');
+    const chatInput = document.getElementById('chat-input');
+    const chatSend = document.getElementById('chat-send');
+    const chatClose = document.getElementById('chat-close');
 
-        chatToggle.addEventListener('click', () => {
-            chatContainer.style.display = chatContainer.style.display === 'none' ? 'block' : 'none';
-        });
+    const responses = {
+        "hola": "¡Hola! ¿Cómo puedo ayudarte?",
+        "adios": "¡Hasta pronto! Que el vino te acompañe 🍷",
+        "gracias": "¡Un placer ayudarte! ¿Necesitas algo más?",
+        "cursos": "Descubre nuestros cursos especializados <a href='/cursos' class='text-yellow-600 font-medium'>aquí</a> 🎓",
+        "catas": "Explora nuestras experiencias de cata <a href='/catasdevino' class='text-yellow-600 font-medium'>aquí</a> 🍇",
+        "especialistas": "Conoce a nuestro equipo <a href='/contacto' class='text-yellow-600 font-medium'>aquí</a> 👩🔬",
+        "tarifas": "Consulta nuestras tarifas <a href='/tarifas' class='text-yellow-600 font-medium'>aquí</a> 💰"
+    };
 
-        chatSend.addEventListener('click', () => {
-            const message = chatInput.value.trim().toLowerCase();
-            if (message) {
-                const userMessageElement = document.createElement('div');
-                userMessageElement.textContent = message;
-                userMessageElement.style.color = 'black'; 
-                chatMessages.appendChild(userMessageElement);
+    chatToggle.addEventListener('click', () => {
+        chatContainer.classList.toggle('hidden');
+        chatToggle.classList.toggle('scale-110');
+    });
 
-                const botResponse = responses[message] || "Lo siento, no entiendo tu mensaje.";
-                const botMessageElement = document.createElement('div');
-                botMessageElement.innerHTML = botResponse;
-                botMessageElement.style.fontWeight = 'bold';
-                botMessageElement.style.color = 'black'; 
-                chatMessages.appendChild(botMessageElement);
+    chatClose.addEventListener('click', () => {
+        chatContainer.classList.add('hidden');
+    });
 
-                chatInput.value = '';
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-        });
+    const addMessage = (message, isUser = false) => {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = isUser ? 'user-message' : 'bot-message';
+        messageDiv.innerHTML = message;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    };
 
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                chatSend.click();
-            }
-        });
-    </script>
+    chatSend.addEventListener('click', () => {
+        const message = chatInput.value.trim().toLowerCase();
+        if (message) {
+            addMessage(message, true);
+            const response = responses[message] || "Lo siento, no entiendo. ¿Podrías reformular?";
+            setTimeout(() => addMessage(response), 1000);
+            chatInput.value = '';
+        }
+    });
 
-</body>
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') chatSend.click();
+    });
+</script>
 
-</html>
 @endsection
