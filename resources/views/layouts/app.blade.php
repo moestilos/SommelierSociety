@@ -30,6 +30,7 @@
     <main>
         @yield('content')
     </main>
+    
 
     <footer class="text-gray-400 bg-black p-4 body-font">
         <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">

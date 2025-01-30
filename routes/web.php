@@ -14,7 +14,7 @@ Route::get('/custom', function () {
 });
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
@@ -97,14 +97,10 @@ Route::get('/cata/{id}', [CatasController::class, 'show'])->name('cata.show');
 
 Route::delete('/catas/{id}', [CatasController::class, 'destroy'])->name('catas.destroy'); // Ruta para eliminar catas
 
-Route::get('/reservar/{id}', [ReservaController::class, 'showForm'])->name('reservar.form');
-Route::post('/reservar/{id}', [ReservaController::class, 'submitForm'])->name('reservar.submit');
-Route::get('/personasReserv/{id}', [ReservaController::class, 'list'])->name('personasReserv.list'); // Ruta para ver personas apuntadas
-Route::delete('/reservas/{id}', [CursoController::class, 'destroyReservation'])->name('reservas.destroy'); // Ruta para eliminar reserva
-
-Route::get('/cursos/{id}/reservar', [CursoController::class, 'showReservationForm'])->name('reservar.form');
-Route::post('/cursos/{id}/reservar', [CursoController::class, 'submitReservation'])->name('reservar.submit');
-Route::get('/cursos/{id}/reservas', [CursoController::class, 'listReservations'])->name('personasReserv.list');
+Route::get('/reservar/{curso}', [CursoController::class, 'showReservationForm'])->name('reservar.form');
+Route::post('/reservar/{curso}', [CursoController::class, 'submitReservation'])->name('reservar.submit');
+Route::get('/personasReserv/{curso}', [CursoController::class, 'listReservations'])->name('personasReserv.list'); // Ruta para ver personas apuntadas
+Route::delete('/reservas/{reserva}', [CursoController::class, 'destroyReservation'])->name('reservas.destroy'); // Ruta para eliminar reserva
 
 Route::resource('resenas', ResenaController::class);
 Route::resource('cursos', CursoController::class);
