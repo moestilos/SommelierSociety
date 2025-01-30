@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Cata; // Importar el modelo Cata
+use App\Models\Cata; 
 use App\Models\Curso;
 use App\Models\ReservaCurso;
-use App\Models\ReservaCata;
+use App\Models\Reserva; 
 
 class AdminController extends Controller
 {
@@ -55,7 +55,7 @@ class AdminController extends Controller
         if ($tipo == 'curso') {
             $reservas = ReservaCurso::where('curso_id', $id)->get();
         } else {
-            $reservas = ReservaCata::where('cata_id', $id)->get();
+            $reservas = Reserva::where('cata_id', $id)->get();
         }
 
         $cursos = Curso::all();
