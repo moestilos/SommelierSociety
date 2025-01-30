@@ -23,11 +23,11 @@
         .chat-input input {
             color: rgba(0, 0, 0, 0.268); 
         }
-        .bg-opacity-60 {
-            background-color: rgba(31, 41, 55, 0.1); 
+        .bg-opacity-80 {
+            background-color: rgba(31, 41, 55, 0.8); 
         }
-        .bg-opacity-40 {
-            background-color: rgba(31, 41, 55, 0.05); 
+        .bg-opacity-60 {
+            background-color: rgba(31, 41, 55, 0.6); 
         }
     </style>
     <title>Vinos</title>
@@ -48,7 +48,7 @@
                 <!-- CAJA 2 -->
                 <div class="p-2 lg:w-1/4 md:w-1/2">
                     <div data-aos="fade-up" data-aos-duration="1000"
-                        class="h-full bg-gray-800 bg-opacity-60 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
+                        class="h-full bg-gray-800 bg-opacity-80 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
                         <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Cursos de Sommelier</h1>
                         <img src="{{ asset('img/bodega.jpeg') }}" alt="Bodega"
                             class="w-full h-40 object-cover mb-4 rounded">
@@ -67,7 +67,7 @@
                 <!-- CAJA 4 -->
                 <div class="p-2 lg:w-1/4 md:w-1/2">
                     <div data-aos="fade-up" data-aos-duration="1000"
-                        class="h-full bg-gray-800 bg-opacity-40 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
+                        class="h-full bg-gray-800 bg-opacity-60 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
                         <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Catas de Vino</h1>
                         <img src="{{ asset('img/vinocur.jpeg') }}" alt="Tuzorra"
                             class="w-full h-40 object-cover mb-4 rounded">
@@ -86,7 +86,7 @@
                 <!-- CAJA 3 -->
                 <div class="p-2 lg:w-1/4 md:w-1/2">
                     <div data-aos="fade-up" data-aos-duration="1000"
-                        class="h-full bg-gray-800 bg-opacity-60 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
+                        class="h-full bg-gray-800 bg-opacity-80 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
                         <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Reseñas</h1>
                         <img src="{{ asset('img/resenas.jpeg') }}" alt="Tuzorra"
                             class="w-full h-40 object-cover mb-4 rounded">
@@ -107,7 +107,7 @@
                 <!-- CAJA 5 -->
                 <div class="p-2 lg:w-1/4 md:w-1/2">
                     <div data-aos="fade-up" data-aos-duration="1000"
-                        class="h-full bg-gray-800 bg-opacity-60 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
+                        class="h-full bg-gray-800 bg-opacity-80 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
                         <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Panel de Control</h1>
                         <img src="{{ asset('img/controlpanel.jpg') }}" alt="Panel de Control"
                             class="w-full h-40 object-cover mb-4 rounded">
