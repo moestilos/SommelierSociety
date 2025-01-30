@@ -4,6 +4,15 @@
 
 @section('content')
 
+
+ <style>
+   body {
+    background: linear-gradient(to bottom, black, #510303, black);
+}
+        .font-amatic {
+            font-family: 'Amatic SC', cursive;
+        }
+        </style>
 <body class="flex flex-col min-h-screen"
     style="background-image: url('{{ asset('img/fondocursos.jpg') }}'); background-size: cover; background-position: center;">
 
