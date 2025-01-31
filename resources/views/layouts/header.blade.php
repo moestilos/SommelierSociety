@@ -83,9 +83,6 @@ background: linear-gradient(to bottom, black, #510303, black);
                 </div>
             </div>
 
-            <button id="theme-toggle" class="bg-gray-800 text-white px-3 py-2 rounded hover:text-yellow-400 transition duration-300 ease-in-out transform hover:scale-105">
-                Modo Oscuro
-            </button>
         </nav>
     </div>
 </header>

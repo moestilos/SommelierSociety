@@ -199,7 +199,7 @@
         // Chatbot Interactivo
         const chatToggle = document.getElementById('chat-toggle');
         const chatContainer = document.getElementById('chat-container');
-        const chatMessages = document.getElementById('chat-messages');
+        const chatMessages = document.querySelector('.chat-messages');
         const chatInput = document.getElementById('chat-input');
         const chatSend = document.getElementById('chat-send');
         const chatClose = document.getElementById('chat-close');
