@@ -45,7 +45,7 @@ Route::get('/contacto', function () {
     return view('contacto');
 });
 
-// Ruta que lleva a 'resenas.blade.php'
+// Ruta principal para mostrar reseñas
 Route::get('/resenas', [ResenaController::class, 'index'])->name('resenas.index');
 
 // Ruta para enviar reseñas
@@ -78,6 +78,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     })->name('panel');
     Route::get('/personas', [AdminController::class, 'showPersonasForm'])->name('personas.form');
     Route::get('/personas/list', [AdminController::class, 'listPersonas'])->name('personas.list');
+    Route::get('/personas/form', [AdminController::class, 'showPersonasForm'])->name('admin.personas.form');
+    Route::get('/admin/personas/form', [AdminController::class, 'showPersonasForm'])->name('admin.personas.form');
 });
 
 // Ruta que lleva a 'catasdevino.blade.php'

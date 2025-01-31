@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Cata; 
 use App\Models\Curso;
 use App\Models\ReservaCurso;
-use App\Models\Reserva; 
+use App\Models\Reserva;
 
 class AdminController extends Controller
 {
@@ -27,7 +27,6 @@ class AdminController extends Controller
             'description' => 'required|string',
         ]);
 
-        // Crear una nueva cata en la base de datos
         Cata::create([
             'title' => $request->name,
             'type' => $request->type,
@@ -40,11 +39,24 @@ class AdminController extends Controller
         return redirect()->route('admin.form')->with('success', 'Formulario enviado correctamente.');
     }
 
-    public function showPersonasForm()
+    public function showPersonasForm(Request $request)
     {
-        $cursos = Curso::all();
-        $catas = Cata::all();
-        return view('personas', compact('cursos', 'catas'));
+        $filter = $request->input('filter');
+        $catas = [];
+        $cursos = [];
+        $todos = [];
+
+        if ($filter == 'catas') {
+            $catas = Cata::all();
+        } elseif ($filter == 'cursos') {
+            $cursos = Curso::all();
+        } else {
+            $catas = Cata::all();
+            $cursos = Curso::all();
+            $todos = $catas->merge($cursos);
+        }
+
+        return view('admin.personas.form', compact('catas', 'cursos', 'todos'));
     }
 
     public function listPersonas(Request $request)

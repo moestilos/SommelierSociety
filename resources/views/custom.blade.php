@@ -28,6 +28,14 @@
               <a href="{{ url('/register') }}" class="mr-5 hover:text-yellow">Register</a>
               <a href="" class="mr-5 hover:text-yellow">About Us</a>
               <a href="" class="mr-5 hover:text-yellow">Store</a>
+              @auth
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+              <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="mr-5 hover:text-yellow">
+                  Cerrar sesión
+              </a>
+              @endauth
           </nav>
       </div>
   </header>

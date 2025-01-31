@@ -20,13 +20,12 @@ class ResenaController extends Controller
             'name' => 'required|string|max:255',
             'review' => 'required|string',
             'stars' => 'required|integer|min:1|max:5',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
 
-        $imagePath = null;
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('resenas', 'public');
-        }
+        $imagePath = $request->file('image')
+            ? $request->file('image')->store('resenas', 'public')
+            : null;
 
         $resena = Resena::create([
             'name' => $request->name,
@@ -35,11 +34,9 @@ class ResenaController extends Controller
             'image' => $imagePath,
         ]);
 
-        if ($request->ajax()) {
-            return response()->json(['success' => true, 'resena' => $resena]);
-        }
-
-        return redirect()->back()->with('success', 'Reseña enviada con éxito.');
+        return $request->wantsJson()
+            ? response()->json(['success' => true, 'resena' => $resena])
+            : redirect()->back()->with('success', 'Reseña enviada con éxito.');
     }
 
     public function edit($id)
@@ -54,7 +51,7 @@ class ResenaController extends Controller
             'name' => 'required|string|max:255',
             'review' => 'required|string',
             'stars' => 'required|integer|min:1|max:5',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
 
         $resena = Resena::findOrFail($id);
@@ -79,6 +76,9 @@ class ResenaController extends Controller
     public function destroy($id)
     {
         $resena = Resena::findOrFail($id);
+        if ($resena->image) {
+            Storage::disk('public')->delete($resena->image);
+        }
         $resena->delete();
 
         return redirect()->route('resenas.index')->with('success', 'Reseña eliminada correctamente.');

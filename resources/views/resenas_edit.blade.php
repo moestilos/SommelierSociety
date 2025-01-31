@@ -49,7 +49,7 @@
                 <label for="review" class="block text-white">Reseña:</label>
                 <textarea id="review" name="review" class="w-full px-4 py-2 mt-2 text-white bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">{{ $resena->review }}</textarea>
             </div>
-           
+        
             <div class="mb-4">
                 <label for="image" class="block text-white">Imagen:</label>
                 <input type="file" id="image" name="image" class="w-full px-4 py-2 mt-2 text-white bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">

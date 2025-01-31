@@ -13,7 +13,7 @@ class CreateResenasTable extends Migration
             $table->string('name');
             $table->text('review');
             $table->integer('stars')->default(1);
-            $table->string('image')->nullable(); // Agregar columna para la imagen
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
