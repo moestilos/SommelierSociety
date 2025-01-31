@@ -1,71 +1,26 @@
 @extends('layouts.app')
 
-@section('title', 'South Wine Academy')
+@section('title', 'Cursos - Banko')
 
 @section('content')
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Jaro:opsz@6..72&family=Sofadi+One&family=Teko:wght@300..700&display=swap');
-
-        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400..700&family=Jaro:opsz@6..72&family=Sofadi+One&family=Teko:wght@300..700&display=swap');
-    </style>
-    <title>Vinos</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <!-- Asegúrate de compilar estilos si usas Tailwind -->
-</head>
-
-<body class="flex flex-col min-h-screen"
-    style="background-image: url('{{ asset('img/fondocursos.jpg') }}'); background-size: cover; background-position: center;">
-
-  
-<section
-  class="relative bg-[url('{{ asset('img/fondocursos.jpg') }}')] bg-cover bg-center bg-no-repeat"
->
-  <div
-    class="absolute inset-0 bg-gray-900/75 sm:from-gray-900/95 sm:to-gray-900/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
-  ></div>
-
-  <div
-    class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-10 lg:flex lg:h-screen lg:items-center lg:px-16"
-  >
-    <div class="max-w-xl text-center mx-auto">
-      <h1 class="text-3xl font-extrabold text-white sm:text-5xl">
-        Cursos de
-
-        <strong class="block font-extrabold text-rose-500"> Sommelier. </strong>
-      </h1>
-
-      <p class="mt-4 max-w-lg text-white sm:text-xl/relaxed mx-auto">
-        Inscribete en nuestros cursos de Sommelier de Vinos de Jerez
-      </p>
-
-      <div class="mt-8 flex flex-wrap gap-4 justify-center">
-        <a
-          href="{{ url('/tarifas') }}"
-          class="block w-full rounded bg-rose-600 px-16 py-4 text-lg font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
-        >
-          Tarifas 
-        </a>
-        
-        <a
-          href="{{ url('/info') }}"
-          class="block w-full rounded bg-white px-16 py-4 text-lg font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
-        >
-          Información
-        </a>
-      </div>
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-6 text-center text-white">Nuestros Cursos</h1>
+        @if($cursos->isEmpty())
+            <p class="text-center text-gray-400">No hay cursos disponibles en este momento.</p>
+        @else
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @foreach($cursos as $curso)
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <h2 class="text-xl font-semibold text-white">{{ $curso->nombre }}</h2>
+                        <p class="text-gray-300">{{ $curso->descripcion_breve }}</p>
+                        <p class="text-gray-400 mt-2">Duración: {{ $curso->duracion }} horas</p>
+                        <p class="text-gray-400">Modalidad: {{ $curso->modalidad }}</p>
+                        <p class="text-gray-400">Plazas disponibles: {{ $curso->plazas_disponibles }}</p>
+                        <p class="text-green-400 font-semibold">Precio: {{ $curso->coste }} €</p>
+                        <a href="{{ route('cursos.show', $curso->id) }}" class="block mt-4 text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">Más información</a>
+                    </div>
+                @endforeach
+            </div>
+        @endif
     </div>
-  </div>
-</section>
-</body>
-</html>
 @endsection
