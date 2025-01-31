@@ -1,8 +1,22 @@
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=EB+Garamond:wght@400;500;600&family=Jaro:opsz@6..72&family=Sofadi+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:wght@400;500;600&display=swap');
+    
+    .font-cinzel {
+        font-family: 'Cinzel Decorative', cursive;
+    }
+    
+    .font-garamond {
+        font-family: 'EB Garamond', serif;
+    }
 
-    </style>
+    .wine-gradient {
+        background: linear-gradient(135deg, rgba(88, 28, 28, 0.95) 0%, rgba(44, 19, 19, 0.95) 100%);
+    }
 
+    .input-glow:focus {
+        box-shadow: 0 0 15px rgba(149, 40, 40, 0.3);
+    }
+</style>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=EB+Garamond:wght@400;500;600&family=Jaro:opsz@6..72&family=Sofadi+One&display=swap');
     body {
@@ -29,12 +43,15 @@ background: linear-gradient(to bottom, black, #510303, black);
         background: linear-gradient(45deg, #b45309, #d97706);
     }
 </style>
-<header class="text-gray-400 bg-black p-2 body-font">
+<header class="text-gray-400 wine-gradient p-2 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
             <!-- Logo VinoA -->
-            <img src="{{ asset('img/nuevoLogo.png') }}" alt="Logo VinoA" class="w-24 h-20 rounded-full mr-3">
-            <span class="ml-3 text-3xl font-amatic">South Wine Academy</span>
+            <div class="relative w-24 h-24">
+                <div class="absolute inset-0 bg-amber-900/20 rounded-full blur-md"></div>
+                <img src="{{ asset('img/nuevoLogo.png') }}" alt="Logo VinoA" class="relative z-10 w-full h-full object-contain rounded-full border-2 border-amber-900/30">
+            </div>
+            <span class="ml-3 text-3xl font-cinzel">South Wine Academy</span>
         </a>
 
         <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center space-x-4">
