@@ -110,7 +110,6 @@
                         "{{ $resena->review }}"
                     </p>
                    
-                    
                 </blockquote>
             </div>
             @endforeach
