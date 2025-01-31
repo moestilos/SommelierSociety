@@ -2,6 +2,33 @@
     @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=EB+Garamond:wght@400;500;600&family=Jaro:opsz@6..72&family=Sofadi+One&display=swap');
 
     </style>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=EB+Garamond:wght@400;500;600&family=Jaro:opsz@6..72&family=Sofadi+One&display=swap');
+    body {
+background: linear-gradient(to bottom, black, #510303, black);
+}
+    .font-amatic {
+        font-family: 'Amatic SC', cursive;
+    }
+    
+    .font-garamond {
+        font-family: 'EB Garamond', serif;
+    }
+
+    .hover-tilt {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .hover-tilt:hover {
+        transform: perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.02);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    .price-badge {
+        background: linear-gradient(45deg, #b45309, #d97706);
+    }
+</style>
 <header class="text-gray-400 bg-black p-2 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">

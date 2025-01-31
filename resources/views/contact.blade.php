@@ -4,10 +4,9 @@
 
 @section('content')
 
-<body class="flex flex-col min-h-screen"
-    style="background-image: url('{{ asset('img/fondocursos.jpg') }}'); background-size: cover; background-position: center;">
+<body class="bg-gradient-to-br from-black via-red-900 to-black dark:bg-gray-900">
 
-<div class="container mx-auto px-4 py-12">
+<div class="container mx-auto px-4 py-12 bg-gradient-to-br from-black via-red-900 to-black dark:bg-gray-900">
     <div class="text-center mb-12">
         
     </div>
