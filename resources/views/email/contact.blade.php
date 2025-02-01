@@ -46,57 +46,12 @@
                 <label for="phone" class="block text-white text-sm mb-1">
                     <i class="fas fa-phone mr-2"></i>Teléfono (9 dígitos)
                 </label>
-                <div class="flex relative">
-                    <!-- Selector de País: España está primero -->
-                    <select id="countryCode" class="rounded-l-lg border border-white/20 bg-transparent text-white px-3 py-3 appearance-none focus:outline-none focus:border-purple-400 pr-8">
-                        <option value="+34" selected>España (+34)</option>
-                        <option value="+93">Afganistán (+93)</option>
-                        <option value="+355">Albania (+355)</option>
-                        <option value="+213">Argelia (+213)</option>
-                        <option value="+376">Andorra (+376)</option>
-                        <option value="+244">Angola (+244)</option>
-                        <option value="+1">Antigua y Barbuda (+1)</option>
-                        <option value="+54">Argentina (+54)</option>
-                        <option value="+374">Armenia (+374)</option>
-                        <option value="+61">Australia (+61)</option>
-                        <option value="+43">Austria (+43)</option>
-                        <option value="+994">Azerbaiyán (+994)</option>
-                        <option value="+1">Bahamas (+1)</option>
-                        <option value="+973">Baréin (+973)</option>
-                        <option value="+880">Bangladesh (+880)</option>
-                        <option value="+1">Barbados (+1)</option>
-                        <option value="+375">Bielorrusia (+375)</option>
-                        <option value="+32">Bélgica (+32)</option>
-                        <option value="+501">Belice (+501)</option>
-                        <option value="+229">Benín (+229)</option>
-                        <option value="+1">Bermudas (+1)</option>
-                        <option value="+975">Bután (+975)</option>
-                        <option value="+591">Bolivia (+591)</option>
-                        <option value="+387">Bosnia y Herzegovina (+387)</option>
-                        <option value="+267">Botswana (+267)</option>
-                        <option value="+55">Brasil (+55)</option>
-                        <option value="+673">Brunéi (+673)</option>
-                        <option value="+1">Canadá (+1)</option>
-                        <option value="+86">China (+86)</option>
-                        <option value="+61">Nueva Zelanda (+61)</option>
-                        <option value="+33">Francia (+33)</option>
-                        <option value="+49">Alemania (+49)</option>
-                        <option value="+39">Italia (+39)</option>
-                        <option value="+81">Japón (+81)</option>
-                        <option value="+82">Corea del Sur (+82)</option>
-                        <option value="+44">Reino Unido (+44)</option>
-                        <option value="+971">Emiratos Árabes Unidos (+971)</option>
-                        <option value="+7">Rusia (+7)</option>
-                        <option value="+91">India (+91)</option>
-                        <option value="+27">Sudáfrica (+27)</option>
-                    </select>
-                    <input type="tel" name="phone" id="phone" required pattern="^\+34\s\d{9}$" minlength="13" maxlength="13"
-                        class="w-full px-4 py-3 bg-white/5 border-t border-b border-r border-white/20 rounded-r-lg focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-300/30 focus:ring-offset-2 focus:ring-offset-black text-white transition-all"
-                        placeholder="">
-                </div>
-                <!-- Banner que informa sobre el prefijo -->
+                <input type="tel" name="phone" id="phone" required pattern="^\+34\s\d{9}$" minlength="13" maxlength="13"
+                    class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-300/30 focus:ring-offset-2 focus:ring-offset-black text-white transition-all"
+                    placeholder="">
+                <!-- Nuevo banner para indicar el prefijo +34 -->
                 <small id="phoneBanner" class="block text-yellow-300 text-xs mt-1 hidden">
-                    Se añadirá el prefijo seleccionado automáticamente.
+                    Se añadirá el prefijo +34 si no está presente.
                 </small>
             </div>
 
@@ -115,21 +70,19 @@
                 <i class="fas fa-paper-plane mr-2"></i>Enviar Mensaje
             </button>
         </form>
-        <!-- Actualización del script inline para aplicar el prefijo según el selector de país -->
+        <!-- Actualización del script inline para mostrar el banner en el campo teléfono -->
         <script>
             document.addEventListener('DOMContentLoaded', function(){
                 const phoneInput = document.querySelector('input[name="phone"]');
                 const phoneBanner = document.getElementById('phoneBanner');
-                const countrySelect = document.getElementById('countryCode');
-                if(phoneInput && countrySelect){
+                if(phoneInput){
                     phoneInput.addEventListener('focus', function(){
                         phoneBanner.classList.remove('hidden');
                     });
                     phoneInput.addEventListener('blur', function(){
                         const val = phoneInput.value.trim();
-                        const selectedCode = countrySelect.value;
-                        if(val && !val.startsWith(selectedCode)){
-                            phoneInput.value = selectedCode + ' ' + val;
+                        if(val && !val.startsWith('+34')){
+                            phoneInput.value = '+34 ' + val;
                         }
                         phoneBanner.classList.add('hidden');
                     });
@@ -162,10 +115,6 @@
     .group:focus-within .icon-fade {
         opacity: 0;
         transition: opacity 0.5s ease-out;
-    }
-    /* Regla para que las opciones del selector se muestren en negro */
-    select#countryCode option {
-        color: black !important;
     }
 </style>
 

@@ -16,13 +16,13 @@
 <body class="flex flex-col min-h-screen"
     style="background-image: url('{{ asset('img/fondocursos.jpg') }}'); background-size: cover; background-position: center;">
 
-<div class="container mx-auto px-4 py-24">
+<div class="container mx-auto px-4 py-24 md:max-w-6xl">
     
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
         <!-- Ana Hergueta Card -->
         <div class="group relative" data-aos="fade-right">
-            <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl transform transition-all duration-300 hover:border-yellow-400/50 hover:shadow-yellow-500/20">
+            <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl transform transition-all duration-300 hover:border-yellow-400/50 hover:shadow-yellow-500/20 hover:scale-[1.02]">
                 <div class="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-pink-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <div class="flex flex-col items-center relative z-10">
@@ -61,7 +61,7 @@
 
         <!-- Pilar Pérez Card -->
         <div class="group relative" data-aos="fade-left">
-            <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl transform transition-all duration-300 hover:border-yellow-400/50 hover:shadow-yellow-500/20">
+            <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl transform transition-all duration-300 hover:border-yellow-400/50 hover:shadow-yellow-500/20 hover:scale-[1.02]">
                 <div class="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-yellow-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <div class="flex flex-col items-center relative z-10">
