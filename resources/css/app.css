@@ -47,6 +47,14 @@ body.light-mode header .title-font, body.light-mode footer .title-font {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: none;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.chat-open {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .chat-header {

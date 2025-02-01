@@ -20,4 +20,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     setInterval(updateCountdown, 1000);
     updateCountdown();
+
+    const chatToggle = document.querySelector('.chat-toggle');
+    const chatContainer = document.querySelector('.chat-container');
+
+    if (chatToggle && chatContainer) {
+        chatToggle.addEventListener('click', () => {
+            chatContainer.classList.toggle('chat-open');
+        });
+    }
+
+    function initChatbot() {
+        const chatMessages = document.querySelector('.chat-messages');
+        if (chatMessages) {
+            chatMessages.innerHTML = `
+                <div>
+                    Hola, ¿necesitas ayuda?
+                    <br><button onclick="window.location.href='/contact'">Ir a Contact (Formulario)</button>
+                    <br><button onclick="window.location.href='/contacto'">Ir a Contacto (Información)</button>
+                </div>
+            `;
+        }
+    }
+
+    initChatbot();
 });
