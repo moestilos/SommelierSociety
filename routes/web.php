@@ -46,19 +46,11 @@ Route::get('/contacto', function () {
 });
 
 // Ruta que lleva a 'resenas.blade.php'
-Route::get('/resenas', [ResenaController::class, 'index'])->name('resenas.index');
-
-// Ruta para enviar reseñas
-Route::post('/resenas', [ResenaController::class, 'store'])->name('resenas.store');
-
-// Ruta para editar reseñas
-Route::get('/resenas/{id}/edit', [ResenaController::class, 'edit'])->name('resenas.edit');
-
-// Ruta para actualizar reseñas
-Route::put('/resenas/{id}', [ResenaController::class, 'update'])->name('resenas.update');
-
-// Ruta para eliminar reseñas
-Route::delete('/resenas/{id}', [ResenaController::class, 'destroy'])->name('resenas.destroy');
+// Route::get('/resenas', [ResenaController::class, 'index'])->name('resenas.index');
+// Route::post('/resenas', [ResenaController::class, 'store'])->name('resenas.store');
+// Route::get('/resenas/{id}/edit', [ResenaController::class, 'edit'])->name('resenas.edit');
+// Route::put('/resenas/{id}', [ResenaController::class, 'update'])->name('resenas.update');
+// Route::delete('/resenas/{id}', [ResenaController::class, 'destroy'])->name('resenas.destroy');
 
 // Página de Contacto
 Route::view('/contact', 'contact')->name('contact');

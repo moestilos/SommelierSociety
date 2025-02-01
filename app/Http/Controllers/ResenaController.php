@@ -35,11 +35,7 @@ class ResenaController extends Controller
             'image' => $imagePath,
         ]);
 
-        if ($request->ajax()) {
-            return response()->json(['success' => true, 'resena' => $resena]);
-        }
-
-        return redirect()->back()->with('success', 'Reseña enviada con éxito.');
+        return response()->json(['success' => true, 'resena' => $resena]);
     }
 
     public function edit($id)

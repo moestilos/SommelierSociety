@@ -54,8 +54,8 @@
                     <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80 rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300">
                         <div class="relative overflow-hidden rounded-xl mb-6">
                             <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105" 
-                                 src="{{ asset('img/bodega.jpeg') }}" 
-                                 alt="Cursos de Sommelier">
+                                src="{{ asset('img/bodega.jpeg') }}" 
+                                alt="Cursos de Sommelier">
                             <span class="absolute top-4 right-4 price-badge text-white px-3 py-1 rounded-full text-sm font-garamond">
                                 Nuevo
                             </span>
@@ -80,8 +80,8 @@
                     <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80 rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300">
                         <div class="relative overflow-hidden rounded-xl mb-6">
                             <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105" 
-                                 src="{{ asset('img/vinocur.jpeg') }}" 
-                                 alt="Experiencias de Cata">
+                                src="{{ asset('img/vinocur.jpeg') }}" 
+                                alt="Experiencias de Cata">
                             <span class="absolute top-4 right-4 price-badge text-white px-3 py-1 rounded-full text-sm font-garamond">
                                 Popular
                             </span>
@@ -186,7 +186,6 @@
         </button>
     </div>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
