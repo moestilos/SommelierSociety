@@ -1,9 +1,9 @@
 @extends('layouts.app')
-
+ 
 @section('title', 'South Wine Academy')
-
+ 
 @section('content')
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-
+ 
     <style>
         /* Animaciones y efectos principales */
         @keyframes fadeIn {
@@ -21,12 +21,12 @@
         
         .review-card {
             animation: fadeIn 0.6s ease-out;
-            box-shadow: 0 10px 30px rgba(90, 15, 29, 0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            background: rgba(248, 249, 250, 0.9);
+            background: linear-gradient(to bottom, #000000, #3a0b0b, #000000);
             backdrop-filter: blur(8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeInUp 0.8s ease forwards;
         }
-
         /* Nuevo estilo para imágenes cuadradas */
         .review-image {
             width: 80px;
@@ -37,47 +37,75 @@
             transition: all 0.3s ease;
             object-fit: cover;
         }
-
         .review-image:hover {
             transform: rotate(3deg) scale(1.1);
             box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5);
         }
-
         /* Ajustes estéticos mantenidos */
         .star-hover {
             transition: all 0.3s ease;
             filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
         }
-
         .gold-gradient {
             background: linear-gradient(135deg, #d4af37 0%, #f5d076 50%, #d4af37 100%);
             background-size: 200% auto;
             transition: all 0.4s ease;
         }
-
         .wine-glass-effect {
             background: rgba(248, 249, 250, 0.85);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(212, 175, 55, 0.2);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        /* Animación de aparición desde abajo */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        /* Efecto de rebote en las estrellas */
+        @keyframes starBounce {
+            0% { transform: scale(1); }
+            30% { transform: scale(1.3); }
+            50% { transform: scale(0.9); }
+            70% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .star-hover.clicked {
+            animation: starBounce 0.6s;
+        }
+
+        /* Animación para mostrar mensajes de alerta */
+        .alert-animation {
+            animation: fadeInUp 0.9s ease-out forwards;
+        }
+
+        /* Aclarar el color de los comentarios en el código */
+        pre code .hljs-comment,
+        code .hljs-comment {
+            color: #bfbfbf !important;
         }
     </style>
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/resenas.js'])
 </head>
-<body class="flex flex-col min-h-screen" style="background-image: linear-gradient(rgba(90, 15, 29, 0.85), rgba(90, 15, 29, 0.85)), url('{{ asset('img/fondovinos.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
-
+<body class="flex flex-col min-h-screen bg-gradient-to-br from-black via-black to-red-900">
 <!-- Sección de Reseñas Existente -->
 <section class="py-12 backdrop-blur-md">
     <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <h2 class="text-center text-4xl font-bold tracking-tight text-gold-100 sm:text-5xl font-jaro drop-shadow-lg mb-8">
             🍇 Reseñas de Nuestros Connoisseurs 🍷
         </h2>
+        <h3 class="text-center text-2xl text-gold-100 font-bold mb-4">
+            Hay ({{ $resenas->count() }}) reseñas
+        </h3>
+        <h3 class="text-center text-xl text-gold-100 font-bold mb-4">
+            Calificación media: {{ number_format($averageRating, 1) }}
+        </h3>
         
         @if(session('success'))
             <div class="alert alert-success mt-4 p-4 rounded-xl gold-gradient text-[#5a0f1d] font-bold border-2 border-gold-200">
                 {{ session('success') }}
             </div>
         @endif
-
         <div id="resenasContainer" class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach ($resenas as $resena)
             <div class="review-card group">
@@ -155,7 +183,6 @@
                 </div>
                 <input type="hidden" id="stars" name="stars" value="0">
             </div>
-
             <div class="mb-6 relative z-10">
                 <label for="name" class="block text-lg font-semibold text-black mb-3">
                     🏷️ Tu Nombre
@@ -173,7 +200,6 @@
                     class="w-full px-4 py-3 rounded-xl border-2 border-gold-200/30 focus:border-gold-400 focus:ring-2 focus:ring-gold-200/30 bg-white/90 text-wine-800 placeholder-wine-600/50 transition-all input-glow"
                     placeholder="Describe tu experiencia mágica..."></textarea>
             </div>
-
             <div class="mb-8 relative z-10">
                 <label for="image" class="block text-lg font-semibold text-black mb-3">
                     📸 Sube tu Foto (Opcional)
@@ -204,7 +230,7 @@
         </form>
     </div>
 </section>
-
+ 
 <script>
     // Star Rating Animation
     document.querySelectorAll('#starRating .star-hover').forEach(star => {
@@ -215,7 +241,6 @@
                 s.style.transform = index < value ? 'scale(1.2)' : 'scale(1)';
             });
         });
-
         star.addEventListener('click', function() {
             const value = this.getAttribute('data-value');
             document.getElementById('stars').value = value;
@@ -225,7 +250,6 @@
             });
         });
     });
-
     // Image Preview
     document.getElementById('image').addEventListener('change', function(e) {
         const reader = new FileReader();
@@ -236,7 +260,6 @@
         }
         reader.readAsDataURL(e.target.files[0]);
     });
-
     // Form Submission
     document.getElementById('resenaForm').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -250,7 +273,6 @@
             setTimeout(() => this.submit(), 1500);
         }, 2000);
     });
-
     // Arrastrar y soltar archivos
     const dropArea = document.querySelector('.group');
     dropArea.addEventListener('dragover', (e) => {
@@ -276,7 +298,6 @@
         reader.readAsDataURL(file);
     });
 </script>
-
 <style>
     .text-gold-100 { color: #f8f9fa; }
     .text-gold-200 { color: #f5d076; }
@@ -308,7 +329,6 @@
         from { transform: rotate(0deg); }
         to { transform: rotate(360deg); }
     }
-
     .custom-loader {
         width: 20px;
         height: 20px;
@@ -317,13 +337,11 @@
         border-radius: 50%;
         animation: rotation 1s linear infinite;
     }
-
     @keyframes rotation {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
 </style>
-
 </body>
 </html>
 @endsection

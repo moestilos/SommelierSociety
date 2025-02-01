@@ -5,29 +5,29 @@
 @section('content')
 <main style="background-image: url('{{ asset('img/catainfofondo.jpg') }}'); background-size: cover; background-position: center; min-height: 63vh;">
     <div class="container mx-auto py-10">
-        <div class="bg-white shadow-md rounded-lg p-6 max-w-xl mx-auto">
-            <h1 class="text-3xl font-bold mb-6 text-center text-black">Reservar: {{ $curso->nombre }}</h1>
+        <div class="bg-gray-800 bg-opacity-60 p-8 rounded-lg shadow-lg">
+            <h1 class="text-4xl font-bold text-white mb-4 text-center">Reservar: {{ $curso->nombre }}</h1>
             <div>
                 <form id="reservationForm" action="{{ route('reservar.submit', $curso->id) }}" method="POST" onsubmit="return validateForm()">
                     @csrf
                     <div class="mb-4">
-                        <label for="name" class="block text-gray-700">Nombre:</label>
-                        <input type="text" id="name" name="name" class="w-full border border-gray-300 p-2 rounded" required>
+                        <label for="name" class="block text-gray-300">Nombre:</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded bg-gray-700 text-white" required>
                     </div>
                     <div class="mb-4">
-                        <label for="age" class="block text-gray-700">Edad:</label>
-                        <input type="number" id="age" name="age" class="w-full border border-gray-300 p-2 rounded" required>
+                        <label for="age" class="block text-gray-300">Edad:</label>
+                        <input type="number" id="age" name="age" class="w-full px-4 py-2 rounded bg-gray-700 text-white" required>
                     </div>
                     <div class="mb-4">
-                        <label for="email" class="block text-gray-700">Correo:</label>
-                        <input type="email" id="email" name="email" class="w-full border border-gray-300 p-2 rounded" required>
+                        <label for="email" class="block text-gray-300">Correo:</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded bg-gray-700 text-white" required>
                     </div>
                     <div class="mb-4">
-                        <label for="confirm_email" class="block text-gray-700">Confirmar Correo:</label>
-                        <input type="email" id="confirm_email" name="confirm_email" class="w-full border border-gray-300 p-2 rounded" required>
+                        <label for="confirm_email" class="block text-gray-300">Confirmar Correo:</label>
+                        <input type="email" id="confirm_email" name="confirm_email" class="w-full px-4 py-2 rounded bg-gray-700 text-white" required>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Reservar</button>
+                        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">Reservar</button>
                     </div>
                 </form>
             </div>

@@ -53,9 +53,9 @@
           href="{{ url('/tarifas') }}"
           class="block w-full rounded bg-rose-600 px-16 py-4 text-lg font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
         >
-          Tarifas
+          Tarifas 
         </a>
-
+        
         <a
           href="{{ url('/info') }}"
           class="block w-full rounded bg-white px-16 py-4 text-lg font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
@@ -66,7 +66,6 @@
     </div>
   </div>
 </section>
-
 </body>
 </html>
 @endsection
