@@ -51,9 +51,11 @@
 
                 <!-- Curso Card -->
                 <div class="p-4 md:w-1/2 lg:w-1/3">
-                    <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80 rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300">
+                    <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80
+            rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300
+            hover:shadow-2xl hover:scale-105">
                         <div class="relative overflow-hidden rounded-xl mb-6">
-                            <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105" 
+                            <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105 rounded-xl" 
                                 src="{{ asset('img/bodega.jpeg') }}" 
                                 alt="Cursos de Sommelier">
                             <span class="absolute top-4 right-4 price-badge text-white px-3 py-1 rounded-full text-sm font-garamond">
@@ -77,9 +79,11 @@
 
                 <!-- Catas Card -->
                 <div class="p-4 md:w-1/2 lg:w-1/3">
-                    <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80 rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300">
+                    <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80
+            rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300
+            hover:shadow-2xl hover:scale-105">
                         <div class="relative overflow-hidden rounded-xl mb-6">
-                            <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105" 
+                            <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105 rounded-xl" 
                                 src="{{ asset('img/vinocur.jpeg') }}" 
                                 alt="Experiencias de Cata">
                             <span class="absolute top-4 right-4 price-badge text-white px-3 py-1 rounded-full text-sm font-garamond">
@@ -103,9 +107,11 @@
 
                 <!-- Reseñas Card -->
                 <div class="p-4 md:w-1/2 lg:w-1/3">
-                    <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80 rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300">
+                    <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80
+            rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300
+            hover:shadow-2xl hover:scale-105">
                         <div class="relative overflow-hidden rounded-xl mb-6">
-                            <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105" 
+                            <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105 rounded-xl" 
                                  src="{{ asset('img/resenas.jpeg') }}" 
                                  alt="Reseñas Expertas">
                             <span class="absolute top-4 right-4 price-badge text-white px-3 py-1 rounded-full text-sm font-garamond">
