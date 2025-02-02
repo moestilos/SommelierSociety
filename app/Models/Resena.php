@@ -9,5 +9,5 @@ class Resena extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'review', 'stars', 'image'];
+    protected $fillable = ['name', 'review', 'stars', 'image', 'likes'];
 }

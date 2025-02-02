@@ -79,4 +79,14 @@ class ResenaController extends Controller
 
         return redirect()->route('resenas.index')->with('success', 'Reseña eliminada correctamente.');
     }
+
+    public function like($id)
+    {
+        $resena = Resena::findOrFail($id);
+        $resena->increment('likes');
+        return response()->json([
+            'success' => true,
+            'likes' => $resena->likes
+        ]);
+    }
 }

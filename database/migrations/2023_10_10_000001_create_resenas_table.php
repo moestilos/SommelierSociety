@@ -14,6 +14,7 @@ class CreateResenasTable extends Migration
             $table->text('review');
             $table->integer('stars')->default(1);
             $table->string('image')->nullable(); // Agregar columna para la imagen
+            $table->integer('likes')->default(0);
             $table->timestamps();
         });
     }

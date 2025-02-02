@@ -138,6 +138,9 @@
         <h2 class="text-center text-4xl font-bold tracking-tight text-gold-100 sm:text-5xl font-jaro drop-shadow-lg mb-8">
             🍇 Reseñas de Nuestros Connoisseurs 🍷
         </h2>
+        <h2 class="text-center text-4xl font-bold">
+            Hay {{ $resenas->count() }} reseñas
+        </h2>
        
         @if(session('success'))
             <div class="alert alert-success mt-4 p-4 rounded-xl gold-gradient text-[#5a0f1d] font-bold border-2 border-gold-200">
@@ -176,7 +179,9 @@
                     <p class="mt-4 text-wine-700/90 italic font-dancing-script text-lg leading-relaxed px-4">
                         "{{ $resena->review }}"
                     </p>
-                
+                    <button class="like-btn text-sm font-bold text-wine-900 mt-2" data-id="{{ $resena->id }}">
+                        Me Gusta (<span class="like-count">{{ $resena->likes }}</span>)
+                    </button>
                 </blockquote>
             </div>
             @endforeach

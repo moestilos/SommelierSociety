@@ -112,4 +112,25 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
+    // Like button
+    document.querySelectorAll('.like-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const id = btn.dataset.id;
+            fetch('/resenas/like/' + id, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    btn.querySelector('.like-count').textContent = data.likes;
+                }
+            })
+            .catch(err => console.error(err));
+        });
+    });
 });

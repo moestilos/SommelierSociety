@@ -90,4 +90,7 @@ Route::delete('/reservas/{reserva}', [CursoController::class, 'destroyReservatio
 Route::resource('resenas', ResenaController::class);
 Route::resource('cursos', CursoController::class);
 
+Route::post('/resenas/like/{id}', [App\Http\Controllers\ResenaController::class, 'like'])
+    ->name('resenas.like');
+
 require __DIR__.'/auth.php';
