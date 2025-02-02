@@ -18,7 +18,7 @@
         </div>
         @endif
 
-        <form method="POST" action="{{ route('contact.store') }}" class="space-y-6">
+        <form id="contactForm" method="POST" action="{{ route('contact.store') }}" class="space-y-6">
             @csrf
 
             <!-- Campo Nombre -->
@@ -70,25 +70,6 @@
                 <i class="fas fa-paper-plane mr-2"></i>Enviar Mensaje
             </button>
         </form>
-        <!-- Actualización del script inline para mostrar el banner en el campo teléfono -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function(){
-                const phoneInput = document.querySelector('input[name="phone"]');
-                const phoneBanner = document.getElementById('phoneBanner');
-                if(phoneInput){
-                    phoneInput.addEventListener('focus', function(){
-                        phoneBanner.classList.remove('hidden');
-                    });
-                    phoneInput.addEventListener('blur', function(){
-                        const val = phoneInput.value.trim();
-                        if(val && !val.startsWith('+34')){
-                            phoneInput.value = '+34 ' + val;
-                        }
-                        phoneBanner.classList.add('hidden');
-                    });
-                }
-            });
-        </script>
     </div>
 </div>
 

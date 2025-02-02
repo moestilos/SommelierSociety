@@ -44,6 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 showAlert('Completa los campos', 'error');
                 return;
             }
+            
+            // Feedback visual en el botón de envío
+            const submitButton = form.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            const originalHTML = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
+            
             try {
                 const response = await fetch(form.action, {
                     method: 'POST',
@@ -62,6 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch(error) {
                 showAlert('Error de red', 'error');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalHTML;
             }
         });
     }
