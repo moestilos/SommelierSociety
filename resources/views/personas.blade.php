@@ -22,6 +22,12 @@
         .input-glow:focus {
             box-shadow: 0 0 15px rgba(149, 40, 40, 0.3);
         }
+
+        /* Add this style for select dropdowns */
+        select option {
+            color: black;
+            background-color: white;
+        }
     </style>
 </head>
 
