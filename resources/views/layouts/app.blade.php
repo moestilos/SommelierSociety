@@ -31,45 +31,26 @@
     <main>
         @yield('content')
 
-        <!-- Sección Contacto - Animación desde la derecha -->
-        <div class="container px-5 py-12 mx-auto"
-             data-aos="fade-right"
-             data-aos-offset="200"
-             data-aos-delay="150"
-             data-aos-duration="800">
-            <div class="text-right">
-                <img src="{{ asset('/img/vino2.jpeg') }}" 
-                     data-aos="zoom-in-left"
-                     data-aos-delay="300"
-                     class="mx-auto mb-4 rounded-xl shadow-lg w-1/2">
-                <p class="text-white font-garamond mb-4"
-                   data-aos="fade-left"
-                   data-aos-delay="450">¿Deseas contactarnos? Haz clic a continuación.</p>
-                <a href="{{ url('/contacto') }}" 
-                   data-aos="fade-up"
-                   data-aos-delay="600"
-                   class="text-yellow-400 hover:text-yellow-500 font-medium">Ir a Contacto</a>
-            </div>
-        </div>
-
         <!-- Sección Reseñas - Animación desde la izquierda -->
         <div class="container px-5 py-12 mx-auto"
              data-aos="fade-left"
              data-aos-offset="200"
              data-aos-delay="150"
-             data-aos-duration="800">
+             data-aos-duration="1000">
             <div class="text-left">
                 <img src="{{ asset('/img/vino1.jpg') }}" 
-                     data-aos="zoom-in-right"
-                     data-aos-delay="300"
+                     data-aos="zoom-in-center"
+                     data-aos-delay="500"
                      class="mx-auto mb-4 rounded-xl shadow-lg w-1/2">
-                <p class="text-white font-garamond mb-4"
-                   data-aos="fade-right"
-                   data-aos-delay="450">Lee opiniones y reseñas interesantes.</p>
-                <a href="{{ url('/resenas') }}" 
-                   data-aos="fade-up"
-                   data-aos-delay="600"
-                   class="text-yellow-400 hover:text-yellow-500 font-medium">Ir a Reseñas</a>
+                <p class="text-dark font-garamond mb-4"
+                   data-aos="fade-center"
+                   data-aos-delay="550">"El vino es más que una bebida; es historia, tradición y pasión embotellada. Cada sorbo nos transporta a tierras bañadas por el sol, donde las vides crecen con paciencia y esmero, esperando el momento perfecto para compartir su esencia con el mundo.
+
+                   En [Nombre de tu web], creemos que cada botella guarda una historia, y nos sentimos honrados de haber compartido contigo este viaje por los aromas, sabores y matices que hacen del vino una experiencia única. Esperamos que cada copa que degustes sea un brindis por la vida, por los encuentros inolvidables y por los momentos que quedan grabados en el corazón.
+                   
+                   Sigue explorando, descubriendo y disfrutando de la magia del vino. Te esperamos en tu próxima visita, siempre con una copa lista para celebrar juntos.
+                   
+                   ¡Salud y hasta pronto!"</p>
             </div>
         </div>
     </main>
