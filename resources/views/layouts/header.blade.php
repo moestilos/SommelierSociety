@@ -59,6 +59,12 @@ background: linear-gradient(to bottom, black, #510303, black);
             <a href="{{ url('/contacto') }}" class="hover:text-yellow-400">About Us</a>
             <a href="{{ url('/contact') }}" class="hover:text-yellow-400">Contact Us</a>
             <a href="" class="hover:text-yellow-400">Store</a>
+            @if(auth()->user() && auth()->user()->is_admin)
+                <a href="{{ route('admin.panel') }}" class="flex items-center hover:text-yellow-400">
+                    <span>Panel Control</span>
+                    
+                </a>
+            @endif
             
             <!-- Dropdown Container -->
             <div class="relative">
