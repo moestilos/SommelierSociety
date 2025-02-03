@@ -164,6 +164,25 @@
         <div class="container">
             <h1 class="section-title">🍷 Comparte Tu Experiencia Vinícola 🍇</h1>
             <div class="form-container">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @if(session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form id="resenaForm" action="{{ route('resenas.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-6">

@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Resena extends Model
 {
+    use HasFactory;
+
     protected $table = 'resenas';
     
     protected $fillable = [
@@ -13,7 +16,7 @@ class Resena extends Model
         'review',
         'stars',
         'image',
-        'likes'
+        'likes',
     ];
 
     protected $casts = [
