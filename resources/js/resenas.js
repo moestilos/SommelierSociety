@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     s.style.color = '#FFFFFF';
                     s.style.opacity = i < value ? '1' : '0.5'; // opacidad completa
                     s.style.textShadow = i < value ? '0 0 4px #FFFFFF' : 'none'; // brillo reducido
-                    s.classList.toggle('animate-pulse', i < value);
+                    // Se eliminó 'animate-pulse' para que no parpadeen
                 });
             });
         });
