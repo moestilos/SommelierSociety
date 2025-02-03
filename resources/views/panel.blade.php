@@ -1,33 +1,33 @@
 @extends('layouts.app')
-
+ 
 @section('title', 'Panel de Control')
-
+ 
 @section('content')
-
+ 
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-
+ 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:wght@400;500;600&display=swap');
-        
+       
         .font-cinzel {
             font-family: 'Cinzel Decorative', cursive;
         }
-        
+       
         .font-garamond {
             font-family: 'EB Garamond', serif;
         }
-
+ 
         .wine-gradient {
             background: linear-gradient(135deg, rgba(88, 28, 28, 0.95) 0%, rgba(44, 19, 19, 0.95) 100%);
         }
-
+ 
         .input-glow:focus {
             box-shadow: 0 0 15px rgba(149, 40, 40, 0.3);
         }
@@ -35,7 +35,7 @@
     <title>Panel de Control</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-
+ 
 <body class="bg-gradient-to-br from-black via-red-900 to-black dark:bg-gray-900">
     <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 backdrop-blur-sm">
         <div class="max-w-4xl w-full space-y-8 wine-gradient rounded-xl p-10 shadow-2xl border border-amber-900/30 transition-all duration-300">
@@ -51,7 +51,7 @@
                     "Where passion meets the vine"
                 </p>
             </div>
-
+ 
             <h1 class="text-1xl font-extrabold text-white sm:text-2xl text-center font-cinzel">Panel de Control</h1>
             <div class="mt-8 text-gray-300 text-left space-y-4">
                 <p>Bienvenido al panel de control del administrador. Aquí puedes gestionar cursos, catas y más.</p>
@@ -80,5 +80,5 @@
     </div>
 </body>
 </html>
-
+ 
 @endsection

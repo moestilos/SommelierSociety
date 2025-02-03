@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
- 
-    // Image preview
+
+    // Image preview y click en imagen para subir archivo
     const imageInput = document.getElementById('image');
     const imagePreview = document.getElementById('imagePreview');
     if (imageInput && imagePreview) {
@@ -37,6 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 imagePreview.classList.remove('hidden');
             };
             reader.readAsDataURL(file);
+        });
+        // Al hacer click en la vista previa o en su contenedor, activar el input file
+        imagePreview.addEventListener('click', () => {
+            imageInput.click();
         });
     }
  
