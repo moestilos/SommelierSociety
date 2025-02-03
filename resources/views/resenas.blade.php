@@ -4,7 +4,7 @@
     <style>
         /* Estilos profesionales */
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap');
-
+ 
         :root {
             --gold: #FFD700;
             --dark: #1a1a1a;
@@ -13,7 +13,7 @@
             --gray-light: #999999;
             --shadow: rgba(0, 0, 0, 0.3);
         }
-
+ 
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(26, 26, 26, 0.95)), url('{{ asset('img/fondovinos.jpg') }}');
@@ -24,25 +24,25 @@
             margin: 0;
             padding: 0;
         }
-
+ 
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             text-align: center;
         }
-
+ 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
+ 
         .section-title {
             font-size: 2.5rem;
             margin-bottom: 40px;
             position: relative;
         }
-
+ 
         .section-title::after {
             content: '';
             display: block;
@@ -51,7 +51,7 @@
             background: var(--gold);
             margin: 10px auto;
         }
-
+ 
         .form-container {
             background: rgba(26, 26, 26, 0.8);
             border: 1px solid rgba(102, 102, 102, 0.2);
@@ -62,7 +62,7 @@
             max-width: 600px;
             text-align: center;
         }
-
+ 
         .form-container input,
         .form-container textarea {
             background: rgba(255, 255, 255, 0.1);
@@ -74,14 +74,14 @@
             width: 100%;
             margin: 10px 0;
         }
-
+ 
         .form-container input:focus,
         .form-container textarea:focus {
             background: rgba(255, 255, 255, 0.2);
             border-color: var(--gold);
             outline: none;
         }
-
+ 
         .submit-btn {
             background: var(--gray-dark);
             color: #fff;
@@ -94,12 +94,13 @@
             margin-top: 20px;
             border: 1px solid var(--gray-medium);
         }
-
+ 
         .submit-btn:hover {
             background: var(--gray-medium);
             border-color: var(--gray-light);
             color: #fff;
         }
+ 
 
         .review-card {
             background: rgba(26, 26, 26, 0.8);
@@ -111,12 +112,13 @@
             box-shadow: 0 4px 15px var(--shadow);
             text-align: center;
         }
+ 
 
         .review-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px var(--shadow);
         }
-
+ 
         .review-image {
             width: 100px;
             height: 100px;
@@ -126,12 +128,12 @@
             margin: 0 auto 15px;
             transition: all 0.3s ease;
         }
-
+ 
         .review-image:hover {
             transform: scale(1.1);
             border-color: var(--light-wine);
         }
-
+ 
         .like-btn {
             background: var(--gold);
             color: var(--dark-wine);
@@ -145,12 +147,12 @@
             gap: 8px;
             margin-top: 15px;
         }
-
+ 
         .like-btn:hover {
             background: var(--light-wine);
             color: #fff;
         }
-
+ 
         .like-btn svg {
             width: 16px;
             height: 16px;
@@ -158,7 +160,7 @@
         }
     </style>
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/resenas.js'])
-
+ 
     <!-- Sección del Formulario -->
     <section class="py-12">
         <div class="container">
@@ -221,7 +223,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- Sección de Reseñas -->
     <section class="py-12">
         <div class="container">
