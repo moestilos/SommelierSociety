@@ -89,5 +89,29 @@ Route::delete('/reservas/{reserva}', [CursoController::class, 'destroyReservatio
  
 Route::resource('resenas', ResenaController::class);
 Route::resource('cursos', CursoController::class);
+
+// Agregar endpoint AJAX para respuestas del ChatBot
+Route::post('/chat-response', function(\Illuminate\Http\Request $request) {
+    $message = strtolower($request->input('message', ''));
+    $wineResponses = [
+        "curso"  => "Nuestro programa profesional incluye:<br>• Certificación internacional<br>• 120 horas lectivas<br>• Acceso a bodegas asociadas<br>• Bolsa de trabajo<br><a href='/cursos' class='text-amber-700 font-medium mt-2 inline-block'>Ver detalles</a>",
+        "cata"   => "Próximos eventos:<br>• Cata de vinos blancos<br>• Maridaje con quesos<br>• Vinos orgánicos<br><a href='/catas' class='text-amber-700 font-medium mt-2 inline-block'>Reservar plaza</a>",
+        "reseña" => "Últimas publicaciones:<br>• Rioja Gran Reserva 2015<br>• Albariño Rías Baixas<br>• Priorat Blend<br><a href='/resenas' class='text-amber-700 font-medium mt-2 inline-block'>Ver análisis completo</a>",
+        "precio" => "Nuestros planes:<br>• Curso completo: €599<br>• Bono 3 catas: €199<br>• Membresía anual: €299<br><a href='/tarifas' class='text-amber-700 font-medium mt-2 inline-block'>Ver todas las opciones</a>"
+    ];
+    $default = "Para más información sobre \"{$message}\", visita <a href='/contacto' class='text-amber-700'>nuestra página de contacto</a> o explora <a href='/faq' class='text-amber-700'>nuestro centro de ayuda</a>.";
+    if (strpos($message, 'curso') !== false) {
+        $response = $wineResponses["curso"];
+    } elseif (strpos($message, 'cata') !== false) {
+        $response = $wineResponses["cata"];
+    } elseif (strpos($message, 'reseña') !== false) {
+        $response = $wineResponses["reseña"];
+    } elseif (strpos($message, 'precio') !== false) {
+        $response = $wineResponses["precio"];
+    } else {
+        $response = $default;
+    }
+    return response()->json(['message' => $response]);
+});
  
 require __DIR__.'/auth.php';
