@@ -107,3 +107,7 @@ body.light-mode header .title-font, body.light-mode footer .title-font {
     align-items: center;
     justify-content: center;
 }
+
+.review-card svg {
+    fill: #FFFFFF !important;
+}

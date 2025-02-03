@@ -7,19 +7,29 @@ document.addEventListener('DOMContentLoaded', function () {
             star.addEventListener('mouseover', () => {
                 const value = +star.dataset.value;
                 starContainer.querySelectorAll('.star-hover').forEach((s, i) => {
-                    s.style.color = i < value ? '#FFFFFF' : '#FFFFFF40';
+                    s.style.color = '#FFFFFF';
+                    s.style.opacity = i < value ? '1' : '0.5'; // seleccionadas opacas; no seleccionadas, menos opacas
                     s.style.transform = i < value ? 'scale(1.2)' : 'scale(1)';
-                    s.style.textShadow = i < value ? '0 0 5px #FFFFFF' : 'none';
+                    s.style.textShadow = i < value ? '0 0 4px #FFFFFF' : 'none'; // brillo reducido
                 });
             });
             star.addEventListener('click', () => {
                 const value = +star.dataset.value;
                 starsInput.value = value;
                 starContainer.querySelectorAll('.star-hover').forEach((s, i) => {
-                    s.style.color = i < value ? '#FFFFFF' : '#FFFFFF40';
-                    s.style.textShadow = i < value ? '0 0 5px #FFFFFF' : 'none';
+                    s.style.color = '#FFFFFF';
+                    s.style.opacity = i < value ? '1' : '0.5'; // opacidad completa
+                    s.style.textShadow = i < value ? '0 0 4px #FFFFFF' : 'none'; // brillo reducido
                     s.classList.toggle('animate-pulse', i < value);
                 });
+            });
+        });
+        // Al salir del contenedor se actualiza la opacidad según la selección actual
+        starContainer.addEventListener('mouseleave', () => {
+            const selected = +starsInput.value || 0;
+            starContainer.querySelectorAll('.star-hover').forEach((s, i) => {
+                s.style.opacity = i < selected ? '1' : '0.5';
+                s.style.textShadow = i < selected ? '0 0 4px #FFFFFF' : 'none';
             });
         });
     }
@@ -38,37 +48,14 @@ document.addEventListener('DOMContentLoaded', function () {
             };
             reader.readAsDataURL(file);
         });
-        // Al hacer click en la vista previa o en su contenedor, activar el input file
+        // Al hacer click en la vista previa, activar el input file
         imagePreview.addEventListener('click', () => {
             imageInput.click();
         });
     }
  
-    // Drag & drop en imagen
-    const dropArea = document.querySelector('.group');
-    if (dropArea) {
-        dropArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            dropArea.classList.add('bg-gold-100/20');
-        });
-        dropArea.addEventListener('dragleave', () => {
-            dropArea.classList.remove('bg-gold-100/20');
-        });
-        dropArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            dropArea.classList.remove('bg-gold-100/20');
-            const file = e.dataTransfer.files[0];
-            if (!file) return;
-            imageInput.files = e.dataTransfer.files;
-            const reader = new FileReader();
-            reader.onload = (e2) => {
-                imagePreview.querySelector('img').src = e2.target.result;
-                imagePreview.classList.remove('hidden');
-            };
-            reader.readAsDataURL(file);
-        });
-    }
- 
+    // Se eliminó la funcionalidad de Drag & drop
+
     // Form submission con fetch
     const form = document.getElementById('resenaForm');
     if (form) {
