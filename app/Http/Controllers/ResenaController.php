@@ -2,91 +2,51 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Resena;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
 
 class ResenaController extends Controller
 {
+    // Mostrar todas las reseñas
     public function index()
     {
-        $resenas = Resena::all();
+        $resenas = Resena::orderBy('created_at', 'desc')->get();
         return view('resenas', compact('resenas'));
     }
 
+    // Guardar una nueva reseña
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'review' => 'required|string',
-            'stars' => 'required|integer|min:1|max:5',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
+        try {
+            $validated = $request->validate([
+                'name' => 'required|string|max:255',
+                'review' => 'required|string',
+                'stars' => 'required|integer|min:1|max:5',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
 
-        $imagePath = null;
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('resenas', 'public');
-        }
-
-        $resena = Resena::create([
-            'name' => $request->name,
-            'review' => $request->review,
-            'stars' => $request->stars,
-            'image' => $imagePath,
-        ]);
-
-        return response()->json(['success' => true, 'resena' => $resena]);
-    }
-
-    public function edit($id)
-    {
-        $resena = Resena::findOrFail($id);
-        return view('resenas_edit', compact('resena'));
-    }
-
-    public function update(Request $request, $id)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'review' => 'required|string',
-            'stars' => 'required|integer|min:1|max:5',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
-
-        $resena = Resena::findOrFail($id);
-
-        if ($request->hasFile('image')) {
-            if ($resena->image) {
-                Storage::disk('public')->delete($resena->image);
+            $imagePath = null;
+            if ($request->hasFile('image')) {
+                $imagePath = $request->file('image')->store('resenas', 'public');
             }
-            $imagePath = $request->file('image')->store('resenas', 'public');
-            $resena->image = $imagePath;
+
+            $resena = Resena::create([
+                'name' => $validated['name'],
+                'review' => $validated['review'],
+                'stars' => $validated['stars'],
+                'image' => $imagePath,
+                'likes' => 0,
+            ]);
+            
+            // Renderizamos el partial y lo enviamos en la respuesta
+            $html = view('partials.resena', compact('resena'))->render();
+
+            return response()->json(['success' => true, 'html' => $html]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'error' => $e->getMessage()
+            ], 500);
         }
-
-        $resena->update([
-            'name' => $request->name,
-            'review' => $request->review,
-            'stars' => $request->stars,
-        ]);
-
-        return redirect()->route('resenas.index')->with('success', 'Reseña actualizada con éxito.');
-    }
-
-    public function destroy($id)
-    {
-        $resena = Resena::findOrFail($id);
-        $resena->delete();
-
-        return redirect()->route('resenas.index')->with('success', 'Reseña eliminada correctamente.');
-    }
-
-    public function like($id)
-    {
-        $resena = Resena::findOrFail($id);
-        $resena->increment('likes');
-        return response()->json([
-            'success' => true,
-            'likes' => $resena->likes
-        ]);
     }
 }

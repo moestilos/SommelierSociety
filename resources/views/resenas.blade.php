@@ -101,6 +101,7 @@
             color: #fff;
         }
  
+
         .review-card {
             background: rgba(26, 26, 26, 0.8);
             border: 1px solid rgba(102, 102, 102, 0.2);
@@ -112,6 +113,7 @@
             text-align: center;
         }
  
+
         .review-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px var(--shadow);
