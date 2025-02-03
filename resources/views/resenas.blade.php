@@ -162,7 +162,7 @@
     <!-- Sección del Formulario -->
     <section class="py-12">
         <div class="container">
-            <h1 class="section-title">🍷 Comparte Tu Experiencia Vinícola 🍇</h1>
+            <h1 class="section-title">🍷 Comparte Tu Experiencia Vinícol 🍇</h1>
             <div class="form-container">
                 <form id="resenaForm" action="{{ route('resenas.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
