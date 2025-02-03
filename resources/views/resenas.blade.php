@@ -209,7 +209,7 @@
                         <div class="relative group mx-auto" style="max-width: 200px;">
                             <input type="file" id="image" name="image" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept="image/*">
                             <div class="px-4 py-6 bg-gold/10 border-2 border-dashed border-gold/40 rounded-xl group-hover:bg-gold/20 transition-all duration-300 relative">
-                                <p class="text-center text-gold/80 font-medium relative z-10"><span class="text-gold">⬆️</span> Imagen</p>
+                                <p class="text-center text-gold/80 font-medium relative z-10"><span class="text-gold">⬆️</span> Tu imagen se vera aquí</p>
                                 <div id="imagePreview" class="mt-4 hidden relative z-10">
                                     <img src="" alt="Vista previa" class="max-h-32 mx-auto rounded-lg shadow-md border-2 border-gold/30">
                                 </div>
