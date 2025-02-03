@@ -1,44 +1,41 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Star rating
+document.addEventListener('DOMContentLoaded', () => {
+    /* Star rating optimizado */
     const starContainer = document.getElementById('starRating');
     if (starContainer) {
         const starsInput = document.getElementById('stars');
-        starContainer.querySelectorAll('.star-hover').forEach(star => {
+        const starElements = starContainer.querySelectorAll('.star-hover');
+        
+        const updateStars = (limit) => {
+            starElements.forEach((s, i) => {
+                s.style.color = '#FFFFFF';
+                s.style.opacity = i < limit ? '1' : '0.5';
+                s.style.textShadow = i < limit ? '0 0 4px #FFFFFF' : 'none';
+                s.style.transform = i < limit ? 'scale(1.2)' : 'scale(1)';
+            });
+        };
+
+        starElements.forEach(star => {
             star.addEventListener('mouseover', () => {
                 const value = +star.dataset.value;
-                starContainer.querySelectorAll('.star-hover').forEach((s, i) => {
-                    s.style.color = '#FFFFFF';
-                    s.style.opacity = i < value ? '1' : '0.5'; // seleccionadas opacas; no seleccionadas, menos opacas
-                    s.style.transform = i < value ? 'scale(1.2)' : 'scale(1)';
-                    s.style.textShadow = i < value ? '0 0 4px #FFFFFF' : 'none'; // brillo reducido
-                });
+                updateStars(value);
             });
             star.addEventListener('click', () => {
                 const value = +star.dataset.value;
                 starsInput.value = value;
-                starContainer.querySelectorAll('.star-hover').forEach((s, i) => {
-                    s.style.color = '#FFFFFF';
-                    s.style.opacity = i < value ? '1' : '0.5'; // opacidad completa
-                    s.style.textShadow = i < value ? '0 0 4px #FFFFFF' : 'none'; // brillo reducido
-                    // Se eliminó 'animate-pulse' para que no parpadeen
-                });
+                updateStars(value);
             });
         });
-        // Al salir del contenedor se actualiza la opacidad según la selección actual
         starContainer.addEventListener('mouseleave', () => {
             const selected = +starsInput.value || 0;
-            starContainer.querySelectorAll('.star-hover').forEach((s, i) => {
-                s.style.opacity = i < selected ? '1' : '0.5';
-                s.style.textShadow = i < selected ? '0 0 4px #FFFFFF' : 'none';
-            });
+            updateStars(selected);
         });
     }
 
-    // Image preview y click en imagen para subir archivo
+    /* Image preview optimizado */
     const imageInput = document.getElementById('image');
     const imagePreview = document.getElementById('imagePreview');
     if (imageInput && imagePreview) {
-        imageInput.addEventListener('change', (e) => {
+        imageInput.addEventListener('change', e => {
             const file = e.target.files[0];
             if (!file) return;
             const reader = new FileReader();
@@ -48,18 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
             };
             reader.readAsDataURL(file);
         });
-        // Al hacer click en la vista previa, activar el input file
-        imagePreview.addEventListener('click', () => {
-            imageInput.click();
-        });
+        imagePreview.addEventListener('click', () => imageInput.click());
     }
- 
-    // Se eliminó la funcionalidad de Drag & drop
 
-    // Form submission con fetch
+    /* Form submission optimizado con async/await y verificación de respuesta */
     const form = document.getElementById('resenaForm');
     if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             if (!document.getElementById('name').value.trim() ||
                 !document.getElementById('review').value.trim() ||
@@ -70,21 +62,24 @@ document.addEventListener('DOMContentLoaded', function () {
             const button = form.querySelector('button[type="submit"]');
             button.innerHTML = '<div class="custom-loader"></div> Enviando...';
             button.disabled = true;
- 
-            const formData = new FormData(form);
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'Accept': 'application/json'
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Accept': 'application/json'
+                    }
+                });
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Error en el servidor: ${errorText}`);
                 }
-            })
-            .then(response => response.json())
-            .then(data => {
+                const data = await response.json();
                 if (data.success) {
-                    // Agregamos la nueva reseña al principio del contenedor
                     const reviewsContainer = document.getElementById('reviewsContainer');
                     const newReview = document.createElement('div');
                     newReview.innerHTML = data.html;
@@ -93,17 +88,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     button.classList.add('bg-green-500');
                     form.reset();
                 } else {
-                    alert('Error al enviar la reseña');
+                    alert('Error al enviar la reseña: ' + (data.message || 'Respuesta inesperada.'));
                 }
-                button.disabled = false;
-                button.innerHTML = 'Publicar Reseña';
-            })
-            .catch(error => {
+            } catch (error) {
                 console.error('Error:', error);
-                alert('Error al enviar la reseña');
+                alert('Error al enviar la reseña: ' + error.message);
+            } finally {
                 button.disabled = false;
                 button.innerHTML = 'Publicar Reseña';
-            });
+            }
         });
     }
 });

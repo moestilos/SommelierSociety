@@ -19,32 +19,25 @@ class ResenaController extends Controller
     // Guardar una nueva reseña
     public function store(Request $request)
     {
-        try {
-            $validated = $request->validate([
-                'name' => 'required|string|max:255',
-                'review' => 'required|string',
-                'stars' => 'required|integer|min:1|max:5',
-                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            ]);
+        // Validar datos
+        $data = $request->validate([
+            'name'   => 'required|string|max:255',
+            'review' => 'required|string',
+            'stars'  => 'required|integer|min:1|max:5',
+            'image'  => 'nullable|image'
+        ]);
 
-            $imagePath = null;
-            if ($request->hasFile('image')) {
-                $imagePath = $request->file('image')->store('resenas', 'public');
-            }
+        // Guardar la reseña y la imagen, si corresponde
+        $resena = Resena::create($data);
 
-            Resena::create([
-                'name' => $validated['name'],
-                'review' => $validated['review'],
-                'stars' => $validated['stars'],
-                'image' => $imagePath,
-                'likes' => 0,
-            ]);
+        // Renderizar la vista parcial en una cadena
+        $html = view('partials.resena', compact('resena'))->render();
 
-            return redirect()->route('resenas.index')->with('success', 'Reseña enviada correctamente.');
-        } catch (\Exception $e) {
-            Log::error('Error al enviar la reseña: ' . $e->getMessage());
-            return redirect()->route('resenas.index')->with('error', 'Error al enviar la reseña: ' . $e->getMessage());
-        }
+        // Retornar respuesta JSON
+        return response()->json([
+            'success' => true,
+            'html' => $html
+        ]);
     }
 
     // Mostrar el formulario de edición de una reseña
