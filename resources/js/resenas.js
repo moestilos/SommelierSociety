@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             imageInput.click();
         });
     }
-
+ 
     // Drag & drop en imagen
     const dropArea = document.querySelector('.group');
     if (dropArea) {
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
             reader.readAsDataURL(file);
         });
     }
-
+ 
     // Form submission con fetch
     const form = document.getElementById('resenaForm');
     if (form) {
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const button = form.querySelector('button[type="submit"]');
             button.innerHTML = '<div class="custom-loader"></div> Enviando...';
             button.disabled = true;
-
+ 
             const formData = new FormData(form);
             fetch(form.action, {
                 method: 'POST',
