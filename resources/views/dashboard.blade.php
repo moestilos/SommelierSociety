@@ -17,7 +17,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600&display=swap');
         body {
             /* Fondo básico en tonos grises */
-            background: linear-gradient(to bottom, #ffffff, #dddddd, #bbbbbb);
+            background: #F7E8D6;
         }
         .font-amatic {
             font-family: 'Amatic SC', cursive;
@@ -123,7 +123,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="flex flex-col min-h-screen bg-gradient-to-br from-black via-red-800 to-black">
+<body class="flex flex-col min-h-screen bg-[#F7E8D6]">
 
     <!-- Main Content Section -->
     <section class="text-gray-700 body-font flex-grow pt-16">
@@ -214,8 +214,9 @@
                 <div class="p-2 w-full">
                     <div data-aos="fade-up" data-aos-duration="1000" class="h-full max-w-md card-uniform bg-gray-100 border border-gray-300 rounded-2xl px-4 pt-8 pb-12 shadow hover:shadow-lg transition-transform duration-300 hover:scale-105">
                         <h1 class="title-font sm:text-xl text-lg font-medium text-dark mb-3">Panel de Control</h1>
+                        <!-- Se agrega marco negro y sombreado a la imagen -->
                         <img src="{{ asset('/img/cala.jpg') }}" alt="Panel de Control"
-                            class="w-full h-40 object-cover mb-4 rounded">
+                            class="w-full h-40 object-cover mb-4 rounded border-2 border-black shadow-lg">
                         <p class="leading-relaxed mb-3 text-white mb-1">Accede al panel de control para gestionar cursos, catas y más.</p>
                         <a href="{{ route('admin.panel') }}" class="text-yellow-400 inline-flex items-center">
                             Learn More
@@ -328,48 +329,6 @@
             if (e.key === 'Enter') chatSend.click();
         });
 
-        // Efecto de puntos de vino con menos frecuencia
-        function createWineBubble() {
-            const bubble = document.createElement('div');
-            bubble.className = 'wine-bubble';
-            
-            // Tamaño aleatorio entre 3 y 12px
-            const size = 3 + Math.random() * 9;
-            bubble.style.width = `${size}px`;
-            bubble.style.height = `${size}px`;
-            
-            // Posición aleatoria
-            const startX = Math.random() * window.innerWidth;
-            const startY = Math.random() * (window.innerHeight - 100);
-            bubble.style.left = `${startX}px`;
-            bubble.style.top = `${startY}px`;
-            
-            document.body.appendChild(bubble);
-
-            // Aparecer gradualmente
-            setTimeout(() => {
-                bubble.style.opacity = '0.8';
-            }, 100);
-
-            // Desaparecer y eliminar
-            const duration = 5000 + Math.random() * 4000;
-            setTimeout(() => {
-                bubble.style.opacity = '0';
-                setTimeout(() => {
-                    bubble.remove();
-                }, 1500);
-            }, duration);
-        }
-
-        // Crear puntos con menos frecuencia
-        setInterval(createWineBubble, 1000); // Aumentado a 1 segundo
-
-        // Crear menos puntos iniciales
-        for(let i = 0; i < 12; i++) { // Reducido a 12 puntos
-            setTimeout(createWineBubble, Math.random() * 2000);
-        }
-
-        // Código eliminado: se usa dashboard.js para la animación de imágenes al hacer scroll.
     </script>
 
 </body>

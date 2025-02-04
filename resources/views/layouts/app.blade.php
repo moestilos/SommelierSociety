@@ -15,9 +15,17 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            background-color: #F7E8D6; /* Fondo crema */
         }
         main {
             flex: 1;
+        }
+        header {
+            background-color: #2B1B0D; /* Banner marrón */
+        }
+        footer {
+            background-color: #2B1B0D; /* Opcional: usar marrón en el footer */
+            color: #F7E8D6;
         }
     </style>
     <title>@yield('title', 'South Wine Academy')</title>
@@ -31,26 +39,34 @@
     <main>
         @yield('content')
 
+
+
         <!-- Sección Reseñas - Animación desde la izquierda -->
         <div class="container px-5 py-12 mx-auto"
              data-aos="fade-left"
              data-aos-offset="200"
              data-aos-delay="150"
-             data-aos-duration="1000">
+             data-aos-duration="800">
             <div class="text-left">
                 <img src="{{ asset('/img/vino1.jpg') }}" 
-                     data-aos="zoom-in-center"
-                     data-aos-delay="500"
+                     data-aos="zoom-in-right"
+                     data-aos-delay="300"
                      class="mx-auto mb-4 rounded-xl shadow-lg w-1/2">
                 <p class="text-dark font-garamond mb-4"
-                   data-aos="fade-center"
-                   data-aos-delay="550">"El vino es más que una bebida; es historia, tradición y pasión embotellada. Cada sorbo nos transporta a tierras bañadas por el sol, donde las vides crecen con paciencia y esmero, esperando el momento perfecto para compartir su esencia con el mundo.
+                   data-aos="fade-right"
+                   data-aos-delay="450">"El vino de Jerez es más que una bebida: es el alma de una tierra bañada por el sol y acariciada por la brisa del Atlántico. Cada copa cuenta una historia de tradición, paciencia y maestría, donde el tiempo y la crianza dan forma a sabores únicos que solo esta tierra puede ofrecer.
 
-                   En [Nombre de tu web], creemos que cada botella guarda una historia, y nos sentimos honrados de haber compartido contigo este viaje por los aromas, sabores y matices que hacen del vino una experiencia única. Esperamos que cada copa que degustes sea un brindis por la vida, por los encuentros inolvidables y por los momentos que quedan grabados en el corazón.
+                   En Sommelier Society, nos apasiona compartir contigo la riqueza de nuestros vinos, desde la intensidad de un Oloroso hasta la sutileza de un Fino, pasando por el dulzor envolvente de un Pedro Ximénez. Cada sorbo es un viaje al corazón del Marco de Jerez, donde la albariza nutre las viñas y la solera guarda secretos centenarios.
                    
-                   Sigue explorando, descubriendo y disfrutando de la magia del vino. Te esperamos en tu próxima visita, siempre con una copa lista para celebrar juntos.
+                   Gracias por acompañarnos en este recorrido sensorial. Que cada copa que degustes sea un homenaje a la tradición, a los momentos inolvidables y a la magia de Jerez.
+                   
+                   Te esperamos en tu próxima visita, con la certeza de que el buen vino siempre reúne a quienes saben disfrutarlo.
                    
                    ¡Salud y hasta pronto!"</p>
+                <a href="{{ url('/resenas') }}" 
+                   data-aos="fade-up"
+                   data-aos-delay="600"
+                   class="text-yellow-400 hover:text-yellow-500 font-medium"></a>
             </div>
         </div>
     </main>
