@@ -1,4 +1,4 @@
-@extends('layouts.app')  // Se cambió de 'app' a 'layouts.app'
+@extends('layouts.app')
  
 @section('title', 'South Wine Academy')
  
@@ -62,7 +62,7 @@
                 <div class="md:w-1/2 text-center md:text-left">
                     <h2 class="text-3xl font-cinzel text-[#4A3728] mb-4">Catas Exclusivas</h2>
                     <p class="text-[#5C4033] font-garamond mb-6">Eventos privados en bodegas seleccionadas. Incluye cata de 5 vinos premium y maridaje con gastronomía local.</p>
-                    <a href="{{ url('/catasdevino') }}" class="inline-flex items-center px-6 py-3 border border-transparent rounded-lg font-cinzel text-[#F5E6CA] bg-[#8B4513]/80 hover:bg-[#A0522D]/90 hover:shadow-lg transition-all duración-300">
+                    <a href="{{ url('/catasdevino') }}" class="inline-flex items-center px-6 py-3 border border-transparent rounded-lg font-cinzel text-[#F5E6CA] bg-[#8B4513]/80 hover:bg-[#A0522D]/90 hover:shadow-lg transition-all duration-300">
                         Ver Calendario
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -81,7 +81,7 @@
                 <div class="md:w-1/2 text-center md:text-left">
                     <h2 class="text-3xl font-cinzel text-[#4A3728] mb-4">Análisis Técnicos</h2>
                     <p class="text-[#5C4033] font-garamond mb-6">Biblioteca completa con análisis detallados, puntuaciones y recomendaciones de maridaje actualizadas semanalmente.</p>
-                    <a href="{{ url('/resenas') }}" class="inline-flex items-center px-6 py-3 border border-transparent rounded-lg font-cinzel text-[#F5E6CA] bg-[#8B4513]/80 hover:bg-[#A0522D]/90 hover:shadow-lg transition-all duración-300">
+                    <a href="{{ url('/resenas') }}" class="inline-flex items-center px-6 py-3 border border-transparent rounded-lg font-cinzel text-[#F5E6CA] bg-[#8B4513]/80 hover:bg-[#A0522D]/90 hover:shadow-lg transition-all duration-300">
                         Ver Análisis
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -97,7 +97,7 @@
  
     <!-- ChatBot Mejorado -->
     <div class="fixed bottom-8 right-8 z-50">
-        <div id="chat-container" class="hidden w-80 bg-[#F5E6CA]/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-[#B38B6D] transform transition-all duración-300">
+        <div id="chat-container" class="hidden w-80 bg-[#F5E6CA]/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-[#B38B6D] transform transition-all duration-300">
             <div class="chat-header bg-gradient-to-r from-[#8B4513] to-[#A0522D] text-[#F5E6CA] p-4 rounded-t-2xl flex items-center">
                 <i class="fas fa-wine-bottle mr-3 text-xl"></i>
                 <h3 class="font-semibold font-garamond text-lg">Asistente Vinícola</h3>

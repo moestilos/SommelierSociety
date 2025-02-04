@@ -57,6 +57,18 @@
             easing: 'ease-in-out-quad'
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/ruta-ejemplo')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Respuesta AJAX:', data);
+                })
+                .catch(error => {
+                    console.error('Error en la petición:', error);
+                });
+        });
+    </script>
     @vite(['resources/js/app.js'])
 </body>
  
