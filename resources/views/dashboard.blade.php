@@ -51,13 +51,11 @@
 
                 <!-- Curso Card -->
                 <div class="p-4 md:w-1/2 lg:w-1/3">
-                    <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80
-            rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300
-            hover:shadow-2xl hover:scale-105">
+                    <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80 rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300">
                         <div class="relative overflow-hidden rounded-xl mb-6">
-                            <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105 rounded-xl" 
-                                src="{{ asset('img/bodega.jpeg') }}" 
-                                alt="Cursos de Sommelier">
+                            <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105" 
+                                 src="{{ asset('img/bodega.jpeg') }}" 
+                                 alt="Cursos de Sommelier">
                             <span class="absolute top-4 right-4 price-badge text-white px-3 py-1 rounded-full text-sm font-garamond">
                                 Nuevo
                             </span>
@@ -79,13 +77,11 @@
 
                 <!-- Catas Card -->
                 <div class="p-4 md:w-1/2 lg:w-1/3">
-                    <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80
-            rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300
-            hover:shadow-2xl hover:scale-105">
+                    <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80 rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300">
                         <div class="relative overflow-hidden rounded-xl mb-6">
-                            <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105 rounded-xl" 
-                                src="{{ asset('img/vinocur.jpeg') }}" 
-                                alt="Experiencias de Cata">
+                            <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105" 
+                                 src="{{ asset('img/vinocur.jpeg') }}" 
+                                 alt="Experiencias de Cata">
                             <span class="absolute top-4 right-4 price-badge text-white px-3 py-1 rounded-full text-sm font-garamond">
                                 Popular
                             </span>
@@ -107,11 +103,9 @@
 
                 <!-- Reseñas Card -->
                 <div class="p-4 md:w-1/2 lg:w-1/3">
-                    <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80
-            rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300
-            hover:shadow-2xl hover:scale-105">
+                    <div class="h-full bg-gradient-to-br from-black via-black to-red-900 backdrop-blur-lg bg-opacity-80 rounded-2xl p-6 shadow-lg hover-tilt border border-gray-100/80 transition-all duration-300">
                         <div class="relative overflow-hidden rounded-xl mb-6">
-                            <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105 rounded-xl" 
+                            <img class="w-full h-56 object-cover transform transition-all duration-500 hover:scale-105" 
                                  src="{{ asset('img/resenas.jpeg') }}" 
                                  alt="Reseñas Expertas">
                             <span class="absolute top-4 right-4 price-badge text-white px-3 py-1 rounded-full text-sm font-garamond">
@@ -133,7 +127,26 @@
                     </div>
                 </div>
 
-                
+                @if(auth()->user() && auth()->user()->is_admin)
+                <!-- CAJA 5 -->
+                <div class="p-2 lg:w-1/4 md:w-1/2">
+                    <div data-aos="fade-up" data-aos-duration="1000"
+                        class="h-full bg-gray-800 bg-opacity-60 px-4 pt-8 pb-12 rounded-lg overflow-hidden text-center relative transition-transform transform hover:scale-105 hover:shadow-lg">
+                        <h1 class="title-font sm:text-xl text-lg font-medium text-white mb-3">Panel de Control</h1>
+                        <img src="{{ asset('img/controlpanel.jpg') }}" alt="Panel de Control"
+                            class="w-full h-40 object-cover mb-4 rounded">
+                        <p class="leading-relaxed mb-3 text-white mb-1">Accede al panel de control para gestionar cursos, catas y más.</p>
+                        <a href="{{ route('admin.panel') }}" class="text-yellow-400 inline-flex items-center">
+                            Learn More
+                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                                <path d="M12 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                @endif
 
             </div>
         </div>
@@ -173,6 +186,7 @@
         </button>
     </div>
 
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
