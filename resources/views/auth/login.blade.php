@@ -16,7 +16,7 @@
         }
 
         .wine-gradient {
-            background: linear-gradient(135deg, rgba(88, 28, 28, 0.95) 0%, rgba(44, 19, 19, 0.95) 100%);
+            background: linear-gradient(135deg, #7B4B3A 0%, #510303 50%, #7B4B3A 100%);
         }
 
         .input-glow:focus {
@@ -126,7 +126,7 @@
                         <div class="w-full border-t border-amber-900/30"></div>
                     </div>
                     <div class="relative flex justify-center text-sm">
-                        <span class="px-2 bg-transparent text-[#8A8D8F] font-garamond italic">
+                        <span class="px-2 bg-transparent text-amber-500/70 font-garamond italic">
                             Or uncork with
                         </span>
                     </div>
@@ -146,9 +146,9 @@
                     </a>
                 </div>
 
-                <p class="text-center text-sm text-[#8A8D8F]/80 font-garamond">
+                <p class="text-center text-sm text-amber-400/80 font-garamond">
                     New to the vineyard? 
-                    <a href="{{ route('register') }}" class="text-[#8A8D8F] hover:text-amber-200 transition duration-300 italic">
+                    <a href="{{ route('register') }}" class="text-amber-300 hover:text-amber-200 transition duration-300 italic">
                         Plant your roots
                     </a>
                 </p>

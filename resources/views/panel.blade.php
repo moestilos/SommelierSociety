@@ -24,10 +24,6 @@
             font-family: 'EB Garamond', serif;
         }
  
-        .wine-gradient {
-            background: linear-gradient(135deg, rgba(88, 28, 28, 0.95) 0%, rgba(44, 19, 19, 0.95) 100%);
-        }
- 
         .input-glow:focus {
             box-shadow: 0 0 15px rgba(149, 40, 40, 0.3);
         }
@@ -36,9 +32,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
  
-<body class="bg-gradient-to-br from-black via-red-900 to-black dark:bg-gray-900">
+<body class="bg-gradient-to-br from-[#7B4B3A] via-[#510303] to-[#7B4B3A] dark:bg-gray-900">
     <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 backdrop-blur-sm">
-        <div class="max-w-4xl w-full space-y-8 wine-gradient rounded-xl p-10 shadow-2xl border border-amber-900/30 transition-all duration-300">
+        <div class="max-w-4xl w-full space-y-8 bg-gradient-to-br from-[#7B4B3A] via-[#510303] to-[#7B4B3A] rounded-xl p-10 shadow-2xl border border-amber-900/30 transition-all duration-300">
             <div class="text-center">
                 <div class="mx-auto relative w-24 h-24 mb-6">
                     <div class="absolute inset-0 bg-amber-900/20 rounded-full blur-md"></div>
