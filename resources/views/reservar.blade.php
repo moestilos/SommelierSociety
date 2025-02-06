@@ -34,13 +34,7 @@
                     Volver al Calendario
                 </a>
             </div>
-            @if(Auth::check() && Auth::user()->is_admin)
-            <div class="text-center mt-4">
-                <a href="{{ route('personasReserv.list', $cata->id) }}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
-                    Ver Personas Apuntadas
-                </a>
-            </div>
-            @endif
+            
         </div>
     </div>
 
