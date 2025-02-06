@@ -33,7 +33,6 @@
 </head>
 <body style="background-image: url('{{ asset('img/catainfofondo.jpg') }}'); background-size: cover; background-position: center;">
     <div class="container mx-auto mt-10 mb-10">
-        <h1 class="text-3xl font-bold mb-6 text-center text-white">Calendario de Catas</h1>
         @if(Auth::check() && Auth::user()->is_admin)
         <div class="text-center mb-6">
             <a href="{{ route('admin.form') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -42,6 +41,7 @@
         </div>
         @endif
         <div class="bg-white shadow-md rounded-lg p-6 max-w-xl mx-auto">
+            <h1 class="text-3xl font-bold mb-6 text-center text-black">Calendario de Catas</h1>
             <div id="calendar"></div>
         </div>
     </div>

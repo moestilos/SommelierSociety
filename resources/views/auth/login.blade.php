@@ -25,7 +25,7 @@
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-br from-[#DEB887] via-[#D4B88C] to-[#8B4513] dark:bg-gray-900">
+<body class="bg-gradient-to-br from-[#7B4B3A] via-[#D4B88C] to-[#8B4513] dark:bg-gray-900">
     <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 backdrop-blur-sm">
         <div class="max-w-md w-full space-y-8 bg-gradient-to-br from-[#E8DCC4] to-[#C4A484] rounded-xl p-10 shadow-2xl border border-[#B38B6D]/30 transition-all duration-300">
             <div class="text-center">
@@ -33,10 +33,10 @@
                     <div class="absolute inset-0 bg-[#B38B6D]/20 rounded-full blur-md"></div>
                     <img src="{{ asset('img/nuevoLogo.png') }}" alt="Logo" class="relative z-10 w-full h-full object-contain rounded-full border-2 border-[#B38B6D]/30">
                 </div>
-                <h2 class="font-cinzel text-4xl text-[#4A3728] mb-2">
+                <h2 class="font-cinzel text-4xl text-[#8A8D8F] mb-2">
                     South Wine Academy
                 </h2>
-                <p class="font-garamond text-[#5C4033]/80 italic">
+                <p class="font-garamond text-[#8A8D8F]/80 italic">
                     "Where passion meets the vine"
                 </p>
             </div>
@@ -60,13 +60,13 @@
                                 placeholder="Sommelier's email"
                             />
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <svg class="w-6 h-6 text-[#8B4513]/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-6 h-6 text-[#8A8D8F]/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                                 </svg>
                             </div>
                         </div>
                         @error('email')
-                            <p class="mt-2 text-sm text-[#8B4513] font-garamond">{{ $message }}</p>
+                            <p class="mt-2 text-sm text-[#8A8D8F] font-garamond">{{ $message }}</p>
                         @enderror
                     </div>
 
@@ -79,7 +79,7 @@
                                 type="password" 
                                 required 
                                 autocomplete="current-password"
-                                class="w-full pl-12 pr-4 py-3 bg-[#F5E6CA]/5 border border-[#B38B6D]/30 rounded-lg text-[#4A3728] placeholder-[#8B4513]/50 focus:border-[#8B4513] input-glow transition-all duration-300 font-garamond"
+                                class="w-full pl-12 pr-4 py-3 bg-[#8A8D8F]/5 border border-[#B38B6D]/30 rounded-lg text-[#4A3728] placeholder-[#8B4513]/50 focus:border-[#8B4513] input-glow transition-all duration-300 font-garamond"
                                 placeholder="Cellar master's key"
                             />
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -100,15 +100,15 @@
                             id="remember_me" 
                             type="checkbox" 
                             name="remember" 
-                            class="rounded border-[#B38B6D]/30 text-[#8B4513] bg-[#F5E6CA]/5 focus:ring-[#8B4513]"
+                            class="rounded border-[#B38B6D]/30 text-[#8A8D8F] bg-[#8A8D8F]/5 focus:ring-[#8B4513]"
                         />
-                        <span class="ml-2 text-sm text-[#5C4033]/80">
+                        <span class="ml-2 text-sm text-[#8A8D8F]/80">
                             Remember my palate
                         </span>
                     </label>
 
                     @if (Route::has('password.request'))
-                        <a href="{{ route('password.request') }}" class="text-sm text-[#8B4513] hover:text-[#A0522D] transition duration-300 italic">
+                        <a href="{{ route('password.request') }}" class="text-sm text-[#8A8D8F] hover:text-[#A0522D] transition duration-300 italic">
                             Forgotten vintage?
                         </a>
                     @endif
@@ -126,7 +126,7 @@
                         <div class="w-full border-t border-amber-900/30"></div>
                     </div>
                     <div class="relative flex justify-center text-sm">
-                        <span class="px-2 bg-transparent text-amber-500/70 font-garamond italic">
+                        <span class="px-2 bg-transparent text-[#8A8D8F] font-garamond italic">
                             Or uncork with
                         </span>
                     </div>
@@ -146,9 +146,9 @@
                     </a>
                 </div>
 
-                <p class="text-center text-sm text-amber-400/80 font-garamond">
+                <p class="text-center text-sm text-[#8A8D8F]/80 font-garamond">
                     New to the vineyard? 
-                    <a href="{{ route('register') }}" class="text-amber-300 hover:text-amber-200 transition duration-300 italic">
+                    <a href="{{ route('register') }}" class="text-[#8A8D8F] hover:text-amber-200 transition duration-300 italic">
                         Plant your roots
                     </a>
                 </p>

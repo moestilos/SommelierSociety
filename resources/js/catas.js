@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         firstDay: 1,
         locale: 'es',
         events: [
-            // Los eventos se cargarán desde el archivo Blade
+            
         ],
         eventMouseEnter: function(info) {
             var tooltip = document.createElement('div');
