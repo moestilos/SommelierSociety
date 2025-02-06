@@ -38,10 +38,10 @@
  
     <main>
         @yield('content')
- 
- 
- 
-     
+
+
+
+      
     </main>
    
     <footer class="text-gray-400 wine-gradient py-2 body-font">
